@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libreria Prompt del Docente | IIS Gregorio Mendel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+  :root{
+    --green-dark:#1B5E20;
+    --green:#2E7D32;
+    --green-light:#4CAF50;
+    --white:#FFFFFF;
+    --grey-bg:#F5F5F5;
+    --text-dark:#1A1A1A;
+    --text-muted:#5A5A5A;
+    --amber:#D97706;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden;}
+
+  /* MINI HERO */
+  .mini-hero{background:var(--green-dark);padding:90px 24px 70px;text-align:center;position:relative;overflow:hidden;}
+  .mini-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:18px;}
+  .mini-hero h1{font-size:44px;font-weight:800;color:var(--white);line-height:1.2;margin-bottom:18px;max-width:800px;margin-left:auto;margin-right:auto;}
+  .mini-hero p{font-size:17px;color:rgba(255,255,255,0.82);line-height:1.6;max-width:660px;margin:0 auto;}
+  .mini-hero .shape-circle{position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(76,175,80,0.10);top:-60px;right:-60px;}
+  .mini-hero .shape-rect{position:absolute;width:260px;height:160px;border:2px solid rgba(76,175,80,0.14);border-radius:12px;bottom:-40px;left:-40px;}
+
+  /* INFO STRIP */
+  .info-strip{background:var(--grey-bg);padding:22px 24px;text-align:center;font-size:15px;color:var(--text-muted);border-bottom:1px solid #e2e2e2;}
+  .info-strip b{color:var(--green-dark);}
+
+  /* SECTIONS */
+  section{padding:70px 24px;}
+  .section-sub{text-align:center;font-size:16px;color:var(--text-muted);max-width:680px;margin:0 auto 46px;}
+
+  /* PART DIVIDER */
+  .part-divider{max-width:900px;margin:0 auto 46px;text-align:center;}
+  .part-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:14px;}
+  .part-eyebrow.generic{background:#E3F2FD;color:#1565C0;}
+  .part-eyebrow.subject{background:#FFF3E0;color:#B15C00;}
+  .part-title{font-size:32px;font-weight:800;color:var(--green-dark);margin-bottom:10px;}
+  .part-desc{font-size:15.5px;color:var(--text-muted);max-width:640px;margin:0 auto;line-height:1.6;}
+
+  /* CATEGORY NAV */
+  .cat-nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,0.97);backdrop-filter:blur(6px);border-bottom:1px solid #e2e2e2;padding:12px 16px;}
+  .cat-nav-row{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;max-width:1200px;margin:0 auto 4px;}
+  .cat-nav-label{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#bbb;padding:7px 6px 7px 2px;white-space:nowrap;}
+  .cat-nav a{font-size:12px;font-weight:600;color:var(--text-muted);text-decoration:none;padding:6px 11px;border-radius:20px;transition:background .2s,color .2s;white-space:nowrap;}
+  .cat-nav a:hover{background:#E8F5E9;color:var(--green-dark);}
+
+  /* PROMPT LIBRARY */
+  .prompts-section{background:var(--white);max-width:900px;margin:0 auto;padding:50px 24px;}
+  .prompts-section.subject-part{background:var(--grey-bg);max-width:none;padding:70px 24px;}
+  .prompts-section.subject-part .prompt-group-inner{max-width:900px;margin:0 auto;}
+  .prompt-group{margin-bottom:24px;border:1px solid #e2e2e2;border-radius:12px;overflow:hidden;scroll-margin-top:80px;background:var(--white);max-width:900px;margin-left:auto;margin-right:auto;}
+  .prompt-group-title{background:var(--green);color:var(--white);font-size:15.5px;font-weight:700;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .prompt-group-title.subject-title{background:var(--amber);}
+  .prompt-group-title span.count{font-size:12px;font-weight:600;background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:20px;white-space:nowrap;}
+  .prompt-list{list-style:none;padding:8px 0;}
+  .prompt-list li{padding:14px 22px;font-size:14.5px;color:var(--text-dark);line-height:1.55;border-top:1px solid #f0f0f0;}
+  .prompt-list li:first-child{border-top:none;}
+  .prompt-list li b{color:var(--green-dark);}
+  .prompts-note{max-width:900px;margin:26px auto 0;background:#E8F5E9;border:1px solid var(--green-light);border-radius:10px;padding:18px 24px;font-size:14px;color:var(--green-dark);}
+  .subject-note{background:#FFF7E6;border:1px solid var(--amber);color:#7a4d00;}
+
+  footer{padding:34px 24px;text-align:center;font-size:13px;color:var(--text-muted);background:var(--grey-bg);border-top:1px solid #e2e2e2;}
+  footer p{margin-top:4px;}
+
+  /* TORNA SU */
+  .back-to-top{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;background:var(--green-dark);color:var(--white);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.22);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease, transform .25s ease, background .2s ease, visibility .25s;z-index:30;}
+  .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0);}
+  .back-to-top:hover{background:var(--green);}
+  @media (max-width:600px){
+    .back-to-top{bottom:18px;right:18px;width:44px;height:44px;}
+    .mini-hero h1{font-size:30px;}
+    .part-title{font-size:26px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="mini-hero">
+  <div class="shape-circle"></div>
+  <div class="shape-rect"></div>
+  <div class="mini-hero-eyebrow">IIS Gregorio Mendel · Team Digitale</div>
+  <h1>Libreria Prompt del Docente</h1>
+  <p>132 prompt pronti da usare subito con Gemini, NotebookLM o Claude — prima quelli generici, validi per qualsiasi materia, poi quelli specifici per disciplina, tecnico e professionale.</p>
+</section>
+
+<div class="info-strip">
+  <b>132 prompt</b> &nbsp;·&nbsp; <b>62 generici</b> + <b>70 per materia</b> &nbsp;·&nbsp; Basta sostituire le parti tra [parentesi quadre]
+</div>
+
+<nav class="cat-nav">
+  <div class="cat-nav-row">
+    <span class="cat-nav-label">Generici</span>
+    <a href="#verifica">Verifiche</a>
+    <a href="#lezione">Lezioni</a>
+    <a href="#inclusione">Inclusione</a>
+    <a href="#correzione">Correzione</a>
+    <a href="#sintesi">Sintesi</a>
+    <a href="#progettazione">Valutazione</a>
+    <a href="#gruppo">Gruppo</a>
+    <a href="#burocrazia">Burocrazia</a>
+    <a href="#idee">Idee</a>
+  </div>
+  <div class="cat-nav-row">
+    <span class="cat-nav-label">Per materia</span>
+    <a href="#inglese">Inglese</a>
+    <a href="#italiano">Italiano/Storia</a>
+    <a href="#matematica">Matematica/Fisica</a>
+    <a href="#diritto">Diritto/Economia</a>
+    <a href="#scienze-integrate">Scienze integrate</a>
+    <a href="#chimica">Chimica applicata</a>
+    <a href="#informatica">Informatica/Disegno</a>
+    <a href="#motorie">Sc. motorie</a>
+    <a href="#produzioni">Produzioni veg./anim.</a>
+    <a href="#tpvz">TPVZ</a>
+    <a href="#trasformazione">Trasformazione prod.</a>
+    <a href="#estimo">Estimo/Economia agr.</a>
+    <a href="#genio-rurale">Genio rurale</a>
+    <a href="#biotecnologie">Biotecnologie</a>
+    <a href="#agronomia">Agronomia/Pedologia</a>
+    <a href="#ambiente">Ambiente/territorio</a>
+    <a href="#frst">FRST</a>
+    <a href="#bio-sostenibile">Agric. sostenibile</a>
+    <a href="#esercitazioni">Esercitazioni agrarie</a>
+    <a href="#sociologia">Sociologia rurale</a>
+  </div>
+</nav>
+
+<!-- ======================= PARTE A — GENERICI ======================= -->
+<section class="prompts-section">
+  <div class="part-divider">
+    <span class="part-eyebrow generic">Parte 1</span>
+    <div class="part-title">Prompt generici</div>
+    <p class="part-desc">Utilizzabili da qualsiasi docente, per qualsiasi materia: basta sostituire argomento, classe e livello.</p>
+  </div>
+
+  <div class="prompt-group" id="verifica">
+    <div class="prompt-group-title"><span>Preparare una verifica</span><span class="count">8</span></div>
+    <ol class="prompt-list">
+      <li>Crea 8 domande a risposta multipla di livello [biennio/triennio], classe [X], sull'argomento [Y]. Ogni domanda deve avere 4 opzioni, con la soluzione indicata separatamente alla fine.</li>
+      <li>Prepara una verifica scritta su [argomento] per una classe [X], con 3 domande aperte di difficoltà crescente e una griglia di valutazione con i punteggi per ciascuna.</li>
+      <li>Trasforma questi appunti (incollati sotto) in una verifica vero/falso di 10 domande, evitando trabocchetti troppo ambigui.</li>
+      <li>Genera una verifica di recupero su [argomento], diversa nella formulazione ma equivalente per difficoltà a questa verifica originale (incollata sotto), per uno studente che deve recuperare l'insufficienza.</li>
+      <li>Crea un compito a scelta multipla con giustificazione: per ogni domanda lo studente deve anche spiegare in una riga perché ha scelto quella risposta.</li>
+      <li>Prepara 5 esercizi pratici di difficoltà progressiva su [argomento/competenza], da usare come compito per casa.</li>
+      <li>Crea un test a risposta multipla di 10 domande sull'argomento [Argomento]. Per ogni domanda fornisci 4 opzioni di cui solo una corretta. Alla fine, fornisci la griglia di correzione separata.</li>
+      <li>Basandoti sull'argomento [Argomento], genera 5 domande a risposta aperta progettate per stimolare il pensiero critico e il collegamento interdisciplinare, non la semplice memorizzazione.</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="lezione">
+    <div class="prompt-group-title"><span>Preparare una lezione</span><span class="count">10</span></div>
+    <ol class="prompt-list">
+      <li>Proponimi una scaletta di lezione di 50 minuti su [argomento], per una classe [X], con una parte introduttiva (10 min), un'attività pratica o di gruppo (25 min) e una verifica finale rapida (15 min).</li>
+      <li>Suggeriscimi 3 modi diversi di introdurre l'argomento [X] a una classe che lo trova noioso o difficile, con un esempio concreto per ciascuno.</li>
+      <li>Crea una mappa concettuale testuale (in elenco puntato gerarchico) sull'argomento [X], adatta a essere ridisegnata a mano alla lavagna.</li>
+      <li>Proponimi un'analogia o una metafora semplice per spiegare [concetto astratto] a ragazzi di [età].</li>
+      <li>Suggeriscimi 3 domande stimolo da porre in apertura di lezione su [argomento], per far emergere cosa già sanno gli studenti.</li>
+      <li>Trasforma questo argomento in una piccola storia o caso pratico legato al settore agrario/tecnico, per renderlo più concreto per i miei studenti.</li>
+      <li>Proponimi un'attività di 15 minuti di ripasso veloce su [argomento] da fare a inizio lezione.</li>
+      <li>Spiega il concetto di [es. Fotosintesi / Ciclo dell'Azoto] usando un'analogia legata alla vita quotidiana, per renderla immediatamente comprensibile a studenti di 14 anni. Limita a 150 parole.</li>
+      <li>Devo creare una nuova UdA su [es. Cambiamento Climatico] per una [es. Terza Superiore]. Proponimi 5 idee per attività pratiche di laboratorio o compiti di realtà (max 2 ore ciascuno).</li>
+      <li>Genera un caso di studio realistico su [es. azienda agricola che affronta una siccità]. Includi dati numerici fittizi, personaggi e un problema finale che gli studenti dovranno risolvere a gruppi.</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="inclusione">
+    <div class="prompt-group-title"><span>Materiali differenziati e inclusione</span><span class="count">10</span></div>
+    <ol class="prompt-list">
+      <li>Riscrivi questo testo (incollato sotto) in una versione più semplice, con frasi più brevi e lessico meno tecnico, mantenendo tutti i concetti chiave, per uno studente con difficoltà di lettura.</li>
+      <li>Prendi questa consegna (incollata sotto) e proponimi una versione facilitata e una di approfondimento per lo stesso argomento, adatte a una classe con livelli eterogenei.</li>
+      <li>Suggeriscimi come adattare questa attività (incollata sotto) per uno studente con DSA, mantenendo lo stesso obiettivo di apprendimento.</li>
+      <li>Trasforma questo testo scritto in una serie di domande guida, utile per uno studente che fatica a orientarsi in un testo lungo.</li>
+      <li>Riscrivi il testo [incolla] per un alunno con DSA. Usa un formato ad alta leggibilità (elenchi), frasi coordinate (no subordinate lunghe), ed evidenzia in MAIUSCOLO le parole chiave.</li>
+      <li>Trasforma questo paragrafo discorsivo [incolla] in un elenco puntato schematico, mantenendo solo i nessi causa-effetto e i concetti fondamentali per lo studio mnemonico.</li>
+      <li>Traduci il testo [incolla] seguendo le regole "Easy to Read" (Facile da Leggere). Usa solo parole comuni, frasi soggetto-verbo-complemento e rivolgiti direttamente al lettore ("Tu").</li>
+      <li>Scomponi questa consegna [es. scrivere relazione sull'esperimento] in una checklist visiva di 5 step brevissimi, numerati, usando imperativi ("1. Prendi il quaderno. 2. Scrivi...").</li>
+      <li>Riorganizza questo testo [incolla] in 4 blocchi tematici brevissimi. Aggiungi un'emoji molto rappresentativa all'inizio di ogni blocco per facilitare la memorizzazione visiva per alunni BES.</li>
+      <li>Riscrivi le istruzioni di questo compito pratico [incolla] descrivendole passo dopo passo, concentrandoti sulle percezioni tattili, uditive e olfattive invece che visive.</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="correzione">
+    <div class="prompt-group-title"><span>Correzione e feedback</span><span class="count">5</span></div>
+    <ol class="prompt-list">
+      <li>Dammi 3 osservazioni costruttive su questo testo scritto da uno studente (incollato sotto), senza riscriverlo tu e senza dare un voto.</li>
+      <li>Elenca gli errori grammaticali/di calcolo in questo testo/esercizio (incollato sotto), spiegando brevemente il perché di ciascuno, senza correggerlo direttamente.</li>
+      <li>Confronta questi due elaborati di studenti diversi (incollati sotto) e dimmi quali punti di forza comuni e quali differenze noti, per aiutarmi a tarare la correzione.</li>
+      <li>Suggeriscimi 3 domande da fare oralmente a uno studente per capire se ha capito davvero questo argomento o l'ha solo mandato a memoria.</li>
+      <li>Scrivi un riassunto (200 parole) su [argomento] inserendo intenzionalmente 4 errori concettuali grossolani. Mi servirà in classe per far trovare l'errore ai ragazzi, con le soluzioni a parte.</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="sintesi">
+    <div class="prompt-group-title"><span>Sintesi e studio</span><span class="count">6</span></div>
+    <ol class="prompt-list">
+      <li>Riassumi questo capitolo/documento (incollato o caricato) in 10 punti chiave, adatti a essere usati come guida di ripasso per gli studenti.</li>
+      <li>Genera 5 domande di autoverifica che uno studente potrebbe porsi dopo aver studiato questo argomento, per capire se ha capito davvero.</li>
+      <li>Trasforma questi appunti disordinati in uno schema ordinato con titoli e sottotitoli.</li>
+      <li>Crea delle flashcard (domanda/risposta) su questo argomento, una per ogni concetto chiave.</li>
+      <li>Estrai dal seguente testo [incolla] i 10 termini tecnici più importanti. Per ciascuno scrivi una definizione di una sola riga adatta a studenti superiori, in formato tabella.</li>
+      <li>Genera una mappa concettuale testuale (elenchi puntati e rientrati) che riassuma cause, svolgimento e conseguenze di [argomento]. Evidenzia i concetti in grassetto.</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="progettazione">
+    <div class="prompt-group-title"><span>Progettazione didattica e valutazione</span><span class="count">6</span></div>
+    <ol class="prompt-list">
+      <li>Aiutami a costruire una rubrica di valutazione a 4 livelli (insufficiente/sufficiente/buono/ottimo) per una consegna di tipo [presentazione orale/relazione scritta/progetto pratico] su [argomento].</li>
+      <li>Proponimi 3 obiettivi di apprendimento misurabili per un'Unità Didattica su [argomento], adatti a una classe [X].</li>
+      <li>Suggeriscimi come collegare questo argomento di [materia] a un tema di Educazione Civica o di cittadinanza digitale.</li>
+      <li>Aiutami a stimare i tempi di un'attività didattica: quanto tempo servirebbe realisticamente per far svolgere questo compito (descritto sotto) a una classe di 20 studenti?</li>
+      <li>Crea una griglia di valutazione in tabella Markdown per [es. relazione di chimica]. Livelli: Iniziale, Base, Intermedio, Avanzato. Indicatori: correttezza contenuti, lessico tecnico, sintesi.</li>
+      <li>Progetta un "compito di realtà" per valutare la competenza [es. progettazione impianto di irrigazione]. Definisci scenario, ruolo dell'alunno, prodotto atteso e vincoli temporali.</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="gruppo">
+    <div class="prompt-group-title"><span>Attività di gruppo, dibattito e coinvolgimento</span><span class="count">5</span></div>
+    <ol class="prompt-list">
+      <li>Proponimi un'attività di dibattito in classe su [argomento controverso legato alla materia], con ruoli assegnati e regole semplici.</li>
+      <li>Suggeriscimi un gioco o una gara a squadre per ripassare [argomento] negli ultimi 15 minuti di lezione.</li>
+      <li>Crea 5 domande aperte per una discussione di classe che stimolino il pensiero critico su [argomento], non solo la memoria.</li>
+      <li>Proponimi un piccolo progetto di gruppo (2-3 lezioni) su [argomento], con una consegna finale concreta da presentare.</li>
+      <li>Agisci come moderatore. Prepara 3 argomentazioni forti a favore e 3 contro sul tema [es. OGM in agricoltura] per supportare gli studenti in un debate in classe.</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="burocrazia">
+    <div class="prompt-group-title"><span>Comunicazione, burocrazia e famiglie</span><span class="count">9</span></div>
+    <ol class="prompt-list">
+      <li>Aiutami a scrivere una comunicazione breve e chiara per le famiglie riguardo a [situazione], in tono professionale ma non burocratico.</li>
+      <li>Trasforma queste note prese durante un Consiglio di Classe in un verbale ordinato e leggibile.</li>
+      <li>Aiutami a scrivere una mail a un collega per proporre un'attività interdisciplinare su [argomento].</li>
+      <li>Scrivi la relazione finale quadrimestrale istituzionale per la classe [Classe]. Concetti: gruppo vivace, laboratori proficui, carente lo studio domestico. Tono formale, 150 parole.</li>
+      <li>Ecco i miei appunti sparsi del Collegio: [incolla]. Rielaborali in un verbale formale diviso in: premessa, ordine del giorno, delibere approvate, interventi principali. Tono burocratico.</li>
+      <li>Scrivi una bozza di nota disciplinare formale per i genitori di [X], che ha disturbato ripetutamente la lezione usando il cellulare e rispondendo male. Richiedi un colloquio, tono fermo ma istituzionale.</li>
+      <li>Scrivi una circolare per le famiglie per l'uscita didattica a [luogo]. Data, ora ritrovo, rientro, mezzo di trasporto. Aggiungi il tagliando per autorizzazione e firma.</li>
+      <li>Devo compilare le "Misure Dispensative e Strumenti Compensativi" per il PDP di uno studente con dislessia in [materia]. Suggeriscimi un elenco puntato burocratico delle 5 misure più adatte da inserire.</li>
+      <li>Scrivi una risposta formale ed empatica alla mail di un genitore preoccupato per il voto insufficiente del figlio [nome]. Rassicuralo, spiega l'andamento e proponi date per un colloquio (in presenza o Meet).</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="idee">
+    <div class="prompt-group-title"><span>Idee e brainstorming personale</span><span class="count">3</span></div>
+    <ol class="prompt-list">
+      <li>Dammi 5 idee di attività pratiche legate al settore agrario da collegare a [argomento teorico], per rendere la lezione più concreta.</li>
+      <li>Sto preparando una lezione su [argomento] e mi sento a corto di idee: proponimi 3 approcci diversi tra cui scegliere, con pro e contro di ciascuno.</li>
+      <li>Aiutami a capire se questo argomento (descritto sotto) si presta meglio a una spiegazione frontale, a un lavoro di gruppo o a un'attività pratica, e perché.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PARTE B — PER MATERIA ======================= -->
+<section class="prompts-section subject-part">
+  <div class="prompt-group-inner">
+    <div class="part-divider">
+      <span class="part-eyebrow subject">Parte 2</span>
+      <div class="part-title">Prompt per materia</div>
+      <p class="part-desc">Organizzati per disciplina, dal biennio comune agli indirizzi Tecnico (GAT/PT) e Professionale/IeFP, con le materie del quinto anno professionale (TPVZ, FRST) e delle esercitazioni pratiche.</p>
+    </div>
+
+    <div class="prompt-group" id="inglese">
+      <div class="prompt-group-title subject-title"><span>🇬🇧 Lingua Inglese</span><span class="count">5</span></div>
+      <ol class="prompt-list">
+        <li>Agisci come importatore britannico (Mr. Smith) che vuole comprare vino e formaggi. Inizia una conversazione con me (venditore). Fai UNA SOLA domanda alla volta. Correggi il mio inglese prima di proseguire.</li>
+        <li>Crea un dialogo guidato in inglese tecnico-commerciale su [situazione, es. trattativa per l'export di prodotti agroalimentari], con il vocabolario chiave evidenziato a parte.</li>
+        <li>Genera un esercizio di reading comprehension in inglese su un breve testo tecnico riguardante [argomento agrario], con 5 domande a risposta multipla in inglese.</li>
+        <li>Correggi questo testo scritto in inglese da uno studente [incolla], segnalando errori grammaticali e lessicali con una breve spiegazione in italiano, senza riscrivere il testo intero.</li>
+        <li>Prepara una lista di 15 termini tecnici in inglese relativi a [settore, es. zootecnia/agronomia] con traduzione e una frase di esempio ciascuno, utile come glossario per il triennio.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="italiano">
+      <div class="prompt-group-title subject-title"><span>Italiano, Storia e Geografia</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Prepara un'analisi guidata (5 domande) del testo [titolo/autore] per una classe [X], concentrata su temi, stile e contesto storico, senza fornire la risposta completa.</li>
+        <li>Crea una linea del tempo testuale con le 8 tappe principali di [evento/periodo storico], con una breve didascalia per ciascuna, adatta a essere ricopiata sul quaderno.</li>
+        <li>Genera 5 domande di collegamento interdisciplinare tra [evento storico] e l'attualità/cittadinanza, utili per un dibattito in classe.</li>
+        <li>Trasforma questa poesia/pagina di prosa (incollata sotto) in una scheda di analisi del testo con: parafrasi in linguaggio semplice, figure retoriche individuate e un commento personale guidato da 3 domande.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="matematica">
+      <div class="prompt-group-title subject-title"><span>Matematica, Fisica e Complementi di Matematica</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Genera 6 esercizi di [argomento, es. equazioni di secondo grado / moto uniformemente accelerato] di difficoltà crescente, con soluzione a parte, per una classe [X].</li>
+        <li>Spiega passo passo la risoluzione di questo problema di matematica/fisica (incollato sotto), evidenziando dove uno studente tipicamente sbaglia.</li>
+        <li>Crea un problema di matematica applicata all'agrario (es. calcolo di superfici, volume di un silo, resa di un campo) su [argomento], con soluzione a parte.</li>
+        <li>Proponimi 3 modi diversi per spiegare [concetto astratto di matematica/fisica] con un esempio pratico legato all'agricoltura o alla meccanica agraria.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="diritto">
+      <div class="prompt-group-title subject-title"><span>Diritto ed Economia</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Spiega la differenza tra [due istituti giuridici o economici, es. impresa individuale e società agricola] con un esempio concreto legato a un'azienda agricola.</li>
+        <li>Crea un caso pratico di diritto/economia agraria su [es. un contratto di affitto di fondo rustico], chiedendo agli studenti di individuare gli elementi essenziali e le criticità.</li>
+        <li>Genera un test di 6 domande vero/falso sui principi base del diritto agrario/commerciale trattati in classe su [argomento], con spiegazione delle risposte.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="scienze-integrate">
+      <div class="prompt-group-title subject-title"><span>Scienze integrate: Biologia, Fisica e Chimica (Biennio)</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Prepara 5 domande a risposta multipla sulle scienze integrate ([biologia/fisica/chimica]) sull'argomento [X], con difficoltà adatta al biennio.</li>
+        <li>Crea un semplice esperimento di laboratorio per il biennio su [argomento di biologia/scienze della terra], con materiali facilmente reperibili a scuola e domande guida per l'osservazione.</li>
+        <li>Spiega [fenomeno fisico o chimico di base] con un esempio visibile nella vita di campagna o in un'azienda agricola, per renderlo concreto a ragazzi di 14-15 anni.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="chimica">
+      <div class="prompt-group-title subject-title"><span>Chimica applicata e processi di trasformazione</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Spiega il processo chimico di [es. fermentazione, esterificazione, idrolisi] applicato alla trasformazione di [prodotto agroalimentare], con un linguaggio adatto a una classe [X].</li>
+        <li>Crea una scheda di laboratorio per l'esperimento su [analisi chimica/microbiologica di un prodotto alimentare], con obiettivo, materiali, procedura in punti e domande di verifica finale.</li>
+        <li>Genera un caso studio sulla trasformazione di [es. latte in formaggio / uva in vino], chiedendo agli studenti di individuare le fasi critiche del processo e i parametri da controllare.</li>
+        <li>Prepara una tabella riassuntiva dei principali parametri chimico-fisici da controllare nella trasformazione di [prodotto], con valori di riferimento e possibili cause di anomalia.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="informatica">
+      <div class="prompt-group-title subject-title"><span>Tecnologie informatiche e Disegno tecnico</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Spiega passo passo come impostare [operazione base, es. una formula su foglio di calcolo / un comando CAD] per uno studente principiante, con istruzioni numerate.</li>
+        <li>Crea un esercizio guidato di disegno tecnico/rappresentazione grafica su [es. pianta di un'azienda agricola / sezione di un manufatto rurale], con le misure da rispettare.</li>
+        <li>Genera una checklist di 8 punti per correggere un elaborato di tecnologie informatiche/disegno tecnico (es. un foglio di calcolo o una tavola grafica) su [argomento].</li>
+        <li>Proponimi un piccolo progetto pratico (2-3 lezioni) di informatica applicata all'agrario (es. un foglio di calcolo per la gestione di un'azienda agricola), con consegna finale.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="motorie">
+      <div class="prompt-group-title subject-title"><span>Scienze motorie</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Proponimi un circuito di allenamento di 30 minuti per una classe di scienze motorie, adattabile a spazi ridotti, con schema riassuntivo delle stazioni.</li>
+        <li>Crea una scheda di autovalutazione per gli studenti su un percorso di scienze motorie, con criteri semplici e non giudicanti.</li>
+        <li>Genera 5 domande per collegare l'attività sportiva a un tema di educazione civica (es. fair play, inclusione, alimentazione), per un momento di riflessione in classe.</li>
+        <li>Aiutami a scrivere una comunicazione alle famiglie per l'organizzazione di un torneo/uscita sportiva, con data, orari e materiale necessario.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="produzioni">
+      <div class="prompt-group-title subject-title"><span>Produzioni vegetali e Produzioni animali (Tecnico)</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Genera un problema per 4ª Agrario. Campo di [X] ettari a [coltura]. Chiedi di calcolare i quintali di concime [titolo] da acquistare basandosi sulle asportazioni N-P-K. Fornisci la soluzione a parte.</li>
+        <li>Genera un problema numerico sulle produzioni vegetali (es. resa per ettaro, dose di seme, epoca di semina) su [coltura], con soluzione a parte.</li>
+        <li>Crea uno scenario clinico simulato per una stalla da latte. Sintomi: calo produzione e [sintomo 2]. Chiedi agli alunni di ipotizzare la patologia (es. mastite), le cause ambientali e le azioni correttive.</li>
+        <li>Prepara un confronto guidato (tabella) tra due tecniche di allevamento/coltivazione ([X] e [Y]) su costi, resa e sostenibilità, da completare in classe.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="tpvz">
+      <div class="prompt-group-title subject-title"><span>Tecniche delle Produzioni Vegetali e Zootecniche — TPVZ (Professionale)</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Spiega una tecnica di selezione genetica in zootecnia applicata a [specie], con linguaggio tecnico adatto al quinto anno professionale.</li>
+        <li>Genera un caso pratico sulla gestione dell'alimentazione di [specie animale, es. bovini da latte], chiedendo agli studenti di calcolare il fabbisogno nutrizionale giornaliero.</li>
+        <li>Prepara 5 domande aperte sul benessere animale in allevamento intensivo/estensivo, utili per un confronto in classe su [specie].</li>
+        <li>Crea una scheda tecnico-colturale semplificata per [coltura], con fasi fenologiche principali e interventi agronomici associati, adatta a essere usata come guida di studio.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="trasformazione">
+      <div class="prompt-group-title subject-title"><span>Trasformazione prodotti agroalimentari</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Spiega le fasi principali della filiera di trasformazione di [prodotto agroalimentare, es. olio, formaggio, salumi], dalla materia prima al confezionamento.</li>
+        <li>Crea un caso studio su un problema di conformità HACCP riscontrato in un laboratorio di trasformazione ([es. temperatura non rispettata]), chiedendo agli studenti di individuare causa e azione correttiva.</li>
+        <li>Genera un esempio di etichetta descrittiva (in formato testo) per un prodotto trasformato, rispettando le informazioni obbligatorie previste dalla normativa (senza inventare dati nutrizionali reali).</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="estimo">
+      <div class="prompt-group-title subject-title"><span>Economia, Estimo, Marketing e Legislazione agraria</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Struttura un indice (solo titoli sezioni) per un business plan volto all'apertura di un punto vendita a Km0 annesso all'azienda agricola scolastica in Lombardia. Evidenzia quali dati servono.</li>
+        <li>Genera un caso studio di esproprio per pubblica utilità (costruzione strada) su un terreno agricolo coltivato. Fornisci dati catastali e rendite fittizie. Chiedi alla classe di calcolare l'indennità spettante.</li>
+        <li>Prepara una scheda di sintesi su [normativa/legislazione di settore agrario, es. PAC, biologico], con i punti chiave in elenco puntato, adatta al ripasso.</li>
+        <li>Crea un esercizio di stima del valore di un fondo agricolo con il metodo sintetico-comparativo, fornendo dati fittizi di mercato e chiedendo il calcolo finale.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="genio-rurale">
+      <div class="prompt-group-title subject-title"><span>Genio rurale</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Spiega il funzionamento di una [es. trattrice ISOBUS]. Linguaggio tecnico. Concentrati sulla componente elettronica e di agricoltura di precisione (GPS, sensori, dosaggio variabile).</li>
+        <li>Crea un esercizio di dimensionamento di un semplice impianto di irrigazione per un appezzamento di [X] ettari, con dati di partenza e richiesta di calcolo della portata necessaria.</li>
+        <li>Spiega la differenza tra due tipologie di macchine agricole ([es. aratro ed erpice]) con un confronto su funzione, momento d'uso e costi indicativi.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="biotecnologie">
+      <div class="prompt-group-title subject-title"><span>Biotecnologie agrarie</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Crea uno scenario applicato di biotecnologie agrarie su [es. miglioramento genetico di una coltura], chiedendo agli studenti di ipotizzare vantaggi e rischi.</li>
+        <li>Spiega in modo semplice la differenza tra selezione tradizionale e tecniche di biotecnologia moderna (es. marker molecolari), con un esempio applicato a una coltura del territorio.</li>
+        <li>Genera 4 domande aperte su rischi e benefici delle biotecnologie in agricoltura, utili per un dibattito guidato in classe.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="agronomia">
+      <div class="prompt-group-title subject-title"><span>Agronomia del territorio, Ecologia e Pedologia</span><span class="count">4</span></div>
+      <ol class="prompt-list">
+        <li>Genera 5 domande di verifica su ecologia/pedologia riguardo [argomento, es. tipi di suolo, ciclo dell'acqua], di livello adatto al triennio/professionale.</li>
+        <li>Spiega le caratteristiche principali di [tipo di suolo] e la sua idoneità per [coltura], con un linguaggio tecnico adatto al triennio/professionale.</li>
+        <li>Crea un caso studio di analisi del territorio agrario locale (Pianura Padana/Lombardia), chiedendo agli studenti di individuare i fattori pedoclimatici che ne condizionano l'uso agricolo.</li>
+        <li>Proponimi un'attività pratica di rilievo pedologico semplificato in campo (o in cortile scolastico), con gli strumenti minimi necessari e le osservazioni da registrare.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="ambiente">
+      <div class="prompt-group-title subject-title"><span>Gestione dell'ambiente e del territorio (Tecnico)</span><span class="count">2</span></div>
+      <ol class="prompt-list">
+        <li>Spiega il concetto di [es. rotazione colturale, gestione forestale sostenibile, biodiversità] con un esempio applicato al territorio lombardo.</li>
+        <li>Crea un caso studio sulla gestione di un'area protetta o di un parco locale, chiedendo agli studenti di proporre un piano di intervento sostenibile.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="frst">
+      <div class="prompt-group-title subject-title"><span>Assestamento forestale, parchi, aree protette e fauna selvatica — FRST (Professionale)</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Genera un piano di massima per l'assestamento di un piccolo bosco didattico, con obiettivi (produzione legnosa, tutela, fruizione) e interventi previsti nei prossimi 5 anni.</li>
+        <li>Prepara una scheda su una specie di fauna selvatica presente nel territorio lombardo ([es. capriolo, cinghiale]), con habitat, impatto sull'agricoltura e possibili misure di gestione.</li>
+        <li>Crea un'attività di rilievo dendrometrico semplificato in un'area boschiva vicina alla scuola, con obiettivi didattici e indicazioni di sicurezza da richiamare agli studenti.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="bio-sostenibile">
+      <div class="prompt-group-title subject-title"><span>Agricoltura sostenibile e biologica</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Spiega le differenze principali tra agricoltura convenzionale, integrata e biologica, con una tabella comparativa su input chimici, resa e costi.</li>
+        <li>Crea un caso pratico di conversione di un'azienda agricola dal metodo convenzionale al biologico, chiedendo agli studenti di individuare le criticità dei primi 3 anni.</li>
+        <li>Genera 5 domande aperte sul ruolo dell'agricoltura sostenibile nella lotta al cambiamento climatico, utili per un dibattito in classe.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="esercitazioni">
+      <div class="prompt-group-title subject-title"><span>Esercitazioni agrarie (Es. Agraria)</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Proponimi un'attività pratica di 2 ore in campo/serra scolastica su [operazione colturale, es. trapianto, potatura], con obiettivi, materiali e sicurezza da richiamare agli studenti.</li>
+        <li>Crea una scheda di osservazione da compilare durante un'esercitazione pratica su [attività], con voci semplici da spuntare (es. condizioni meteo, fase fenologica, operazioni svolte).</li>
+        <li>Proponimi un'attività pratica all'aperto (rilievo in azienda agraria/orto scolastico) su [argomento], con obiettivi di apprendimento e materiale necessario.</li>
+      </ol>
+    </div>
+
+    <div class="prompt-group" id="sociologia">
+      <div class="prompt-group-title subject-title"><span>Gestione, valorizzazione delle attività produttive e Sociologia rurale</span><span class="count">3</span></div>
+      <ol class="prompt-list">
+        <li>Genera 5 domande aperte su un tema di sociologia rurale o sviluppo del territorio (es. spopolamento delle aree montane, filiera corta), utili per un dibattito in classe.</li>
+        <li>Crea un caso studio su un'azienda agricola che vuole diversificare l'attività (es. agriturismo, fattoria didattica), chiedendo agli studenti di valutare opportunità e rischi.</li>
+        <li>Proponimi 3 idee di valorizzazione del territorio rurale locale (filiera corta, turismo enogastronomico, mercati contadini) da discutere in classe come compiti di realtà.</li>
+      </ol>
+    </div>
+
+    <div class="prompts-note subject-note">
+      <b>Una regola per tutti i prompt:</b> più sei specifico su classe, livello e formato desiderato, migliore sarà il risultato — e va sempre riletto e verificato prima di usarlo con gli studenti.
+    </div>
+  </div>
+</section>
+
+<button class="back-to-top" id="backToTop" aria-label="Torna su">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<footer>
+  <p>IIS Gregorio Mendel — Villa Cortese (MI) &nbsp;·&nbsp; Team Digitale</p>
+  <p>Via Ferrazzi 15 · 20035 Villa Cortese (MI)</p>
+  <p>In conformità alle Linee Guida MIM 2025 e al Regolamento IA d'Istituto</p>
+</footer>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(".mini-hero-eyebrow, .mini-hero h1, .mini-hero p",{opacity:0,y:24});
+  gsap.timeline({delay:.1})
+    .to(".mini-hero-eyebrow",{opacity:1,y:0,duration:.5,ease:"power3.out"})
+    .to(".mini-hero h1",{opacity:1,y:0,duration:.7,ease:"power3.out"},"-=0.25")
+    .to(".mini-hero p",{opacity:1,y:0,duration:.6,ease:"power2.out"},"-=0.35");
+
+  gsap.utils.toArray(".prompt-group").forEach((el)=>{
+    gsap.from(el,{
+      scrollTrigger:{trigger:el,start:"top 88%"},
+      opacity:0,y:24,duration:.5,ease:"power2.out"
+    });
+  });
+
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 480){ backToTop.classList.add('visible'); }
+    else{ backToTop.classList.remove('visible'); }
+  });
+  backToTop.addEventListener('click', ()=>{
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
