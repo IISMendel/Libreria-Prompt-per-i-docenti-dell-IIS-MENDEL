@@ -97,6 +97,14 @@
   .tool-tag.t-edu{background:#FFE4E6;color:#E11D48;}
   .mini-hero-logo{width:84px;height:84px;border-radius:50%;background:#fff;padding:6px;object-fit:contain;margin:0 auto 20px;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.25);position:relative;z-index:2;}
   @media (max-width:600px){.mini-hero-logo{width:68px;height:68px;}}
+
+  /* MOBILE: menu categorie non piu sticky e a righe scorrevoli */
+  @media (max-width:768px){
+    .cat-nav{position:static;top:auto;}
+    .cat-nav-row{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+    .cat-nav-row::-webkit-scrollbar{height:3px;}
+    .cat-nav-label{position:sticky;left:0;background:rgba(255,255,255,0.97);z-index:1;}
+  }
 </style>
 </head>
 <body>
