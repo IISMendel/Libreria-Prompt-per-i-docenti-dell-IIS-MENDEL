@@ -87,6 +87,9 @@
   .part-eyebrow.ia{background:#CCFBF1;color:#0F766E;}
   .prompt-group-title.ia-title{background:#0F766E;}
   .prompt-list li .en{display:block;margin-top:6px;font-size:12.5px;color:#8A8A8A;font-style:italic;}
+  .prompt-list li ul.sub{list-style:disc;margin:8px 0 0 20px;padding:0;}
+  .prompt-list li ul.sub li{padding:2px 0;border-top:none;font-size:14px;color:var(--text-muted);line-height:1.5;}
+  .prompt-list li .tip{display:block;margin-top:8px;font-size:12.5px;color:#0F5A54;background:#F0FDFA;border-left:3px solid #0F766E;padding:7px 12px;border-radius:0 6px 6px 0;}
   .prompts-note.ia-note{background:#F0FDFA;border:1px solid #0F766E;color:#0F5A54;}
   .tool-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;white-space:nowrap;}
   .tool-tag.t-nb{background:#CCFBF1;color:#0D9488;}
@@ -119,7 +122,7 @@
 </section>
 
 <div class="info-strip">
-  <b>132 prompt didattici</b> &nbsp;·&nbsp; <b>62 generici</b> + <b>70 per materia</b> &nbsp;·&nbsp; <b>+ Parte 3: oltre 110 prompt e sistemi IA</b> &nbsp;·&nbsp; Basta sostituire le parti tra [parentesi quadre]
+  <b>132 prompt didattici</b> &nbsp;·&nbsp; <b>62 generici</b> + <b>70 per materia</b> &nbsp;·&nbsp; <b>+ Parte 3: oltre 230 prompt e sistemi IA</b> &nbsp;·&nbsp; Basta sostituire le parti tra [parentesi quadre]
 </div>
 
 <nav class="cat-nav">
@@ -165,6 +168,7 @@
   <div class="cat-nav-row">
     <span class="cat-nav-label">Intelligenza artificiale</span>
     <a href="#notebooklm">NotebookLM</a>
+    <a href="#notebooklm-studio">Studio ed esami</a>
     <a href="#skill-library">Claude Skills</a>
     <a href="#youtube">YouTube</a>
     <a href="#ricerca">Ricerca</a>
@@ -648,6 +652,72 @@
       <li><b>La Panoramica</b> — Forniscimi una panoramica generale dell'intero documento, suddivisa nei temi e concetti principali, come se lo stessi presentando a una persona che lo vede per la prima volta.</li>
       <li><b>Il Tutor</b> — Insegnami il contenuto di questo documento passo dopo passo, partendo dalle basi e aumentando gradualmente il livello di difficolta. Considera che sto studiando questo argomento per la prima volta.</li>
       <li><b>La Scomposizione</b> — Trasforma ogni sezione o capitolo di questo documento in una breve lezione con una spiegazione chiara, esempi e un rapido riepilogo finale.</li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="notebooklm-studio">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM - studiare e prepararsi agli esami (7 prompt)</span><span class="count">7</span></div>
+    <ol class="prompt-list">
+      <li><b>Piano di studio istantaneo</b> (Instant Study Blueprint) — Carica il materiale di studio, poi chiedi: <i>"Crea una guida allo studio completa e pronta per l'esame partendo dal mio materiale. Organizza tutto per argomento. Per ogni argomento, includi:</i>
+        <ul class="sub">
+          <li>3 concetti chiave spiegati in modo semplice</li>
+          <li>2 malintesi comuni che gli studenti commettono</li>
+          <li>2 domande d'esame realistiche con risposte dettagliate</li>
+          <li>un rapido riassunto per un ripasso dell'ultimo minuto".</li>
+        </ul>
+        <span class="tip">In pochi minuti si ottiene una guida chiara e ben strutturata che rende il ripasso piu veloce e la preparazione all'esame molto piu semplice.</span>
+      </li>
+      <li><b>Interrogazione socratica</b> (Socratic Quizzer) — <i>"Interrogami sui concetti piu importanti del mio materiale. Inizia con domande di base, poi aumenta gradualmente la difficolta. Dopo ogni mia risposta, dimmi se e corretta, spiegami il perche e fammi altre domande finche non avro compreso appieno l'argomento".</i>
+        <span class="tip">Invece di leggere passivamente, lo studente impara con una sessione di tutoraggio interattiva che rafforza la comprensione ed evidenzia le lacune.</span>
+      </li>
+      <li><b>Predittore d'esame</b> (Exam Predictor) — <i>"Analizza tutto il mio materiale di studio e prevedi i contenuti d'esame piu probabili. Identifica:</i>
+        <ul class="sub">
+          <li>i 5 argomenti d'esame con la priorita piu alta</li>
+          <li>il motivo per cui e probabile che ogni argomento compaia</li>
+          <li>una domanda impegnativa in stile esame per ogni argomento</li>
+          <li>una risposta modello con i punti chiave per la valutazione".</li>
+        </ul>
+        <span class="tip">Utile per concentrare il tempo sui concetti piu importanti e prepararsi alle domande piu probabili.</span>
+      </li>
+      <li><b>Chiarificatore di dubbi</b> (Confusion Clarifier) — <i>"Spiega il [concetto] nel modo piu semplice possibile. Utilizza:</i>
+        <ul class="sub">
+          <li>una semplice analogia con la vita di tutti i giorni</li>
+          <li>un esempio del mondo reale</li>
+          <li>l'errore piu comune che commettono gli studenti</li>
+          <li>un rapido trucco mnemonico per aiutarmi a ricordarlo.</li>
+        </ul>
+        <i>Poi fammi qualche domanda per assicurarti che io l'abbia veramente capito".</i>
+        <span class="tip">Perfetto per i momenti in cui lo studente pensa "ancora non ci arrivo": invece di imparare a memoria, costruisce una reale comprensione.</span>
+      </li>
+      <li><b>Rilevatore di lacune</b> (Gap Detector) — <i>"Analizza il mio materiale di studio e identifica:</i>
+        <ul class="sub">
+          <li>i concetti mancanti o trascurati</li>
+          <li>gli argomenti con cui molto probabilmente avro difficolta</li>
+          <li>le lacune di conoscenza che potrebbero farmi perdere punti</li>
+          <li>una spiegazione chiara e concisa per colmare ogni lacuna</li>
+          <li>l'ordine migliore per ripassare tutto ottenendo la massima memorizzazione".</li>
+        </ul>
+        <span class="tip">Smette di far tirare a indovinare cosa studiare: prima le aree piu deboli, per trasformarle in punti di forza prima del giorno dell'esame.</span>
+      </li>
+      <li><b>Creatore di simulazioni d'esame</b> (Practice Exam Builder) — <i>"Crea un esame completo basato sul mio materiale di studio. Includi:</i>
+        <ul class="sub">
+          <li>domande a risposta multipla (MCQ)</li>
+          <li>domande a risposta breve</li>
+          <li>domande a saggio/tema</li>
+          <li>una griglia di correzione dettagliata con le spiegazioni</li>
+          <li>una scomposizione del punteggio e un feedback sulle competenze valutate da ciascuna domanda".</li>
+        </ul>
+        <span class="tip">Permette di esercitarsi in condizioni d'esame realistiche, scoprire le aree deboli e acquisire sicurezza prima della prova vera.</span>
+      </li>
+      <li><b>Controllo con metodo insegnamento</b> (Teach-Back Check) — <i>"Spieghero un concetto a parole mie. Valuta la mia spiegazione e dimmi:</i>
+        <ul class="sub">
+          <li>cosa ho spiegato correttamente</li>
+          <li>cosa manca o e inesatto</li>
+          <li>come posso migliorare la mia spiegazione</li>
+          <li>qualsiasi malinteso che ancora mi porto dietro.</li>
+        </ul>
+        <i>Poi fammi altre domande finche non sarai sicuro che io abbia compreso davvero l'argomento".</i>
+        <span class="tip">Insegnare e uno dei modi piu efficaci per imparare: se lo studente riesce a spiegarlo chiaramente, probabilmente lo conosce bene.</span>
+      </li>
     </ol>
   </div>
   <div class="prompt-group" id="notebooklm-claude">
