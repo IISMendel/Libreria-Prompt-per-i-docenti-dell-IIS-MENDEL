@@ -25,7 +25,7 @@
   /* MINI HERO */
   .mini-hero{background:var(--green-dark);padding:90px 24px 70px;text-align:center;position:relative;overflow:hidden;}
   .mini-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:18px;}
-  .mini-hero h1{font-size:44px;font-weight:800;color:var(--white);line-height:1.2;margin-bottom:18px;max-width:800px;margin-left:auto;margin-right:auto;}
+  .mini-hero h1{font-size:clamp(22px,3.6vw,40px);font-weight:800;color:var(--white);line-height:1.2;margin-bottom:18px;max-width:none;margin-left:auto;margin-right:auto;white-space:nowrap;}
   .mini-hero p{font-size:17px;color:rgba(255,255,255,0.82);line-height:1.6;max-width:660px;margin:0 auto;}
   .mini-hero .shape-circle{position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(76,175,80,0.10);top:-60px;right:-60px;}
   .mini-hero .shape-rect{position:absolute;width:260px;height:160px;border:2px solid rgba(76,175,80,0.14);border-radius:12px;bottom:-40px;left:-40px;}
@@ -77,7 +77,7 @@
   .back-to-top:hover{background:var(--green);}
   @media (max-width:600px){
     .back-to-top{bottom:18px;right:18px;width:44px;height:44px;}
-    .mini-hero h1{font-size:30px;}
+    .mini-hero h1{white-space:normal;font-size:clamp(20px,7vw,28px);}
     .part-title{font-size:26px;}
   }
 
@@ -100,6 +100,19 @@
   .tool-tag.t-edu{background:#FFE4E6;color:#E11D48;}
   .mini-hero-logo{width:84px;height:84px;border-radius:50%;background:#fff;padding:6px;object-fit:contain;margin:0 auto 20px;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.25);position:relative;z-index:2;}
   @media (max-width:600px){.mini-hero-logo{width:68px;height:68px;}}
+
+  /* MUSICA DI SOTTOFONDO */
+  .music-widget{position:fixed;bottom:28px;left:28px;z-index:30;display:flex;align-items:center;gap:8px;background:var(--green-dark);border-radius:30px;padding:8px;box-shadow:0 6px 18px rgba(0,0,0,0.22);}
+  .music-btn{width:40px;height:40px;border-radius:50%;background:var(--green);color:var(--white);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease;flex-shrink:0;}
+  .music-btn:hover{background:var(--green-light);}
+  .music-btn.muted{background:rgba(255,255,255,0.15);}
+  .music-label{color:var(--white);font-size:12px;font-weight:600;padding-right:10px;white-space:nowrap;max-width:0;overflow:hidden;transition:max-width .3s ease, padding .3s ease;}
+  .music-widget:hover .music-label{max-width:160px;}
+  @media (max-width:600px){
+    .music-widget{bottom:18px;left:18px;padding:6px;}
+    .music-btn{width:36px;height:36px;}
+    .music-label{display:none;}
+  }
 
   /* MOBILE: menu categorie non piu sticky e a righe scorrevoli */
   @media (max-width:768px){
@@ -1155,6 +1168,19 @@
   </div>
 </section>
 
+<div class="music-widget">
+  <button class="music-btn" id="musicPlayBtn" aria-label="Riproduci musica rilassante di sottofondo" title="Musica di sottofondo">
+    <svg id="musicPlayIcon" width="18" height="18" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+  <button class="music-btn" id="musicMuteBtn" aria-label="Attiva/disattiva audio" title="Muto">
+    <svg id="musicMuteIcon" width="16" height="16" viewBox="0 0 24 24" fill="#ffffff"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+  </button>
+  <span class="music-label">Musica rilassante di sottofondo</span>
+  <audio id="bgMusic" loop preload="none">
+    <source src="quiet-morning-light.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
 <button class="back-to-top" id="backToTop" aria-label="Torna su">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
@@ -1187,6 +1213,38 @@
   });
   backToTop.addEventListener('click', ()=>{
     window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* MUSICA DI SOTTOFONDO */
+  const bgMusic = document.getElementById('bgMusic');
+  const playBtn = document.getElementById('musicPlayBtn');
+  const playIcon = document.getElementById('musicPlayIcon');
+  const muteBtn = document.getElementById('musicMuteBtn');
+  bgMusic.volume = 0.35;
+  let isPlaying = false;
+
+  const iconPlay = '<path d="M8 5v14l11-7z"/>';
+  const iconPause = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
+
+  playBtn.addEventListener('click', ()=>{
+    if(!isPlaying){
+      bgMusic.play().then(()=>{
+        isPlaying = true;
+        playIcon.innerHTML = iconPause;
+        playBtn.title = 'Metti in pausa';
+      }).catch(()=>{ /* riproduzione bloccata dal browser finche non c'e interazione */ });
+    } else {
+      bgMusic.pause();
+      isPlaying = false;
+      playIcon.innerHTML = iconPlay;
+      playBtn.title = 'Riproduci musica di sottofondo';
+    }
+  });
+
+  muteBtn.addEventListener('click', ()=>{
+    bgMusic.muted = !bgMusic.muted;
+    muteBtn.classList.toggle('muted', bgMusic.muted);
+    muteBtn.title = bgMusic.muted ? 'Riattiva audio' : 'Muto';
   });
 </script>
 </body>
