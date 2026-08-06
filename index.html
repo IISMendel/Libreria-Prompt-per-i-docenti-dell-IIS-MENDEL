@@ -25,7 +25,7 @@
   /* MINI HERO */
   .mini-hero{background:var(--green-dark);padding:90px 24px 70px;text-align:center;position:relative;overflow:hidden;}
   .mini-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:18px;}
-  .mini-hero h1{font-size:clamp(22px,3.6vw,40px);font-weight:800;color:var(--white);line-height:1.2;margin-bottom:18px;max-width:none;margin-left:auto;margin-right:auto;white-space:nowrap;}
+  .mini-hero h1{font-size:44px;font-weight:800;color:var(--white);line-height:1.2;margin-bottom:18px;max-width:800px;margin-left:auto;margin-right:auto;}
   .mini-hero p{font-size:17px;color:rgba(255,255,255,0.82);line-height:1.6;max-width:660px;margin:0 auto;}
   .mini-hero .shape-circle{position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(76,175,80,0.10);top:-60px;right:-60px;}
   .mini-hero .shape-rect{position:absolute;width:260px;height:160px;border:2px solid rgba(76,175,80,0.14);border-radius:12px;bottom:-40px;left:-40px;}
@@ -77,7 +77,7 @@
   .back-to-top:hover{background:var(--green);}
   @media (max-width:600px){
     .back-to-top{bottom:18px;right:18px;width:44px;height:44px;}
-    .mini-hero h1{white-space:normal;font-size:clamp(20px,7vw,28px);}
+    .mini-hero h1{font-size:30px;}
     .part-title{font-size:26px;}
   }
 
@@ -90,6 +90,7 @@
   .prompt-list li ul.sub{list-style:disc;margin:8px 0 0 20px;padding:0;}
   .prompt-list li ul.sub li{padding:2px 0;border-top:none;font-size:14px;color:var(--text-muted);line-height:1.5;}
   .prompt-list li .tip{display:block;margin-top:8px;font-size:12.5px;color:#0F5A54;background:#F0FDFA;border-left:3px solid #0F766E;padding:7px 12px;border-radius:0 6px 6px 0;}
+  .prompt-list li .tip.gem{color:#1E40AF;background:#EFF6FF;border-left-color:#2563EB;}
   .prompts-note.ia-note{background:#F0FDFA;border:1px solid #0F766E;color:#0F5A54;}
   .tool-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;white-space:nowrap;}
   .tool-tag.t-nb{background:#CCFBF1;color:#0D9488;}
@@ -100,19 +101,6 @@
   .tool-tag.t-edu{background:#FFE4E6;color:#E11D48;}
   .mini-hero-logo{width:84px;height:84px;border-radius:50%;background:#fff;padding:6px;object-fit:contain;margin:0 auto 20px;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.25);position:relative;z-index:2;}
   @media (max-width:600px){.mini-hero-logo{width:68px;height:68px;}}
-
-  /* MUSICA DI SOTTOFONDO */
-  .music-widget{position:fixed;bottom:28px;left:28px;z-index:30;display:flex;align-items:center;gap:8px;background:var(--green-dark);border-radius:30px;padding:8px;box-shadow:0 6px 18px rgba(0,0,0,0.22);}
-  .music-btn{width:40px;height:40px;border-radius:50%;background:var(--green);color:var(--white);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease;flex-shrink:0;}
-  .music-btn:hover{background:var(--green-light);}
-  .music-btn.muted{background:rgba(255,255,255,0.15);}
-  .music-label{color:var(--white);font-size:12px;font-weight:600;padding-right:10px;white-space:nowrap;max-width:0;overflow:hidden;transition:max-width .3s ease, padding .3s ease;}
-  .music-widget:hover .music-label{max-width:160px;}
-  @media (max-width:600px){
-    .music-widget{bottom:18px;left:18px;padding:6px;}
-    .music-btn{width:36px;height:36px;}
-    .music-label{display:none;}
-  }
 
   /* MOBILE: menu categorie non piu sticky e a righe scorrevoli */
   @media (max-width:768px){
@@ -183,10 +171,12 @@
     <a href="#notebooklm">NotebookLM</a>
     <a href="#notebooklm-studio">Studio ed esami</a>
     <a href="#notebooklm-ricerca">Materiale di ricerca</a>
+    <a href="#notebooklm-imparare">Imparare meglio</a>
     <a href="#skill-library">Claude Skills</a>
     <a href="#youtube">YouTube</a>
     <a href="#ricerca">Ricerca</a>
     <a href="#avanzate">Modalita avanzate</a>
+    <a href="#gemini-video">Gemini video</a>
     <a href="#gemini-file">Gemini file</a>
     <a href="#workspace">Workspace</a>
     <a href="#chatgpt">ChatGPT</a>
@@ -198,16 +188,6 @@
     <a href="#teaching">Teaching System</a>
     <a href="#universali">Universali</a>
     <a href="#edugems">EduGems</a>
-    <a href="#google-omni">Google Omni video</a>
-    <a href="#claude-power">Claude: 10 prompt potenti</a>
-  </div>
-  <div class="cat-nav-row">
-    <span class="cat-nav-label">Risparmia tempo</span>
-    <a href="#ts-comunicazione">Comunicazione</a>
-    <a href="#ts-progettazione">Progettazione lezioni</a>
-    <a href="#ts-differenziazione">Differenziazione</a>
-    <a href="#ts-valutazione">Valutazione</a>
-    <a href="#ts-risorse">Risorse didattiche</a>
   </div>
 </nav>
 
@@ -788,6 +768,94 @@
       </li>
     </ol>
   </div>
+  <div class="prompt-group" id="notebooklm-imparare">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Smetti di leggere in modo piu intelligente, inizia a imparare in modo piu intelligente - 10 prompt</span><span class="count">10</span></div>
+    <ol class="prompt-list">
+      <li><b>Progettista didattico strutturato</b> — <i>"Agisci come un progettista didattico di fama mondiale. Analizza tutte le fonti caricate e crea una roadmap di padronanza di 8 settimane, da principiante ad avanzato. Per ogni settimana, includi:</i>
+        <ul class="sub">
+          <li>concetto chiave da padroneggiare</li>
+          <li>materiali di base prioritari</li>
+          <li>piano di studio giornaliero</li>
+          <li>esercizi pratici</li>
+          <li>errori comuni da evitare</li>
+          <li>metriche di successo</li>
+          <li>un progetto intermedio (milestone project).</li>
+        </ul>
+        <i>Termina con un progetto conclusivo finale (capstone project), una checklist delle competenze e i prossimi passi consigliati".</i>
+        <span class="tip">Trasforma un insieme di materiali in un percorso di apprendimento progressivo con tappe e verifiche.</span>
+      </li>
+      <li><b>Tutor socratico rigoroso</b> — <i>"Agisci come un tutor socratico di fama mondiale. Usa solo le mie fonti caricate. Non dare risposte dirette a meno che non sia strettamente necessario. Fai una domanda impegnativa alla volta. Dopo ogni mia risposta:</i>
+        <ul class="sub">
+          <li>valuta il mio ragionamento</li>
+          <li>identifica falle logiche o prove mancanti</li>
+          <li>cita la fonte pertinente che ho tralasciato</li>
+          <li>fai una domanda di follow-up piu avanzata.</li>
+        </ul>
+        <i>Aumenta la difficolta man mano che miglioro. Il tuo obiettivo e aiutarmi a pensare come un esperto, non solo a memorizzare informazioni".</i>
+        <span class="tip">Versione esigente del tutor: niente risposte pronte, solo domande che costringono a ragionare sulle fonti.</span>
+      </li>
+      <li><b>Costruttore di verita fondamentali</b> — <i>"Agisci come un maestro insegnante e un pensatore basato sui principi fondamentali (first-principles thinker). Analizza le mie fonti caricate ed estrai le verita fondamentali alla base di ogni idea principale. Per ogni concetto:</i>
+        <ul class="sub">
+          <li>spiega la verita fondamentale con un linguaggio semplice</li>
+          <li>mostra perche e importante</li>
+          <li>collegalo a concetti correlati.</li>
+        </ul>
+        <i>Poi ricostruisci l'argomento passo dopo passo, dai principi fondamentali alle idee avanzate, evidenziando le ipotesi chiave, i punti di accordo e i disaccordi tra le fonti. Finisci con una gerarchia visiva della conoscenza che mappi il percorso di apprendimento dalle basi alla padronanza".</i>
+        <span class="tip">Utile per costruire mappe concettuali gerarchiche a partire dai fondamenti della disciplina.</span>
+      </li>
+      <li><b>Semplificatore Feynman</b> — <i>"Agisci come un insegnante di fama mondiale che utilizza il Metodo Feynman. Analizza le mie fonti caricate e identifica i concetti complessi piu importanti. Per ogni concetto:</i>
+        <ul class="sub">
+          <li>spiegalo come se avessi 12 anni, con linguaggio semplice e un'analogia con il mondo reale</li>
+          <li>introduci i termini tecnici corretti e collegali all'analogia</li>
+          <li>evidenzia i malintesi comuni</li>
+          <li>chiedimi di rispiegartelo</li>
+          <li>valuta la mia spiegazione (da 1 a 10) e fornisci un feedback mirato.</li>
+        </ul>
+        <i>Ripeti l'operazione finche non riesco a spiegare il concetto in modo chiaro senza averlo imparato a memoria".</i>
+        <span class="tip">Il classico ciclo Feynman: spiegare, sbagliare, correggere, rispiegare.</span>
+      </li>
+      <li><b>Decodificatore della mentalita esperta</b> — <i>"Agisci come un analista delle prestazioni d'elite e uno scienziato cognitivo. Analizza le mie fonti caricate e identifica i 3 principali modelli mentali, framework decisionali e schemi di pensiero utilizzati dagli esperti. Per ciascuno spiega: cos'e, perche funziona, le prove tratte dalle fonti e quando usarlo. Poi confronta come un principiante e un esperto risolverebbero lo stesso problema, evidenziando le differenze chiave nel pensiero e nelle decisioni. Finisci con un 'Sistema Operativo dell'Esperto' che riassuma i principi ricorrenti e i modelli mentali presenti in tutte le fonti".</i>
+        <span class="tip">Rende esplicito il ragionamento implicito degli esperti: molto efficace per l'orientamento e le discipline tecniche.</span>
+      </li>
+      <li><b>Ponte per il trasferimento delle competenze</b> — <i>"Agisci come uno stratega dell'apprendimento di fama mondiale. Utilizzando le mie fonti caricate, confronta [CONCETTO A] e [CONCETTO B] per aiutarmi a imparare piu velocemente. Mostra: principi condivisi, mappatura dei concetti uno a uno, differenze chiave, analogie semplici e modelli mentali, connessioni nascoste. Poi crea un ponte di apprendimento:</i>
+        <ul class="sub">
+          <li>cosa so gia</li>
+          <li>cosa si trasferisce direttamente</li>
+          <li>cosa necessita di aggiustamenti</li>
+          <li>cosa e completamente nuovo.</li>
+        </ul>
+        <i>Termina con un esercizio pratico che applichi il Concetto B usando l'intuizione derivata dal Concetto A".</i>
+        <span class="tip">Ideale per collegare argomenti nuovi a quelli gia noti e per la didattica interdisciplinare.</span>
+      </li>
+      <li><b>Simulatore del mondo reale</b> — <i>"Agisci come un coach d'elite ed esperto di simulazioni. Usa solo le mie fonti caricate per creare scenari realistici e ad alto rischio che testino la mia capacita di applicare il materiale. Per ogni scenario:</i>
+        <ul class="sub">
+          <li>presenta una situazione impegnativa</li>
+          <li>non rivelare la risposta migliore</li>
+          <li>valuta la mia risposta (da 1 a 10)</li>
+          <li>valuta il mio ragionamento</li>
+          <li>identifica punti di forza, errori e principi tralasciati</li>
+          <li>spiega cosa consigliano invece le fonti.</li>
+        </ul>
+        <i>Aumenta la difficolta dopo ogni round e concludi con una breve lezione. Inizia immediatamente con il primo scenario".</i>
+        <span class="tip">Ottimo per compiti di realta e simulazioni professionali legate all'indirizzo agrario.</span>
+      </li>
+      <li><b>Critico spietato</b> — <i>"Agisci come un severo revisore accademico e un esperto del settore. Confronta la mia spiegazione con le fonti caricate e criticala con il massimo rigore: identifica falle logiche e ipotesi non supportate, metti in discussione affermazioni vaghe o imprecise, fai notare le prove mancanti e i dettagli trascurati, separa cio che e corretto da cio che e sbagliato, riscrivi la mia spiegazione come farebbe un esperto basandoti solo sulle fonti. La mia spiegazione: [INCOLLA QUI]".</i>
+        <span class="tip">Da usare dopo una prima stesura: fa emergere gli errori prima che lo faccia la verifica.</span>
+      </li>
+      <li><b>Costruttore della memoria a lungo termine</b> — <i>"Agisci come un esperto di scienze cognitive e ottimizzazione della memoria. Utilizzando le mie fonti caricate, crea un mazzo di 30 flashcard per la conservazione a lungo termine. Formattale come una tabella a due colonne: fronte con la domanda, retro con la risposta precisa. Concentrati su idee centrali, intuizioni controintuitive, malintesi comuni e domande basate su scenari, una sola idea per carta. Organizza il mazzo dai fondamenti all'applicazione nel mondo reale".</i>
+        <span class="tip">L'output in tabella si importa facilmente in Anki, Quizlet o in un foglio di Google.</span>
+      </li>
+      <li><b>Valutatore dell'esame finale</b> — <i>"Agisci come un esaminatore accademico d'elite. Usando solo le mie fonti caricate, crea un esame finale in 3 parti:</i>
+        <ul class="sub">
+          <li>3 domande a risposta breve sui concetti fondamentali</li>
+          <li>2 scenari del mondo reale che richiedono di identificare errori o idee applicate male</li>
+          <li>1 domanda di sintesi che combina piu concetti tra le varie fonti.</li>
+        </ul>
+        <i>Attendi le mie risposte, poi valuta rigorosamente ogni risposta, cita le sezioni rilevanti delle fonti, spiega gli errori e i punti ciechi e mostra cosa includerebbe una risposta di livello esperto".</i>
+        <span class="tip">Chiude il percorso con una prova sommativa costruita interamente sulle fonti caricate.</span>
+      </li>
+    </ol>
+  </div>
   <div class="prompt-group" id="notebooklm-claude">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM + Claude - workflow avanzati</span><span class="count">5</span></div>
     <ol class="prompt-list">
@@ -852,6 +920,42 @@
       <li><b>Modalita analisi scientifica</b> — Agisci come assistente di ricerca per uno scienziato senior. Valuta criticamente il materiale dando priorita alle prove.</li>
       <li><b>Traduttore per le superiori</b> — Riscrivi il contenuto affinche un ragazzo di 12 anni lo afferri appieno. Includi TL;DR, analogia, lessico, vero/falso e spiegazione semplice.</li>
     </ol>
+  </div>
+  <div class="prompt-group" id="gemini-video">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - montaggio e modifica video (10 prompt con esempio)</span><span class="count">10</span></div>
+    <ol class="prompt-list">
+      <li><b>Miglioramento cinematografico</b> — <i>"Modifica questo video in una clip cinematografica. Mantieni [SOGGETTO PRINCIPALE] invariato. Migliora l'illuminazione affinche sembri [STILE DI ILLUMINAZIONE]. Aggiungi [MOVIMENTO DI MACCHINA], [STILE COLORE] e [ATMOSFERA VISIVA]. Non modificare [DETTAGLI CHE DEVONO RIMANERE UGUALI]".</i>
+        <span class="tip gem">Esempio: mantieni il viso e l'abbigliamento invariati, illuminazione calda da tramonto, movimento di macchina lento, contrasto morbido, atmosfera calma; non modificare lo sfondo ne i movimenti del corpo.</span>
+      </li>
+      <li><b>Sostituzione dello sfondo</b> — <i>"Sostituisci lo sfondo con [NUOVA LOCATION]. Mantieni [SOGGETTO PRINCIPALE] esattamente uguale. Adatta l'illuminazione, le ombre e l'angolazione della telecamera in modo che sembri reale. Non modificare [VISO, ABBIGLIAMENTO, OGGETTO, MOVIMENTO O ALTRO DETTAGLIO CHIAVE]".</i>
+        <span class="tip gem">Esempio: sfondo sostituito con un moderno studio per podcast, speaker identico, senza toccare viso, abbigliamento, voce e movimento delle labbra.</span>
+      </li>
+      <li><b>Rimozione oggetti</b> — <i>"Rimuovi [OGGETTO DA RIMUOVERE] da questo video. Riempi lo spazio in modo naturale usando lo sfondo circostante. Mantieni [SOGGETTO PRINCIPALE], [ILLUMINAZIONE] e [MOVIMENTO DI MACCHINA] invariati. Rendi la modifica pulita e realistica".</i>
+        <span class="tip gem">Esempio: togliere una bottiglia d'acqua dall'inquadratura ricostruendo tavolo e sfondo, lasciando persona, luce e movimento di macchina invariati.</span>
+      </li>
+      <li><b>Aggiunta di B-roll (immagini di copertura)</b> — <i>"Aggiungi B-roll di [SCENA O SOGGETTO] durante la parte in cui viene menzionato [ARGOMENTO O AZIONE PRINCIPALE]. Adatta il colore, il ritmo e lo stile al video originale. Mantieni la storia principale chiara e rendi la transizione fluida".</i>
+        <span class="tip gem">Esempio: inserire riprese di una persona che digita al portatile mentre si parla di strumenti di produttivita.</span>
+      </li>
+      <li><b>Aggiunta di musica di sottofondo</b> — <i>"Aggiungi musica di sottofondo [STILE MUSICALE] a questo video. Adattala all'atmosfera e al ritmo del contenuto. Mantieni la musica a un volume piu basso rispetto alla voce. Assicurati che il dialogo rimanga chiaro per tutto il video".</i>
+        <span class="tip gem">Esempio: base cinematografica e vivace, sempre sotto il livello della voce, con parlato perfettamente intelligibile.</span>
+      </li>
+      <li><b>Aggiunta di grafiche animate (motion graphics)</b> — <i>"Aggiungi grafiche animate per evidenziare [PAROLE CHIAVE, NUMERI O IDEE]. Adattale allo stile e ai colori del video. Posiziona ogni grafica al momento giusto. Mantieni le animazioni fluide ed evita di coprire il soggetto principale".</i>
+        <span class="tip gem">Esempio: far comparire statistiche e parole chiave nei momenti in cui vengono pronunciate, senza mai coprire chi parla.</span>
+      </li>
+      <li><b>Cambio di abbigliamento</b> — <i>"Cambia [ABBIGLIAMENTO DELLA PERSONA] in [NUOVO STILE DI ABBIGLIAMENTO]. Mantieni [VISO], [FORMA DEL CORPO], [POSA] e [MOVIMENTO] invariati. Fai in modo che il vestito si muova naturalmente con il corpo. Adatta l'illuminazione e le ombre a quelle del video originale".</i>
+        <span class="tip gem">Esempio: sostituire l'abbigliamento con un look streetwear scuro mantenendo identici viso, corporatura, posa e movimenti.</span>
+      </li>
+      <li><b>Montaggio per annuncio di prodotto</b> — <i>"Modifica questo video di prodotto in un annuncio premium per [NOME DEL PRODOTTO]. Mantieni [FORMA, COLORE, LOGO O CARATTERISTICHE CHIAVE] del prodotto invariati. Aggiungi [STILE DELLO SFONDO], [STILE DI ILLUMINAZIONE] e [MOVIMENTO DI MACCHINA]. Fai sembrare il prodotto realistico e di alta qualita".</i>
+        <span class="tip gem">Esempio: spot per uno smartwatch con sfondo nero da studio, illuminazione morbida a faretto e primo piano lento, senza alterare forma, colore, logo e schermo.</span>
+      </li>
+      <li><b>Cambio di angolazione della telecamera</b> — <i>"Ricrea questa scena da [NUOVA ANGOLAZIONE DELLA TELECAMERA]. Mantieni [SOGGETTO PRINCIPALE], [AZIONE] e [DETTAGLI IMPORTANTI] coerenti. Regola [ILLUMINAZIONE], [OMBRE] e [PROSPETTIVA DELLO SFONDO] per adattarli alla nuova angolazione".</i>
+        <span class="tip gem">Esempio: rigirare la scena con un'inquadratura dal basso a effetto (hero shot) mantenendo coerenti speaker, azione e abbigliamento.</span>
+      </li>
+      <li><b>Correzione dell'illuminazione</b> — <i>"Correggi l'illuminazione in questo video. Fai in modo che sembri [STILE DI ILLUMINAZIONE]. Mantieni [SOGGETTO PRINCIPALE] invariato. Riduci [PROBLEMA], migliora [DETTAGLIO DESIDERATO] e mantieni la scena realistica".</i>
+        <span class="tip gem">Esempio: luce morbida e naturale, ombre dure attenuate, viso piu visibile, scena comunque realistica.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;"><b>Attenzione:</b> questi prompt modificano l'aspetto di persone e ambienti reali. Con immagini di studenti o colleghi servono liberatoria e rispetto della normativa sulla privacy; evita modifiche (volto, abbigliamento, sfondo) che possano risultare ingannevoli e dichiara sempre quando un video e stato alterato con l'IA.</div>
   </div>
   <div class="prompt-group" id="gemini-file">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - generare file scaricabili (.pdf .xlsx .docx .pptx)</span><span class="count">5</span></div>
@@ -1008,178 +1112,8 @@
       <li><b>Elisabetta Nanni - MusaiLab</b> — Chatbot nativamente in italiano per progettare risorse didattiche musicali inclusive e innovative, integrato con le Indicazioni Nazionali MIUR.</li>
     </ol>
   </div>
-
-  <div class="prompt-group" id="google-omni">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Video IA</span>Google Omni: 11 prompt per modificare i video con l'IA</span><span class="count">11</span></div>
-    <ol class="prompt-list">
-      <li><b>1. Upgrade cinematografico</b> — Trasforma un video qualunque in una scena cinematografica professionale, mantenendo invariato il soggetto principale.
-        <span class="tip">Prompt: «Modifica questo video trasformandolo in una clip cinematografica. Mantieni invariato [soggetto principale]. Migliora l'illuminazione dandole l'aspetto di [stile di luce]. Aggiungi [movimento di camera], [stile colore] e [atmosfera visiva]. Non modificare [dettagli che devono restare invariati].»</span>
-        <span class="en">Esempio: «Modifica questo video trasformandolo in una clip cinematografica. Mantieni invariati il mio viso e il mio abbigliamento. Migliora l'illuminazione dandole l'aspetto di una calda luce al tramonto. Aggiungi un movimento di camera lento, un contrasto morbido e un'atmosfera calma e lussuosa. Non modificare lo sfondo o il movimento del mio corpo.»</span>
-      </li>
-      <li><b>2. Sostituzione dello sfondo</b> — Colloca il soggetto in un'ambientazione completamente nuova, mantenendo tutto il resto naturale e realistico.
-        <span class="tip">Prompt: «Sostituisci lo sfondo con [nuova ambientazione]. Mantieni [soggetto principale] esattamente identico. Adatta luce, ombre e angolazione della camera in modo che la scena risulti realistica. Non modificare [volto, abbigliamento, oggetto, movimento o altri dettagli chiave].»</span>
-        <span class="en">Esempio: «Sostituisci lo sfondo con uno studio podcast moderno. Mantieni il relatore esattamente identico. Adatta luce, ombre e angolazione della camera perché risulti realistico. Non modificare volto, abbigliamento, voce o movimento delle labbra.»</span>
-      </li>
-      <li><b>3. Rimozione di oggetti</b> — Elimina oggetti indesiderati da un video mantenendo la scena pulita, naturale e senza cuciture visibili.
-        <span class="tip">Prompt: «Rimuovi [oggetto da eliminare] da questo video. Riempi lo spazio vuoto in modo naturale usando lo sfondo circostante. Mantieni invariati [soggetto principale], [illuminazione] e [movimento di camera]. Rendi la modifica impercettibile e realistica.»</span>
-        <span class="en">Esempio: «Rimuovi la bottiglia d'acqua da questo video. Riempi lo spazio vuoto in modo naturale usando il tavolo e lo sfondo circostanti. Mantieni invariati la persona, l'illuminazione e il movimento di camera. Rendi la modifica impercettibile e realistica.»</span>
-      </li>
-      <li><b>4. Aggiunta di B-roll</b> — Inserisce spezzoni di B-roll pertinenti che arricchiscono la narrazione senza interrompere il flusso del video.
-        <span class="tip">Prompt: «Aggiungi B-roll di [scena o soggetto] nel punto in cui si parla di [argomento o azione principale]. Adatta color grading, ritmo e stile visivo al video originale. Mantieni chiara la narrazione principale e rendi ogni transizione fluida e naturale.»</span>
-        <span class="en">Esempio: «Aggiungi B-roll di una persona che digita su un laptop nel punto in cui si parla di strumenti di produttività. Adatta color grading, ritmo e stile visivo al video originale. Mantieni chiara la narrazione principale e rendi la transizione fluida.»</span>
-      </li>
-      <li><b>5. Aggiunta di musica di sottofondo</b> — Rafforza l'impatto emotivo del video con una colonna sonora che accompagna i contenuti senza sovrastarli.
-        <span class="tip">Prompt: «Aggiungi a questo video una musica di sottofondo in stile [stile musicale]. Adattala all'atmosfera, all'energia e al ritmo dei contenuti. Mantieni il volume della musica più basso della voce, così il parlato resta chiaro e comprensibile per tutta la durata del video.»</span>
-        <span class="en">Esempio: «Aggiungi una musica di sottofondo cinematografica e coinvolgente a questo video. Adattala all'atmosfera, all'energia e al ritmo dei contenuti. Mantieni il volume della musica più basso della voce. Assicurati che il parlato resti chiaro per tutta la durata del video.»</span>
-      </li>
-      <li><b>6. Aggiunta di motion graphics</b> — Evidenzia le informazioni più importanti con grafiche animate pulite e professionali, che valorizzano il video senza distrarre lo spettatore.
-        <span class="tip">Prompt: «Aggiungi motion graphics per evidenziare [parole chiave, numeri o concetti]. Adattali allo stile visivo, alla palette colori e al ritmo del video. Mostra ogni grafica nel momento più adatto. Mantieni le animazioni fluide e moderne, evitando di coprire il soggetto principale.»</span>
-        <span class="en">Esempio: «Aggiungi motion graphics per evidenziare statistiche chiave e parole chiave importanti. Adattali allo stile visivo e ai colori del video. Mostra ogni grafica nel momento giusto. Mantieni le animazioni fluide ed evita di coprire il soggetto principale.»</span>
-      </li>
-      <li><b>7. Cambio d'abito</b> — Modifica l'abbigliamento di una persona mantenendo un aspetto naturale, realistico e un movimento coerente per tutto il video.
-        <span class="tip">Prompt: «Cambia [l'abbigliamento della persona] in [nuovo stile di abbigliamento]. Mantieni invariati [volto], [corporatura], [posa] e [movimento]. Fai in modo che il nuovo abito si muova naturalmente con il corpo e rispetti l'illuminazione, le ombre e lo stile visivo del video originale.»</span>
-        <span class="en">Esempio: «Cambia il mio abbigliamento in un look streetwear di lusso nero. Mantieni invariati il mio viso, la mia corporatura, la posa e il movimento. Fai in modo che l'abito si muova naturalmente con il mio corpo. Rispetta l'illuminazione e le ombre del video originale per un risultato realistico.»</span>
-      </li>
-      <li><b>8. Video pubblicitario di prodotto</b> — Trasforma un comune video di prodotto in uno spot pubblicitario di livello premium, mantenendo inalterato l'aspetto originale del prodotto.
-        <span class="tip">Prompt: «Trasforma questo video di prodotto in una pubblicità premium per [nome del prodotto]. Mantieni invariati [forma, colore, logo e caratteristiche principali] del prodotto. Aggiungi [stile di sfondo], [stile di illuminazione] e [movimento di camera]. Crea un risultato pulito, di fascia alta, realistico e dall'aspetto professionale.»</span>
-        <span class="en">Esempio: «Trasforma questo video di prodotto in una pubblicità premium per uno smartwatch. Mantieni invariati forma, colore, logo e schermo del prodotto. Aggiungi uno sfondo da studio nero e pulito, un'illuminazione soft a effetto spot e un lento movimento di camera in primo piano. Rendi il prodotto realistico, premium e di alta qualità.»</span>
-      </li>
-      <li><b>9. Cambio di angolazione della camera</b> — Ricrea una scena da una nuova angolazione, aggiungendo profondità, drammaticità e una prospettiva più cinematografica senza alterare l'azione principale.
-        <span class="tip">Prompt: «Ricrea questa scena da [nuova angolazione di camera]. Mantieni coerenti [soggetto principale], [azione] e [dettagli importanti]. Adatta [illuminazione], [ombre] e [prospettiva dello sfondo] in modo che corrispondano naturalmente alla nuova angolazione. Assicurati che il risultato finale sia realistico e cinematografico.»</span>
-        <span class="en">Esempio: «Ricrea questa scena con un'inquadratura dal basso in stile eroico. Mantieni coerenti il relatore, l'azione e l'abbigliamento. Adatta illuminazione, ombre e prospettiva dello sfondo alla nuova angolazione, creando un effetto cinematografico drammatico.»</span>
-      </li>
-      <li><b>10. Correzione dell'illuminazione</b> — Corregge un'illuminazione scadente e dona al video un aspetto curato e professionale, preservando la scena originale.
-        <span class="tip">Prompt: «Correggi l'illuminazione di questo video. Rendila [stile di illuminazione desiderato]. Mantieni invariato [soggetto principale]. Riduci [problema di illuminazione], migliora [dettaglio desiderato] e mantieni un aspetto naturale e realistico per tutto il video.»</span>
-        <span class="en">Esempio: «Correggi l'illuminazione di questo video. Rendila morbida e naturale. Mantieni invariato il relatore. Riduci le ombre dure, migliora la visibilità del volto e mantieni un aspetto realistico e professionale.»</span>
-      </li>
-      <li><b>11. Trasferimento di stile</b> — Trasforma lo stile visivo del video preservando il soggetto originale e i dettagli chiave.
-        <span class="tip">Prompt: «Applica a questo video uno stile [stile desiderato]. Aggiungi [dettagli di stile], [tono colore] e [texture]. Mantieni invariato [soggetto principale]. Non alterare [dettagli importanti]. Assicurati che il risultato finale sia coerente, cinematografico e con una gradazione colore professionale.»</span>
-        <span class="en">Esempio: «Applica a questo video uno stile anni '70. Aggiungi una grana pellicola morbida, toni colore caldi e una texture d'obiettivo vintage. Mantieni invariato il relatore. Non modificare volto, abbigliamento o sfondo. Crea un'autentica atmosfera cinematografica retrò.»</span>
-      </li>
-    </ol>
-  </div>
-
-  <div class="prompt-group" id="claude-power">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>10 prompt per usare Claude al massimo delle sue potenzialità</span><span class="count">10</span></div>
-    <ol class="prompt-list">
-      <li><b>1. Trasforma un'idea in un piano</b>
-        <span class="tip">Prompt: «Agisci come uno stratega di progetto. Trasforma questa idea in un piano pratico e passo dopo passo: [descrivi la tua idea]. Includi obiettivo, risorse necessarie, passaggi chiave, possibili problemi, soluzioni e un piano d'azione a 7, 30 e 90 giorni. Concludi con tre azioni che posso fare oggi.»</span>
-      </li>
-      <li><b>2. Analizza qualsiasi documento</b>
-        <span class="tip">Prompt: «Analizza questo documento come un analista di ricerca senior: [incolla il testo o carica il file]. Forniscimi un riassunto semplice, i punti chiave, i fatti importanti, le date, le decisioni, i rischi, le informazioni mancanti, le azioni da intraprendere e le domande che dovrei porre in seguito. Non inventare dettagli.»</span>
-      </li>
-      <li><b>3. Crea 30 giorni di contenuti</b>
-        <span class="tip">Prompt: «Crea un piano di contenuti di 30 giorni su [argomento] per [pubblico target] su [piattaforma]. Il mio obiettivo è [obiettivo] e il mio tono è [tono]. Per ogni giorno fornisci un argomento unico, un hook, un formato, un messaggio chiave e una call to action. Evita idee ripetitive.»</span>
-      </li>
-      <li><b>4. Copia il mio stile di scrittura</b>
-        <span class="tip">Prompt: «Analizza questi esempi di scrittura e individua il mio tono, il vocabolario, lo stile delle frasi, la formattazione, l'umorismo e gli schemi ricorrenti: [incolla 3-5 esempi]. Crea una breve guida sulla voce del mio brand, poi riscrivi questo contenuto nel mio stile: [incolla la bozza]. Mantienilo naturale e non aggiungere espressioni che normalmente non userei.»</span>
-      </li>
-      <li><b>5. Trasforma un post in 15</b>
-        <span class="tip">Prompt: «Trasforma questo contenuto in 15 post originali per i social media: [incolla il contenuto]. Crea post educativi, narrativi, di opinione, checklist, mito-contro-fatto, passo dopo passo, caso di studio e promozionali. Per ognuno fornisci un hook, una didascalia completa, una CTA e un'idea visiva.»</span>
-      </li>
-      <li><b>6. Ricevi un feedback brutalmente onesto</b>
-        <span class="tip">Prompt: «Agisci come un esperto brutalmente onesto nel campo [settore]. Valuta questo: [incolla idea, contenuto, offerta o piano]. Assegna un punteggio da 1 a 10 per chiarezza, originalità, utilità, credibilità e rilevanza per il pubblico. Spiega cosa funziona, cosa non funziona, cosa manca e come migliorarlo. Poi crea una versione più forte.»</span>
-      </li>
-      <li><b>7. Impara qualsiasi competenza più velocemente</b>
-        <span class="tip">Prompt: «Sii il mio tutor personale per [competenza]. Il mio livello è [livello], il mio obiettivo è [obiettivo] e posso dedicarci [tempo disponibile]. Crea un piano di apprendimento passo dopo passo con lezioni settimanali, esercizi, mini-progetti, errori comuni, test di verifica e un progetto finale. Insegnami una lezione alla volta e interrogami prima di proseguire.»</span>
-      </li>
-      <li><b>8. Migliora un flusso di lavoro ripetitivo</b>
-        <span class="tip">Prompt: «Agisci come un consulente di automazione. Svolgo ripetutamente questo compito: [descrivi il compito]. Attualmente uso: [elenca gli strumenti]. Crea un flusso di lavoro più veloce. Indica cosa deve restare manuale, cosa può essere automatizzato, come Claude può aiutare, i prompt esatti da usare e una checklist di controllo qualità.»</span>
-      </li>
-      <li><b>9. Confronta chiaramente le opzioni</b>
-        <span class="tip">Prompt: «Confronta queste opzioni: [Opzione 1] [Opzione 2] [Opzione 3]. Il mio obiettivo è [obiettivo], le mie priorità sono [priorità] e i miei limiti sono [budget, tempo, esperienza, ecc.]. Crea una tabella comparativa, assegna un punteggio a ogni opzione, spiega i compromessi e consiglia la scelta complessivamente migliore.»</span>
-      </li>
-      <li><b>10. Migliora prima il mio prompt</b>
-        <span class="tip">Prompt: «Agisci come un esperto di prompt engineering. Migliora questo prompt di base: [incolla il prompt]. Individua cosa non è chiaro o manca, poi crea tre versioni: semplice, dettagliata e avanzata. Includi un contesto migliore, istruzioni, vincoli e una formattazione dell'output più efficace. Non rispondere alla richiesta originale finché il prompt non è stato migliorato.»</span>
-      </li>
-    </ol>
-  </div>
   </div>
 </section>
-
-<!-- ======================= PARTE 4 — RISPARMIA TEMPO ======================= -->
-<section class="prompts-section subject-part">
-  <div class="part-divider">
-    <span class="part-eyebrow subject">Parte 4</span>
-    <div class="part-title">La guida IA salva-tempo per i docenti</div>
-    <p class="part-desc">25 prompt pronti all'uso per risparmiare ore ogni settimana. Copiali, incollali e personalizzali in Claude, ChatGPT o nel tuo strumento IA preferito: pensa all'IA come a un assistente didattico che si occupa del lavoro ripetitivo, così puoi concentrarti su ciò che conta davvero — i tuoi studenti.</p>
-  </div>
-
-  <div class="prompts-note subject-note" style="max-width:900px;margin:0 auto 30px;">
-    <b>Suggerimento:</b> più sei specifico, migliori saranno i risultati. Indica sempre, quando possibile, la classe, la materia, gli standard o gli obiettivi di apprendimento.
-  </div>
-
-  <div class="prompt-group-inner">
-
-  <div class="prompt-group" id="ts-comunicazione">
-    <div class="prompt-group-title subject-title"><span>📧 Comunicazione</span><span class="count">5</span></div>
-    <ol class="prompt-list">
-      <li><b>Email ai genitori</b> — Scrivi un'email amichevole per i genitori spiegando che la prossima settimana la classe inizierà a studiare le frazioni. Includi tre semplici modi per esercitarsi a casa.</li>
-      <li><b>Newsletter settimanale di classe</b> — Crea una newsletter di classe calorosa e coinvolgente usando questi appunti: [incolla i punti]. Organizzala in sezioni con titoli e rendila facile da leggere per i genitori.</li>
-      <li><b>Feedback allo studente</b> — Scrivi un feedback personalizzato e incoraggiante per uno studente che si è impegnato molto ma deve migliorare l'organizzazione. Mantieni un tono positivo e concreto.</li>
-      <li><b>Comunicazione sul comportamento</b> — Scrivi un'email professionale a un genitore spiegando che lo studente ha avuto difficoltà a mantenere la concentrazione durante il lavoro individuale. Includi osservazioni positive e suggerimenti per collaborare.</li>
-      <li><b>Comunicazione tra colleghi</b> — Riscrivi questa email in modo che risulti professionale, sintetica e cordiale: [incolla la bozza].</li>
-    </ol>
-  </div>
-
-  <div class="prompt-group" id="ts-progettazione">
-    <div class="prompt-group-title subject-title"><span>📝 Progettazione delle lezioni</span><span class="count">4</span></div>
-    <ol class="prompt-list">
-      <li><b>Attività di apertura</b> — Crea cinque attività di apertura coinvolgenti che ripassino la lezione di ieri sulla moltiplicazione tra frazioni.</li>
-      <li><b>Biglietto d'uscita (exit ticket)</b> — Scrivi cinque domande di biglietto d'uscita per verificare la comprensione della lezione di oggi. Includi domande a scelta multipla e a risposta breve.</li>
-      <li><b>Obiettivi di apprendimento</b> — Scrivi obiettivi di apprendimento e criteri di successo, in un linguaggio adatto agli studenti, per una lezione sull'identificazione dell'idea principale in un testo informativo.</li>
-      <li><b>Domande per la discussione</b> — Genera dieci domande di ordine superiore basate sulla Tassonomia di Bloom per una lezione sulla Rivoluzione Americana (adattabile a un tema di storia italiana o europea).</li>
-    </ol>
-  </div>
-
-  <div class="prompt-group" id="ts-differenziazione">
-    <div class="prompt-group-title subject-title"><span>🎯 Differenziazione</span><span class="count">5</span></div>
-    <ol class="prompt-list">
-      <li><b>Semplificare un testo</b> — Riscrivi questo brano per studenti che leggono due livelli scolastici più indietro. Mantieni le stesse idee chiave ma semplifica il lessico e la struttura delle frasi.</li>
-      <li><b>Potenziamento</b> — Crea attività di approfondimento per gli studenti più avanzati che hanno già padroneggiato questa lezione.</li>
-      <li><b>Supporto per studenti stranieri o NAI</b> — Riscrivi queste istruzioni con un linguaggio semplice e includi un supporto lessicale per studenti non madrelingua italiana.</li>
-      <li><b>Versioni multiple</b> — Crea tre versioni di questa consegna: sotto il livello della classe, al livello della classe e avanzata.</li>
-      <li><b>Choice board</b> — Crea una griglia 3x3 di attività a scelta per un'unità sugli ecosistemi, con attività di scrittura, creatività, tecnologia e apprendimento pratico.</li>
-    </ol>
-  </div>
-
-  <div class="prompt-group" id="ts-valutazione">
-    <div class="prompt-group-title subject-title"><span>✅ Valutazione</span><span class="count">5</span></div>
-    <ol class="prompt-list">
-      <li><b>Generatore di verifiche</b> — Crea una verifica di 10 domande su questo argomento. Includi domande a scelta multipla, vero/falso e a risposta breve.</li>
-      <li><b>Domande per Kahoot</b> — Genera 20 domande coinvolgenti per Kahoot a partire da questa lezione. Includi quattro opzioni di risposta e indica quella corretta.</li>
-      <li><b>Griglia di valutazione</b> — Crea una rubrica a quattro livelli per un tema argomentativo, allineata agli standard di scrittura della classe [X].</li>
-      <li><b>Griglia di correzione</b> — Crea una griglia di correzione con le spiegazioni per ogni domanda.</li>
-      <li><b>Formato Google Moduli</b> — Converti questa verifica in un formato facile da incollare in Google Moduli.</li>
-    </ol>
-  </div>
-
-  <div class="prompt-group" id="ts-risorse">
-    <div class="prompt-group-title subject-title"><span>🎨 Risorse didattiche</span><span class="count">5</span></div>
-    <ol class="prompt-list">
-      <li><b>Testo di lettura</b> — Scrivi un testo di lettura non narrativo sui vulcani per studenti di scuola secondaria di primo grado. Includi un titolo, il lessico specifico e cinque domande di comprensione.</li>
-      <li><b>Problemi di matematica</b> — Crea dieci problemi di moltiplicazione basati su situazioni reali per studenti della scuola primaria, con livelli di difficoltà differenti.</li>
-      <li><b>Spunti di scrittura</b> — Genera 20 spunti di scrittura creativa che incoraggino la scrittura descrittiva per studenti della fascia 10-13 anni.</li>
-      <li><b>Gioco di ripasso in classe</b> — Trasforma questa lezione in un gioco di ripasso divertente che richieda poca preparazione.</li>
-      <li><b>Choice board o angoli di apprendimento</b> — Crea cinque attività per angoli di lettura che rafforzino la capacità di individuare le prove testuali.</li>
-    </ol>
-  </div>
-
-  </div>
-</section>
-
-<div class="music-widget">
-  <button class="music-btn" id="musicPlayBtn" aria-label="Riproduci musica rilassante di sottofondo" title="Musica di sottofondo">
-    <svg id="musicPlayIcon" width="18" height="18" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
-  </button>
-  <button class="music-btn" id="musicMuteBtn" aria-label="Attiva/disattiva audio" title="Muto">
-    <svg id="musicMuteIcon" width="16" height="16" viewBox="0 0 24 24" fill="#ffffff"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-  </button>
-  <span class="music-label">Musica rilassante di sottofondo</span>
-  <audio id="bgMusic" loop preload="none">
-    <source src="quiet-morning-light.mp3" type="audio/mpeg">
-  </audio>
-</div>
 
 <button class="back-to-top" id="backToTop" aria-label="Torna su">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -1213,38 +1147,6 @@
   });
   backToTop.addEventListener('click', ()=>{
     window.scrollTo({top:0, behavior:'smooth'});
-  });
-
-  /* MUSICA DI SOTTOFONDO */
-  const bgMusic = document.getElementById('bgMusic');
-  const playBtn = document.getElementById('musicPlayBtn');
-  const playIcon = document.getElementById('musicPlayIcon');
-  const muteBtn = document.getElementById('musicMuteBtn');
-  bgMusic.volume = 0.35;
-  let isPlaying = false;
-
-  const iconPlay = '<path d="M8 5v14l11-7z"/>';
-  const iconPause = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
-
-  playBtn.addEventListener('click', ()=>{
-    if(!isPlaying){
-      bgMusic.play().then(()=>{
-        isPlaying = true;
-        playIcon.innerHTML = iconPause;
-        playBtn.title = 'Metti in pausa';
-      }).catch(()=>{ /* riproduzione bloccata dal browser finche non c'e interazione */ });
-    } else {
-      bgMusic.pause();
-      isPlaying = false;
-      playIcon.innerHTML = iconPlay;
-      playBtn.title = 'Riproduci musica di sottofondo';
-    }
-  });
-
-  muteBtn.addEventListener('click', ()=>{
-    bgMusic.muted = !bgMusic.muted;
-    muteBtn.classList.toggle('muted', bgMusic.muted);
-    muteBtn.title = bgMusic.muted ? 'Riattiva audio' : 'Muto';
   });
 </script>
 </body>
