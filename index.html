@@ -97,6 +97,8 @@
   .tool-tag.t-gem{background:#DBEAFE;color:#2563EB;}
   .tool-tag.t-gpt{background:#D1FAE5;color:#059669;}
   .tool-tag.t-cla{background:#FEF3C7;color:#B45309;}
+  .tool-tag.t-univ{background:#EDE9FE;color:#6D28D9;margin-left:8px;margin-right:0;}
+  .univ-legend{margin:0 0 18px;padding:12px 16px;background:#F5F3FF;border-left:3px solid #6D28D9;border-radius:0 8px 8px 0;font-size:13.5px;color:#4C1D95;line-height:1.55;}
   .tool-tag.t-did{background:#EDE9FE;color:#7C3AED;}
   .tool-tag.t-edu{background:#FFE4E6;color:#E11D48;}
   .mini-hero-logo{width:84px;height:84px;border-radius:50%;background:#fff;padding:6px;object-fit:contain;margin:0 auto 20px;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.25);position:relative;z-index:2;}
@@ -172,6 +174,7 @@
     <a href="#notebooklm-studio">Studio ed esami</a>
     <a href="#notebooklm-ricerca">Materiale di ricerca</a>
     <a href="#notebooklm-imparare">Imparare meglio</a>
+    <a href="#notebooklm-ruoli">Prompt-ruolo</a>
     <a href="#skill-library">Claude Skills</a>
     <a href="#youtube">YouTube</a>
     <a href="#ricerca">Ricerca</a>
@@ -181,6 +184,7 @@
     <a href="#workspace">Workspace</a>
     <a href="#chatgpt">ChatGPT</a>
     <a href="#claude-paper">Claude Paper</a>
+    <a href="#claude-accademico">Scrittura accademica</a>
     <a href="#lingue">Lingue</a>
     <a href="#claude-tips">Ottimizzazione</a>
     <a href="#prompt-eng">Prompt eng.</a>
@@ -650,6 +654,7 @@
       <p class="part-desc">Una raccolta organizzata per usare al meglio gli assistenti IA nella didattica e nella ricerca: NotebookLM, Gemini &amp; Workspace, ChatGPT, Claude, prompt engineering ed EduGems.</p>
     </div>
   <div class="prompts-note ia-note"><b>Come usare questa parte:</b> prompt e sistemi per sfruttare al meglio gli assistenti IA (NotebookLM, Gemini, ChatGPT, Claude). Sostituisci le parti tra [parentesi]; per i prompt bilingui trovi anche la versione inglese in corsivo. Verifica sempre l'output prima di usarlo con gli studenti.</div>
+  <div class="univ-legend"><span class="tool-tag t-univ" style="margin-left:0;margin-right:8px;">trasversale</span> I gruppi con questa etichetta contengono prompt testuali puri: non dipendono da funzioni esclusive dello strumento indicato dal tag colorato e si possono copiare e usare allo stesso modo su NotebookLM, Gemini, ChatGPT o Claude. Gli altri gruppi sfruttano invece caratteristiche specifiche di un singolo strumento (generazione di file, Workspace, modifica video, panoramiche audio, Skills).</div>
   <div class="prompt-group" id="notebooklm">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM - sistema a 3 prompt</span><span class="count">3</span></div>
     <ol class="prompt-list">
@@ -659,7 +664,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="notebooklm-studio">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM - studiare e prepararsi agli esami (7 prompt)</span><span class="count">7</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM - studiare e prepararsi agli esami (7 prompt)<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
     <ol class="prompt-list">
       <li><b>Piano di studio istantaneo</b> (Instant Study Blueprint) — Carica il materiale di studio, poi chiedi: <i>"Crea una guida allo studio completa e pronta per l'esame partendo dal mio materiale. Organizza tutto per argomento. Per ogni argomento, includi:</i>
         <ul class="sub">
@@ -725,7 +730,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="notebooklm-ricerca">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Notebook: tutto il materiale di ricerca trasformato in analisi chiare in pochi minuti</span><span class="count">8</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Notebook: tutto il materiale di ricerca trasformato in analisi chiare in pochi minuti<span class="tool-tag t-univ">trasversale</span></span><span class="count">11</span></div>
     <ol class="prompt-list">
       <li><b>La rassegna della letteratura a zero-shot</b> — <i>"Analizza tutte le fonti selezionate e genera una rassegna della letteratura completa su [ARGOMENTO DI RICERCA]. Struttura l'output come segue:</i>
         <ul class="sub">
@@ -766,10 +771,19 @@
         <i>Formatta il tutto in modo pulito cosi posso salvarlo direttamente nel pannello delle note di NotebookLM".</i>
         <span class="tip">Chiude il lavoro con un documento di sintesi salvabile nelle note del notebook e condivisibile con colleghi e studenti.</span>
       </li>
+      <li><b>Mappa delle conoscenze completa</b> — <i>"Ho caricato dei documenti su [ARGOMENTO]. Prima di iniziare, chiedimi cosa voglio ottenere. Poi crea una mappa concettuale strutturata che organizzi i concetti chiave, le prove a sostegno, le relazioni tra le idee, la terminologia essenziale, le lacune di conoscenza, le domande senza risposta e gli spunti operativi. Basa tutto rigorosamente sui documenti caricati e indica chiaramente ogni volta che le prove disponibili sono insufficienti".</i>
+        <span class="tip">Il primo passo prima di studiare: l'IA chiede l'obiettivo e restituisce l'architettura completa dell'argomento.</span>
+      </li>
+      <li><b>Dalla ricerca alla presentazione</b> — <i>"Trasforma i documenti caricati in una scaletta per una presentazione professionale con una struttura logica, titoli delle slide chiari, spiegazioni concise, esempi pertinenti, transizioni fluide, concetti chiave (key takeaways), probabili domande del pubblico con relative risposte suggerite e note dettagliate per il relatore. Assicurati che ogni punto sia pienamente supportato dalle fonti caricate".</i>
+        <span class="tip">Produce anche le note del relatore e le domande attese: utile per esposizioni orali, colloqui d'esame e collegi docenti.</span>
+      </li>
+      <li><b>Dalla ricerca al piano d'azione</b> — <i>"Ho caricato dei documenti su [ARGOMENTO] e il mio obiettivo e [OBIETTIVO]. Crea un piano d'azione pratico e passo-passo con priorita chiare, traguardi, tempistiche, metriche di successo, potenziali ostacoli e prossimi passi operativi. Spiega come ogni raccomandazione e supportata dai documenti caricati e individua chiaramente dove potrebbero essere necessarie ulteriori prove".</i>
+        <span class="tip">Chiude il cerchio: dalla lettura delle fonti a un piano operativo con tempi, indicatori e rischi.</span>
+      </li>
     </ol>
   </div>
   <div class="prompt-group" id="notebooklm-imparare">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Smetti di leggere in modo piu intelligente, inizia a imparare in modo piu intelligente - 10 prompt</span><span class="count">10</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Smetti di leggere in modo piu intelligente, inizia a imparare in modo piu intelligente - 10 prompt<span class="tool-tag t-univ">trasversale</span></span><span class="count">10</span></div>
     <ol class="prompt-list">
       <li><b>Progettista didattico strutturato</b> — <i>"Agisci come un progettista didattico di fama mondiale. Analizza tutte le fonti caricate e crea una roadmap di padronanza di 8 settimane, da principiante ad avanzato. Per ogni settimana, includi:</i>
         <ul class="sub">
@@ -856,6 +870,30 @@
       </li>
     </ol>
   </div>
+  <div class="prompt-group" id="notebooklm-ruoli">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Prompt-ruolo parametrici: assegnare all'IA un ruolo professionale<span class="tool-tag t-univ">trasversale</span></span><span class="count">6</span></div>
+    <ol class="prompt-list">
+      <li><b>Hub di conoscenza personale</b> — <i>"Agisci come il mio Personal Knowledge Architect. Carichero [PDF / ARTICOLI SCIENTIFICI / LIBRI / VERBALI DI RIUNIONI / TRASCRIZIONI YOUTUBE / DOCUMENTI]. Il mio obiettivo e [APPRENDIMENTO / RICERCA / BUSINESS / ESAME / SCRITTURA], il mio livello di partenza e [LIVELLO DI ESPERIENZA] e la mia scadenza e [TEMPISTICA]. Organizza tutto in un sistema di conoscenza consultabile, collega i concetti correlati, individua i temi ricorrenti, evidenzia le contraddizioni, estrai le informazioni chiave, crea riassunti per diversi livelli di competenza, suggerisci risorse di approfondimento e fammi domande ogni volta che un contesto aggiuntivo potrebbe migliorare il risultato finale".</i>
+        <span class="tip">La richiesta di fare domande e la parte piu preziosa: costringe il modello a chiarire il contesto invece di tirare a indovinare.</span>
+      </li>
+      <li><b>Professore universitario</b> — <i>"Agisci come il mio professore universitario. Insegnami [MATERIA] utilizzando esclusivamente le fonti caricate. Il mio livello attuale e [PRINCIPIANTE / INTERMEDIO / AVANZATO], il mio stile di apprendimento e [VISIVO / PRATICO / LETTURA], il mio obiettivo e [ESAME / CARRIERA / PERSONALE] e il tempo di studio a disposizione e [ORE]. Scomponi ogni concetto in spiegazioni semplici, analogie del mondo reale, quiz, flashcard, trucchi mnemonici, esercizi pratici e domande via via piu complesse fino a quando non avro padroneggiato completamente l'argomento".</i>
+        <span class="tip">Versione parametrica del tutor: il vincolo "solo le fonti caricate" riduce sensibilmente le invenzioni.</span>
+      </li>
+      <li><b>Senior business analyst</b> — <i>"Agisci come un Senior Business Analyst. Analizza i miei report, le presentazioni, i fogli di calcolo e i documenti caricati. Il mio obiettivo e [OBIETTIVO], il settore e [SETTORE], la sfida attuale e [SFIDA] e il pubblico di riferimento e [PUBBLICO]. Estrai trend, rischi, opportunita, informazioni mancanti, riepiloghi esecutivi, raccomandazioni strategiche, KPI e prossimi passi operativi supportati da prove tratte dal materiale caricato".</i>
+        <span class="tip">A scuola si adatta bene a rendicontazioni di progetto, monitoraggi PNRR e analisi di questionari.</span>
+      </li>
+      <li><b>Studio di produzione contenuti</b> — <i>"Agisci come il mio AI Content Studio. Utilizzando il materiale caricato, crea contenuti per [X / YOUTUBE / LINKEDIN / NEWSLETTER / INSTAGRAM / BLOG]. Il mio pubblico e [PUBBLICO], lo stile di scrittura e [TONO], l'obiettivo e [OBIETTIVO] e la call to action e [CTA]. Genera idee originali, ganci di apertura, angolature narrative, FAQ, serie di contenuti, elementi visivi e molteplici formati senza perdere il significato originale".</i>
+        <span class="tip">Utile per trasformare un progetto o un'uscita didattica in comunicazione per il sito e i canali della scuola.</span>
+      </li>
+      <li><b>Direttore di ricerca</b> — <i>"Agisci come il mio direttore di ricerca. Carichero piu documenti su [ARGOMENTO]. Il mio obiettivo di ricerca e [OBIETTIVO], la profondita richiesta e [BASE / DETTAGLIATA / ESPERTO], il pubblico di riferimento e [PUBBLICO] e il risultato atteso e [DECISIONE / REPORT / PRESENTAZIONE]. Confronta le fonti, individua punti di accordo e divergenze, valuta la qualita delle prove, individua spunti nascosti, sintetizza i risultati chiave e produci un report di ricerca professionale con raccomandazioni pratiche".</i>
+        <span class="tip">Rispetto agli altri prompt di sintesi, qui si dichiarano in anticipo profondita, pubblico e formato dell'output.</span>
+      </li>
+      <li><b>Partner di ricerca permanente</b> — <i>"Diventa il mio partner di ricerca permanente su NotebookLM. Ogni volta che carico nuovi documenti, collegali automaticamente alle conoscenze precedenti, individua modelli e schemi, rileva incoerenze, genera domande piu approfondite, raccomanda nuove direzioni di ricerca, sintetizza le novita e migliora continuamente la mia base di conoscenza personale in base ai miei obiettivi a lungo termine [OBIETTIVI], alla mia professione [PROFESSIONE] e ai miei interessi [ARGOMENTI]".</i>
+        <span class="tip">Da salvare nelle note del notebook e richiamare a ogni nuovo caricamento: il modello non ricorda l'istruzione da solo tra una sessione e l'altra.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;">Tre prompt della raccolta originale non compaiono qui perche gia presenti in pagina: <b>preparazione all'esame</b> (gruppo "studiare e prepararsi agli esami"), <b>creazione della presentazione</b> ("Dalla ricerca alla presentazione") e <b>organizzazione degli appunti</b> ("Mappa delle conoscenze completa").</div>
+  </div>
   <div class="prompt-group" id="notebooklm-claude">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM + Claude - workflow avanzati</span><span class="count">5</span></div>
     <ol class="prompt-list">
@@ -894,7 +932,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="ricerca">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Ricerca accademica, letteratura e grant</span><span class="count">9</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Ricerca accademica, letteratura e grant<span class="tool-tag t-univ">trasversale</span></span><span class="count">9</span></div>
     <ol class="prompt-list">
       <li><b>Mappare il panorama della ricerca</b> — Analizza tutte le fonti caricate su [ARGOMENTO]. Crea un quadro d'insieme elencando ogni fonte per autore, anno, titolo, tesi centrale, temi, punti di consenso e prospettive contrapposte.<span class="en">EN — Analyze all uploaded sources related to [TOPIC]. Create a structured overview listing each source by author, year, title, and central thesis.</span></li>
       <li><b>Mappare le tesi contestate</b> — Analizza tutte le fonti su [ARGOMENTO] e identifica le principali tesi contestate nella letteratura.<span class="en">EN — Identify the major contested claims across the literature.</span></li>
@@ -968,7 +1006,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="feynman">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - apprendimento personalizzato (Feynman e primi principi)</span><span class="count">7</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - apprendimento personalizzato (Feynman e primi principi)<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
     <ol class="prompt-list">
       <li><b>Metodo Feynman</b> — Insegnami [ARGOMENTO] come se fossi un principiante assoluto, con linguaggio semplice e quotidiano. Scomponilo in passaggi chiari con esempi pratici e analogie.</li>
       <li><b>Scomposizione primi principi</b> — Agisci come docente di livello mondiale. Scomponi [ARGOMENTO] nei suoi elementi piu fondamentali usando il ragionamento basato sui primi principi.</li>
@@ -1010,7 +1048,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="chatgpt">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gpt">ChatGPT</span>ChatGPT - scrittura e revisione avanzata</span><span class="count">7</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gpt">ChatGPT</span>ChatGPT - scrittura e revisione avanzata<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
     <ol class="prompt-list">
       <li><b>Correggi errori nascosti</b> — Rivedi questo testo come un editor professionista. Trova errori grammaticali, frasi contorte, parole deboli e periodi poco chiari. Riscrivi solo le parti da migliorare e spiega ogni modifica.</li>
       <li><b>Suona piu naturale e umano</b> — Riscrivi questo testo in modo naturale e umano. Rimuovi formulazioni robotiche e frasi artificiali. Migliora tono, ritmo e fluidita mantenendo intatti messaggio e voce.</li>
@@ -1022,7 +1060,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="claude-paper">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - Paper Research System (analisi scientifica)</span><span class="count">9</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - Paper Research System (analisi scientifica)<span class="tool-tag t-univ">trasversale</span></span><span class="count">9</span></div>
     <ol class="prompt-list">
       <li><b>Protocollo di acquisizione</b> — Condividero [X] articoli su [ARGOMENTO]. Prima di rispondere, elenca ciascun articolo con autore, anno e una frase di tesi centrale. Raggruppa gli articoli in cluster per presupposti condivisi, individua quelli che si contraddicono e mappa il panorama generale senza riassumere i singoli articoli.</li>
       <li><b>Rilevatore di contraddizioni</b> — Esamina tutti gli articoli e identifica ogni punto in cui due o piu autori si contraddicono. Per ciascuna contraddizione spiega entrambe le posizioni, gli articoli coinvolti e perche il disaccordo esiste. Presenta i risultati in una tabella comparativa.</li>
@@ -1035,8 +1073,23 @@
       <li><b>Test del E quindi?</b> — Immagina di avere cinque minuti per spiegare l'intero corpo di ricerca a un non esperto intelligente. In una frase: cosa e stato dimostrato; poi la cosa piu grande che ancora non si sa e l'unica implicazione reale che conta di piu. Linguaggio semplice, senza gergo.</li>
     </ol>
   </div>
+  <div class="prompt-group" id="claude-accademico">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - leggere, scrivere e revisionare testi accademici<span class="tool-tag t-univ">trasversale</span></span><span class="count">9</span></div>
+    <ol class="prompt-list">
+      <li><b>Comprendere un articolo scientifico in pochi minuti</b> — Agisci come un mentore accademico esperto. Spiega questo articolo di ricerca con un linguaggio semplice ma preciso. Scomponilo in: problema di ricerca, metodologia, risultati chiave, limitazioni e opportunita per ricerche future.</li>
+      <li><b>Dagli appunti alla rassegna della letteratura</b> — Converti i seguenti appunti in punti elenco in una rassegna della letteratura strutturata. Confronta e metti a contrasto gli studi, evidenzia le differenze metodologiche e sintetizza i risultati chiave.</li>
+      <li><b>Confronto tra articoli di ricerca</b> — Confronta questi studi in termini di disegno della ricerca, fonti dei dati, metodi analitici e conclusioni. Presenta le differenze in una tabella e spiega il contributo fornito da ciascuno studio.</li>
+      <li><b>Semplificare metodi complessi</b> — Spiega questa metodologia come se la stessi insegnando a uno studente di laurea magistrale o di dottorato che la affronta per la prima volta. Includi la logica passo-passo del metodo ed esempi pratici.<span class="tip">Particolarmente efficace su statistica, modellizzazione e metodi sperimentali.</span></li>
+      <li><b>Migliorare la scrittura accademica</b> — Riscrivi questo paragrafo per migliorarne la chiarezza, la forza dell'argomentazione e il tono accademico, mantenendo inalterati il significato originale e le citazioni.</li>
+      <li><b>Generare domande di ricerca</b> — Sulla base della seguente sintesi della letteratura, proponi 10 valide domande di ricerca adatte per una tesi di laurea magistrale o di dottorato.<span class="tip">Utile quando ci si blocca nella fase di stesura della proposta di ricerca.</span></li>
+      <li><b>Revisione critica in stile peer review</b> — Agisci come un revisore di una rivista scientifica (peer reviewer). Valuta criticamente questo manoscritto per originalita, metodologia, chiarezza e contributo al settore. Fornisci un feedback costruttivo.<span class="tip">Da usare prima dell'invio definitivo di un lavoro.</span></li>
+      <li><b>Estrarre i dati chiave dagli articoli</b> — Estrai tutte le variabili chiave, le dimensioni dei campioni, i luoghi dello studio e i risultati principali da questo articolo e presentali in una tabella strutturata.<span class="tip">Pensato per revisioni sistematiche e meta-analisi.</span></li>
+      <li><b>Da articolo a proposta di ricerca</b> — Utilizzando i risultati di questo articolo, progetta uno studio di follow-up includendo ipotesi, metodologia, contributo atteso e possibili limitazioni.</li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;">Questi prompt non dipendono da funzioni esclusive di Claude: funzionano allo stesso modo con Gemini, ChatGPT o NotebookLM, purche il modello possa leggere il documento. Il prompt sulle lacune di ricerca non compare qui perche e gia presente sopra, nel Paper Research System ("Scanner delle lacune di ricerca").</div>
+  </div>
   <div class="prompt-group" id="lingue">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - framework per l'apprendimento delle lingue</span><span class="count">8</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - framework per l'apprendimento delle lingue<span class="tool-tag t-univ">trasversale</span></span><span class="count">8</span></div>
     <ol class="prompt-list">
       <li><b>Roadmap per la fluidita</b> — Agisci come tutor linguistico e progettista di corsi. Costruisci un piano di sei mesi per sostenere vere conversazioni nella mia lingua di destinazione.<span class="en">EN — Build me a six-month plan to hold real conversations in my target language.</span></li>
       <li><b>Vocabolario fondamentale</b> — Agisci come linguista. Prepara le prime 300 parole che sbloccano la maggior parte delle conversazioni quotidiane nella mia lingua di destinazione.<span class="en">EN — Build me the first 300 words that unlock the most everyday conversation.</span></li>
@@ -1062,14 +1115,14 @@
     </ol>
   </div>
   <div class="prompt-group" id="prompt-eng">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Prompt engineering e schede visive stampabili</span><span class="count">2</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Prompt engineering e schede visive stampabili<span class="tool-tag t-univ">trasversale</span></span><span class="count">2</span></div>
     <ol class="prompt-list">
       <li><b>Trucco valutazione (0-10) e auto-ottimizzazione</b> — Fai valutare e perfezionare il prompt all'IA in due passi. Passo 1: Dai un voto a questo prompt da 0 a 10: [PROMPT]. Passo 2: Cosa lo renderebbe un 10/10? Riscrivilo e perfezionalo tu. Esempio di role-play: Agisci come Gaio Giulio Cesare nel 44 a.C. e parla a studenti di 10 anni nel Foro; linguaggio semplice e solenne, immagini romane, nessun concetto moderno, risposte brevi e dialogate.</li>
       <li><b>Scheda didattica stampabile con IA visiva</b> — Prompt modello per DALL-E 3 o Gemini Imagen: Crea l'immagine di una scheda didattica stampabile in italiano su [ARGOMENTO] per [CLASSE]. Formato verticale A4, alta risoluzione. Titolo Scopriremo... [DOMANDA] e 4 sezioni: 1) Esplora e osserva, 2) Costruiamo l'idea insieme, 3) Stabilire collegamenti, 4) Rifletti e riassumi con Oggi ho imparato che...</li>
     </ol>
   </div>
   <div class="prompt-group" id="didattici">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Prompt didattici specializzati</span><span class="count">7</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Prompt didattici specializzati<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
     <ol class="prompt-list">
       <li><b>Schede didattiche per Italiano L2</b> — Sei insegnante esperto di Italiano L2 e instructional designer. Genera una scheda da completare con 15-25 frasi e un archivio di parole per studenti di [CLASSE/LIVELLO] che imparano l'italiano come L2, livello [PRINCIPIANTE/INTERMEDIO/AVANZATO].</li>
       <li><b>Idee per piani di lezione</b> — Sei insegnante esperto di [GRADO E MATERIA]. Elabora 3 idee di piani di lezione nell'unita su [ARGOMENTO], di [X] minuti ciascuno e progressivi. Ogni lezione: obiettivi, parole chiave, scaletta con istruzioni dirette, attivita pratica e riepilogo con valutazione.</li>
@@ -1081,7 +1134,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="teaching">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>AI Teaching System - progettazione lezioni</span><span class="count">5</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>AI Teaching System - progettazione lezioni<span class="tool-tag t-univ">trasversale</span></span><span class="count">5</span></div>
     <ol class="prompt-list">
       <li><b>Struttura didattica e analisi capitolo</b> — Sei insegnante con 25 anni di esperienza. Analizza il capitolo in profondita (non riassumere) e restituisci: obiettivi di apprendimento, conoscenze preliminari, concetti principali, formule importanti, mappa delle dipendenze concettuali, errori comuni, argomenti confusi, esempi reali, concetti visivi, attivita in classe, trucchi mnemonici, aree d'esame, concetti HOTS e panoramica in una pagina.</li>
       <li><b>DNA dello stile visivo didattico</b> — Sei un Educational Visual Designer. Crea un DNA dello stile visivo riutilizzabile per insegnare [MATERIA/ARGOMENTO]: tavolozza colori, tipografia, icone, illustrazioni, forme, diagrammi, infografiche, stile per la classe, poster, mappe mentali, gerarchia visiva, atmosfera e suggerimenti per animazioni.</li>
@@ -1091,7 +1144,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="universali">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>7 prompt universali per la padronanza delle competenze</span><span class="count">7</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>7 prompt universali per la padronanza delle competenze<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
     <ol class="prompt-list">
       <li><b>Traccia i miei progressi</b> — Agisci come il mio coach personale per l'apprendimento durante tutto il percorso di 30 giorni.<span class="en">EN — Act as my personal learning coach throughout my 30-day journey.</span></li>
       <li><b>Tutor personale esperto</b> — Agisci come un tutor esperto e insegnami come se fossi il tuo unico studente.<span class="en">EN — Act as an expert tutor and teach me as if I were your only student.</span></li>
