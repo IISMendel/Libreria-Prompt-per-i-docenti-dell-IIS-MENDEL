@@ -175,6 +175,8 @@
     <a href="#notebooklm-ricerca">Materiale di ricerca</a>
     <a href="#notebooklm-imparare">Imparare meglio</a>
     <a href="#notebooklm-ruoli">Prompt-ruolo</a>
+    <a href="#notebooklm-corso">Costruire un corso</a>
+    <a href="#notebooklm-revisione">Rassegna e revisione</a>
     <a href="#skill-library">Claude Skills</a>
     <a href="#youtube">YouTube</a>
     <a href="#ricerca">Ricerca</a>
@@ -893,6 +895,102 @@
       </li>
     </ol>
     <div class="prompts-note ia-note" style="margin:18px 22px 22px;">Tre prompt della raccolta originale non compaiono qui perche gia presenti in pagina: <b>preparazione all'esame</b> (gruppo "studiare e prepararsi agli esami"), <b>creazione della presentazione</b> ("Dalla ricerca alla presentazione") e <b>organizzazione degli appunti</b> ("Mappa delle conoscenze completa").</div>
+  </div>
+  <div class="prompt-group" id="notebooklm-corso">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Costruire un corso completo dentro NotebookLM - flusso in 7 passaggi</span><span class="count">7</span></div>
+    <ol class="prompt-list">
+      <li><b>Passaggio 1 - Creare la knowledge base principale</b> — Carica programma, bibliografia, appunti delle lezioni e prove degli anni precedenti in un unico taccuino (fino a 50 fonti). Poi inizializzalo: <i>"Agisci come un progettista didattico accademico di alto livello e un esperto della materia in [ARGOMENTO]. Ho caricato [X] documenti principali. Prima di creare qualsiasi piano di studi:</i>
+        <ul class="sub">
+          <li>estrai i 5 principi fondamentali che collegano l'intera base di conoscenza</li>
+          <li>identifica metodologie in conflitto, presupposti o disaccordi teorici</li>
+          <li>cataloga i principali casi d'uso nel mondo reale discussi nei materiali.</li>
+        </ul>
+        <i>Conferma quando la mappa delle conoscenze e completa".</i>
+        <span class="tip">Non saltare questo passaggio: e la fase che allinea il modello ai materiali prima di produrre qualsiasi cosa.</span>
+      </li>
+      <li><b>Passaggio 2 - Generare la mappa del curricolo</b> — <i>"Utilizzando solo i materiali caricati, progetta un piano di studi completo di [X] settimane. Requisiti: segui la tassonomia di Bloom, dal ricordo alla creazione. Per ogni settimana fornisci:</i>
+        <ul class="sub">
+          <li>competenza chiave</li>
+          <li>fonte che introduce il concetto (con citazioni)</li>
+          <li>fonte che lo espande, lo mette in discussione o lo complica</li>
+          <li>applicazione nel mondo reale in cui viene utilizzato il concetto.</li>
+        </ul>
+        <i>Assicurati che le conoscenze si sviluppino in modo sequenziale senza saltare i prerequisiti".</i>
+        <span class="tip">Le citazioni restano agganciate alle fonti, quindi ogni scelta del curricolo e verificabile.</span>
+      </li>
+      <li><b>Passaggio 3 - Costruire i piani di lezione</b> — <i>"Crea un piano di lezione minuto per minuto di [X] minuti per [ARGOMENTO]. Requisiti:</i>
+        <ul class="sub">
+          <li>aggancio (10 min): una contraddizione, una scoperta sorprendente o un'intuizione trascurata nelle letture</li>
+          <li>decostruzione del concetto (20 min): spiega il meccanismo usando un'analogia pratica</li>
+          <li>punti di attrito (10 min): identifica i due maggiori ostacoli cognitivi e come superarli</li>
+          <li>esercizio di applicazione (20 min): costruisci un esercizio basato su scenari usando solo prove ed esempi tratti dai materiali caricati.</li>
+        </ul>
+        <span class="tip">I minutaggi vanno adattati all'ora di lezione reale: con 50 minuti effettivi conviene comprimere aggancio e applicazione.</span>
+      </li>
+      <li><b>Passaggio 4 - Creare i materiali per gli studenti</b> — <i>"Crea un pacchetto di studio completo per gli studenti su [ARGOMENTO]. Includi:</i>
+        <ul class="sub">
+          <li>guida allo studio: argomentazioni principali, argomentazioni secondarie, prove a sostegno</li>
+          <li>matrice di flashcard: 15 termini tecnici con definizioni specifiche per il contesto</li>
+          <li>valutazione: 5 domande basate su scenari, mix di risposta multipla e risposta breve, che valutino la sintesi e non la memorizzazione</li>
+          <li>chiave di risposta: cita l'esatta fonte e la sezione che supporta ogni risposta".</li>
+        </ul>
+        <span class="tip">La richiesta di citare fonte e sezione per ogni soluzione rende la correzione difendibile davanti a studenti e famiglie.</span>
+      </li>
+      <li><b>Passaggio 5 - Usare le panoramiche audio come lavoro preparatorio</b> — Si assume che gli studenti abbiano gia ascoltato la panoramica audio del taccuino prima della lezione. <i>"Crea una guida di facilitazione per una discussione avanzata. Requisiti:</i>
+        <ul class="sub">
+          <li>tre domande da avvocato del diavolo mirate ai punti piu deboli nelle argomentazioni degli autori</li>
+          <li>un esercizio di controinterrogatorio in cui gli studenti usano la metodologia della fonte A per criticare la fonte B</li>
+          <li>tre spunti di sintesi che costringano gli studenti a combinare idee contrastanti in un nuovo quadro pratico".</li>
+        </ul>
+        <span class="tip">Classe capovolta applicata: l'ascolto sostituisce la spiegazione frontale e l'ora in classe diventa discussione.</span>
+      </li>
+      <li><b>Passaggio 6 - Aggiornare la rassegna della letteratura</b> — <i>"Agisci come assistente di ricerca senior. Analizza il repository caricato su [MATERIA] ed esegui una revisione approfondita della letteratura attuale. Consegna:</i>
+        <ul class="sub">
+          <li>gap analysis: identifica 3 importanti lacune metodologiche o presupposti obsoleti</li>
+          <li>modernizzazione: trova 5 documenti recenti e credibili o casi di studio che colmano tali lacune</li>
+          <li>matrice della rassegna: scoperte chiave, metodologia e come ogni fonte aggiorna, supporta o confuta i materiali del corso esistenti".</li>
+        </ul>
+        <span class="tip">Il punto 2 richiede fonti esterne al taccuino: vanno cercate e verificate a mano, altrimenti il rischio di riferimenti inventati e alto.</span>
+      </li>
+      <li><b>Passaggio 7 - Trasformare il taccuino in un tutor per gli studenti</b> — Condividi il taccuino in sola lettura e fornisci agli studenti questo prompt: <i>"Agisci come mio tutor accademico personale. Ho difficolta con [CONCETTO]. Utilizzando solo i materiali del corso assegnati:</i>
+        <ul class="sub">
+          <li>spiega il concetto passo dopo passo</li>
+          <li>crea un caso di studio realistico che richieda l'applicazione del concetto</li>
+          <li>chiedimi di risolverlo</li>
+          <li>non rivelare la risposta</li>
+          <li>valuta la mia risposta in base a quanto accuratamente applico le letture assegnate".</li>
+        </ul>
+        <span class="tip">Cosi lo studente lavora dentro un perimetro di fonti scelto dal docente, invece di chiedere all'IA generica.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;">Questo flusso non ha il tag "trasversale" perche due passaggi dipendono da funzioni proprie di NotebookLM: le panoramiche audio (passaggio 5) e la condivisione del taccuino in sola lettura (passaggio 7). I passaggi da 1 a 4 funzionano invece con qualsiasi assistente in grado di leggere i documenti caricati.</div>
+  </div>
+  <div class="prompt-group" id="notebooklm-revisione">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Rassegna della letteratura e autorevisione della bozza<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;"><b>Il flusso "converti in fonte" (specifico di NotebookLM).</b> Non chiedere la rassegna della letteratura direttamente da una pila di PDF grezzi: l'esito e quasi sempre generico e ripetitivo. Procedi invece per gradi: <b>1)</b> fai domande mirate in chat per estrarre temi, scoperte, contraddizioni e lacune; <b>2)</b> salva in nota le risposte migliori; <b>3)</b> usa <i>Converti in fonte</i> per trasformare quelle note in materiale di origine; <b>4)</b> deseleziona i PDF grezzi nel pannello delle fonti, lascia attive solo le note distillate e chiedi da li la stesura. Il percorso documenti grezzi &rarr; intuizioni &rarr; note distillate &rarr; fonti &rarr; testo dà molto piu controllo su argomentazione e organizzazione. Verifica sempre affermazioni e citazioni finali sugli originali.</div>
+    <ol class="prompt-list">
+      <li><b>Analisi della metodologia</b> — <i>"Confronta le metodologie di ricerca utilizzate in questi studi. Crea una tabella che mostri la metodologia, la dimensione del campione, la popolazione di riferimento, le variabili chiave e le limitazioni principali di ciascuno studio. Cita la fonte pertinente per ogni punto".</i>
+        <span class="tip">In NotebookLM conviene lanciarlo dalla funzione Tabella dati dopo aver selezionato le sole fonti da confrontare.</span>
+      </li>
+      <li><b>Lacune dichiarate dagli autori</b> — <i>"Attraverso questi studi, quali limitazioni specifiche, domande senza risposta o direzioni di ricerca future identificano esplicitamente gli autori? Raggruppa le lacune simili e cita gli studi che menzionano ciascuna di esse".</i>
+        <span class="tip">Diverso dallo "Scanner delle lacune" piu avanti: qui si raccolgono solo le lacune dichiarate dagli autori, non quelle dedotte dal modello, quindi il risultato e piu verificabile.</span>
+      </li>
+      <li><b>Filtro di rilevanza</b> — <i>"Sto studiando [ARGOMENTO SPECIFICO]. Quali scoperte, argomentazioni, metodologie e lacune di ricerca di questi documenti sono direttamente rilevanti per il mio argomento? Per ciascuno, spiega perche e rilevante e cita la fonte a supporto".</i>
+        <span class="tip">Piu la domanda di ricerca e formulata con precisione, meglio il filtro scarta cio che sembra pertinente ma non sostiene il lavoro.</span>
+      </li>
+      <li><b>Matrice comparativa delle prove</b> — <i>"Crea una tabella comparativa con colonne per: autore e anno, metodologia, dimensione del campione, scoperte chiave e limitazioni principali. Cita la fonte pertinente per ogni voce".</i>
+        <span class="tip">Le colonne vanno adattate alla domanda di ricerca. La tabella e una prima bozza della matrice delle prove, non la verita finale: i dati che contano si ricontrollano sugli originali.</span>
+      </li>
+      <li><b>Autorevisione: verifica delle prove</b> — Carica la tua bozza insieme ai documenti citati, poi chiedi: <i>"Identifica le affermazioni principali fatte nella mia bozza. Per ogni affermazione, determina se e adeguatamente supportata dai documenti di riferimento citati. Segnala le affermazioni non supportate, debolmente supportate o potenzialmente esagerate e cita le fonti pertinenti".</i>
+        <span class="tip">Individua il difetto piu frequente nei lavori scritti: la conclusione che va oltre cio che le fonti dicono davvero.</span>
+      </li>
+      <li><b>Autorevisione: contraddizioni con la letteratura</b> — <i>"Confronta la mia bozza con i documenti di riferimento caricati. Identifica eventuali affermazioni che contraddicono, trascurano o travisano scoperte importanti della letteratura. Spiega la discrepanza e cita le fonti pertinenti".</i>
+      </li>
+      <li><b>Autorevisione: lacune logiche</b> — <i>"Analizza il flusso logico dalla mia introduzione fino alla mia domanda di ricerca e metodologia. Identifica presupposti non supportati, ragionamenti mancanti, transizioni deboli o lacune che potrebbero rendere l'argomentazione difficile da seguire".</i>
+        <span class="tip">Non chiedere "il mio elaborato e buono?": chiedi di attaccare un punto preciso dell'argomentazione. L'obiettivo e trovare i problemi prima di chi correggera.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;"><b>Due funzioni utili da conoscere.</b> La <i>mappa mentale</i> del taccuino serve anche a caccia di lacune: espandi tutti i rami e guarda dove i sotto-rami sono pochi o assenti, perche quegli spazi vuoti segnalano temi poco esplorati o prove limitate. Le <i>panoramiche video</i>, le <i>presentazioni</i> e le <i>infografiche</i> permettono poi di riusare la stessa ricerca in formati diversi: seleziona prima le sole fonti pertinenti a quell'output, perche generare dall'intera libreria produce risultati generici.</div>
   </div>
   <div class="prompt-group" id="notebooklm-claude">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM + Claude - workflow avanzati</span><span class="count">5</span></div>
