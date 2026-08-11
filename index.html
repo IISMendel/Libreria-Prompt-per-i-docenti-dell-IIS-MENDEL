@@ -52,9 +52,16 @@
   .cat-nav-label{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#bbb;padding:7px 6px 7px 2px;white-space:nowrap;}
   .cat-nav a{font-size:12px;font-weight:600;color:var(--text-muted);text-decoration:none;padding:6px 11px;border-radius:20px;transition:background .2s,color .2s;white-space:nowrap;}
   .cat-nav a:hover{background:#E8F5E9;color:var(--green-dark);}
+  .cat-nav-parts{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;max-width:1200px;margin:0 auto 9px;padding-bottom:9px;border-bottom:1px solid #ececec;}
+  .cat-nav-parts a{font-size:13px;font-weight:800;color:#fff;padding:8px 18px;border-radius:22px;letter-spacing:.01em;}
+  .cat-nav-parts a.p1{background:var(--green);}
+  .cat-nav-parts a.p2{background:var(--amber);}
+  .cat-nav-parts a.p3{background:#0F766E;}
+  .cat-nav-parts a:hover{background:var(--green-dark);color:#fff;opacity:.9;}
+  @media(max-width:640px){.cat-nav-parts a{font-size:12px;padding:7px 13px;}}
 
   /* PROMPT LIBRARY */
-  .prompts-section{background:var(--white);max-width:900px;margin:0 auto;padding:50px 24px;}
+  .prompts-section{background:var(--white);max-width:900px;margin:0 auto;padding:50px 24px;scroll-margin-top:130px;}
   .prompts-section.subject-part{background:var(--grey-bg);max-width:none;padding:70px 24px;}
   .prompts-section.subject-part .prompt-group-inner{max-width:900px;margin:0 auto;}
   .prompt-group{margin-bottom:24px;border:1px solid #e2e2e2;border-radius:12px;overflow:hidden;scroll-margin-top:80px;background:var(--white);max-width:900px;margin-left:auto;margin-right:auto;}
@@ -129,6 +136,11 @@
 </div>
 
 <nav class="cat-nav">
+  <div class="cat-nav-parts">
+    <a class="p1" href="#parte-1">Parte 1 · Generici</a>
+    <a class="p2" href="#parte-2">Parte 2 · Per materia</a>
+    <a class="p3" href="#parte-3">Parte 3 · Intelligenza artificiale</a>
+  </div>
   <div class="cat-nav-row">
     <span class="cat-nav-label">Generici</span>
     <a href="#verifica">Verifiche</a>
@@ -169,8 +181,26 @@
     <a href="#valorizzazione">Valorizzazione prod.</a>
   </div>
   <div class="cat-nav-row">
-    <span class="cat-nav-label">Intelligenza artificiale</span>
-    <a href="#notebooklm">NotebookLM</a>
+    <span class="cat-nav-label">ChatGPT</span>
+    <a href="#chatgpt">Scrittura e revisione</a>
+    <span class="cat-nav-label">Claude</span>
+    <a href="#claude-paper">Paper Research</a>
+    <a href="#claude-accademico">Scrittura accademica</a>
+    <a href="#lingue">Lingue</a>
+    <a href="#claude-tips">Crediti e limiti</a>
+    <a href="#skill-library">Libreria Skills</a>
+  </div>
+  <div class="cat-nav-row">
+    <span class="cat-nav-label">Gemini</span>
+    <a href="#feynman">Imparare un argomento</a>
+    <a href="#gemini-video">Modifica video</a>
+    <a href="#gemini-file">Creare file</a>
+    <a href="#workspace">Workspace</a>
+    <a href="#edugems">EduGems</a>
+  </div>
+  <div class="cat-nav-row">
+    <span class="cat-nav-label">NotebookLM</span>
+    <a href="#notebooklm">Sistema base</a>
     <a href="#notebooklm-studio">Studio ed esami</a>
     <a href="#notebooklm-ricerca">Materiale di ricerca</a>
     <a href="#notebooklm-imparare">Imparare meglio</a>
@@ -178,29 +208,23 @@
     <a href="#notebooklm-corso">Costruire un corso</a>
     <a href="#notebooklm-revisione">Rassegna e revisione</a>
     <a href="#notebooklm-articolo">Scrivere un articolo</a>
-    <a href="#notebooklm-slide">Stili slide</a>
-    <a href="#skill-library">Claude Skills</a>
+    <a href="#notebooklm-slide">Presentazioni</a>
     <a href="#youtube">YouTube</a>
-    <a href="#ricerca">Ricerca</a>
-    <a href="#avanzate">Modalita avanzate</a>
-    <a href="#gemini-video">Gemini video</a>
-    <a href="#gemini-file">Gemini file</a>
-    <a href="#workspace">Workspace</a>
-    <a href="#chatgpt">ChatGPT</a>
-    <a href="#claude-paper">Claude Paper</a>
-    <a href="#claude-accademico">Scrittura accademica</a>
-    <a href="#lingue">Lingue</a>
-    <a href="#claude-tips">Ottimizzazione</a>
-    <a href="#prompt-eng">Prompt eng.</a>
+    <a href="#ricerca">Ricerca accademica</a>
+    <a href="#avanzate">Modalità avanzate</a>
+    <a href="#notebooklm-claude">Con Claude</a>
+  </div>
+  <div class="cat-nav-row">
+    <span class="cat-nav-label">Trasversali</span>
+    <a href="#prompt-eng">Scrivere buoni prompt</a>
     <a href="#didattici">Prompt didattici</a>
-    <a href="#teaching">Teaching System</a>
-    <a href="#universali">Universali</a>
-    <a href="#edugems">EduGems</a>
+    <a href="#teaching">Progettare lezioni</a>
+    <a href="#universali">Prompt universali</a>
   </div>
 </nav>
 
 <!-- ======================= PARTE A — GENERICI ======================= -->
-<section class="prompts-section">
+<section class="prompts-section" id="parte-1">
   <div class="part-divider">
     <span class="part-eyebrow generic">Parte 1</span>
     <div class="part-title">Prompt generici</div>
@@ -325,7 +349,7 @@
 </section>
 
 <!-- ======================= PARTE B — PER MATERIA ======================= -->
-<section class="prompts-section subject-part">
+<section class="prompts-section subject-part" id="parte-2">
   <div class="prompt-group-inner">
     <div class="part-divider">
       <span class="part-eyebrow subject">Parte 2</span>
@@ -650,7 +674,7 @@
 
 
 <!-- ======================= PARTE C - INTELLIGENZA ARTIFICIALE ======================= -->
-<section class="prompts-section ia-part">
+<section class="prompts-section ia-part" id="parte-3">
   <div class="prompt-group-inner">
     <div class="part-divider">
       <span class="part-eyebrow ia">Parte 3</span>
@@ -659,6 +683,183 @@
     </div>
   <div class="prompts-note ia-note"><b>Come usare questa parte:</b> prompt e sistemi per sfruttare al meglio gli assistenti IA (NotebookLM, Gemini, ChatGPT, Claude). Sostituisci le parti tra [parentesi]; per i prompt bilingui trovi anche la versione inglese in corsivo. Verifica sempre l'output prima di usarlo con gli studenti.</div>
   <div class="univ-legend"><span class="tool-tag t-univ" style="margin-left:0;margin-right:8px;">trasversale</span> I gruppi con questa etichetta contengono prompt testuali puri: non dipendono da funzioni esclusive dello strumento indicato dal tag colorato e si possono copiare e usare allo stesso modo su NotebookLM, Gemini, ChatGPT o Claude. Gli altri gruppi sfruttano invece caratteristiche specifiche di un singolo strumento (generazione di file, Workspace, modifica video, panoramiche audio, Skills).</div>
+  <div class="prompt-group" id="chatgpt">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gpt">ChatGPT</span>ChatGPT - scrittura e revisione avanzata<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
+    <ol class="prompt-list">
+      <li><b>Correggi errori nascosti</b> — Rivedi questo testo come un editor professionista. Trova errori grammaticali, frasi contorte, parole deboli e periodi poco chiari. Riscrivi solo le parti da migliorare e spiega ogni modifica.</li>
+      <li><b>Suona piu naturale e umano</b> — Riscrivi questo testo in modo naturale e umano. Rimuovi formulazioni robotiche e frasi artificiali. Migliora tono, ritmo e fluidita mantenendo intatti messaggio e voce.</li>
+      <li><b>Rafforza ogni frase</b> — Migliora ogni frase per chiarezza, impatto e leggibilita. Sostituisci i termini deboli, rimuovi le espressioni superflue e rendi conciso cio che e prolisso, senza alterare il significato.</li>
+      <li><b>Rendi il testo piu sintetico</b> — Aumenta concisione e chiarezza. Rimuovi informazioni superflue, ripetizioni e spiegazioni non necessarie, mantenendo intatto il messaggio.</li>
+      <li><b>Migliora la fluidita</b> — Riscrivi migliorando flusso, transizioni e ritmo delle frasi. Rendi la scrittura fluida e coinvolgente, con ogni idea collegata naturalmente alla successiva.</li>
+      <li><b>Revisione da editor professionista</b> — Agisci come editor professionista. Trova problemi grammaticali, debolezze strutturali, ripetizioni e criticita di leggibilita. Fornisci una versione migliorata e spiega le correzioni principali.</li>
+      <li><b>Rendi il testo pronto per la pubblicazione</b> — Trasforma questa bozza in una versione rifinita e pronta per la pubblicazione. Migliora grammatica, chiarezza, struttura e coinvolgimento, preservando la mia voce.</li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="claude-paper">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - Paper Research System (analisi scientifica)<span class="tool-tag t-univ">trasversale</span></span><span class="count">9</span></div>
+    <ol class="prompt-list">
+      <li><b>Protocollo di acquisizione</b> — Condividero [X] articoli su [ARGOMENTO]. Prima di rispondere, elenca ciascun articolo con autore, anno e una frase di tesi centrale. Raggruppa gli articoli in cluster per presupposti condivisi, individua quelli che si contraddicono e mappa il panorama generale senza riassumere i singoli articoli.</li>
+      <li><b>Rilevatore di contraddizioni</b> — Esamina tutti gli articoli e identifica ogni punto in cui due o piu autori si contraddicono. Per ciascuna contraddizione spiega entrambe le posizioni, gli articoli coinvolti e perche il disaccordo esiste. Presenta i risultati in una tabella comparativa.</li>
+      <li><b>Catena delle citazioni</b> — Identifica i tre concetti piu citati negli articoli. Per ciascuno spiega chi lo ha introdotto, chi lo ha messo in discussione, chi lo ha raffinato e l'attuale consenso. Presenta lo sviluppo come albero genealogico delle idee.</li>
+      <li><b>Scanner delle lacune di ricerca</b> — Analizza tutti gli articoli e identifica cinque domande di ricerca irrisolte. Per ciascuna spiega perche esiste ancora, quale articolo si e avvicinato di piu e la metodologia piu probabile per risolverla.</li>
+      <li><b>Audit metodologico</b> — Esamina le metodologie usate e raggruppale (sondaggi, esperimenti, simulazioni, meta-analisi, casi di studio). Identifica quale domina e perche, quale e sotto-utilizzata e quale appare la piu debole, con le ragioni.</li>
+      <li><b>Sintesi principale</b> — Scrivi una sintesi che non riassuma i singoli articoli: spiega cosa crede collettivamente il settore, quali questioni restano discusse, quali risultati sono solidi e concludi con la domanda irrisolta piu importante. Sotto le 400 parole.</li>
+      <li><b>Distruttore di presupposti</b> — Identifica i presupposti su cui si basano gli articoli senza dimostrarli. Per ciascuno spiegalo, individua gli articoli che vi fanno piu affidamento e descrivi come cambierebbe il settore se fosse falso.</li>
+      <li><b>Costruttore mappa della conoscenza</b> — Crea una mappa strutturata della letteratura: tesi centrale, 3-5 pilastri consolidati, 2-3 aree di dibattito, 1-2 domande di frontiera e i tre articoli che ogni debuttante dovrebbe leggere per primi, con motivazione. Output come schema, non prosa.</li>
+      <li><b>Test del E quindi?</b> — Immagina di avere cinque minuti per spiegare l'intero corpo di ricerca a un non esperto intelligente. In una frase: cosa e stato dimostrato; poi la cosa piu grande che ancora non si sa e l'unica implicazione reale che conta di piu. Linguaggio semplice, senza gergo.</li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="claude-accademico">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - leggere, scrivere e revisionare testi accademici<span class="tool-tag t-univ">trasversale</span></span><span class="count">9</span></div>
+    <ol class="prompt-list">
+      <li><b>Comprendere un articolo scientifico in pochi minuti</b> — Agisci come un mentore accademico esperto. Spiega questo articolo di ricerca con un linguaggio semplice ma preciso. Scomponilo in: problema di ricerca, metodologia, risultati chiave, limitazioni e opportunita per ricerche future.</li>
+      <li><b>Dagli appunti alla rassegna della letteratura</b> — Converti i seguenti appunti in punti elenco in una rassegna della letteratura strutturata. Confronta e metti a contrasto gli studi, evidenzia le differenze metodologiche e sintetizza i risultati chiave.</li>
+      <li><b>Confronto tra articoli di ricerca</b> — Confronta questi studi in termini di disegno della ricerca, fonti dei dati, metodi analitici e conclusioni. Presenta le differenze in una tabella e spiega il contributo fornito da ciascuno studio.</li>
+      <li><b>Semplificare metodi complessi</b> — Spiega questa metodologia come se la stessi insegnando a uno studente di laurea magistrale o di dottorato che la affronta per la prima volta. Includi la logica passo-passo del metodo ed esempi pratici.<span class="tip">Particolarmente efficace su statistica, modellizzazione e metodi sperimentali.</span></li>
+      <li><b>Migliorare la scrittura accademica</b> — Riscrivi questo paragrafo per migliorarne la chiarezza, la forza dell'argomentazione e il tono accademico, mantenendo inalterati il significato originale e le citazioni.</li>
+      <li><b>Generare domande di ricerca</b> — Sulla base della seguente sintesi della letteratura, proponi 10 valide domande di ricerca adatte per una tesi di laurea magistrale o di dottorato.<span class="tip">Utile quando ci si blocca nella fase di stesura della proposta di ricerca.</span></li>
+      <li><b>Revisione critica in stile peer review</b> — Agisci come un revisore di una rivista scientifica (peer reviewer). Valuta criticamente questo manoscritto per originalita, metodologia, chiarezza e contributo al settore. Fornisci un feedback costruttivo.<span class="tip">Da usare prima dell'invio definitivo di un lavoro.</span></li>
+      <li><b>Estrarre i dati chiave dagli articoli</b> — Estrai tutte le variabili chiave, le dimensioni dei campioni, i luoghi dello studio e i risultati principali da questo articolo e presentali in una tabella strutturata.<span class="tip">Pensato per revisioni sistematiche e meta-analisi.</span></li>
+      <li><b>Da articolo a proposta di ricerca</b> — Utilizzando i risultati di questo articolo, progetta uno studio di follow-up includendo ipotesi, metodologia, contributo atteso e possibili limitazioni.</li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;">Questi prompt non dipendono da funzioni esclusive di Claude: funzionano allo stesso modo con Gemini, ChatGPT o NotebookLM, purche il modello possa leggere il documento. Il prompt sulle lacune di ricerca non compare qui perche e gia presente sopra, nel Paper Research System ("Scanner delle lacune di ricerca").</div>
+  </div>
+  <div class="prompt-group" id="lingue">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - framework per l'apprendimento delle lingue<span class="tool-tag t-univ">trasversale</span></span><span class="count">8</span></div>
+    <ol class="prompt-list">
+      <li><b>Roadmap per la fluidita</b> — Agisci come tutor linguistico e progettista di corsi. Costruisci un piano di sei mesi per sostenere vere conversazioni nella mia lingua di destinazione.<span class="en">EN — Build me a six-month plan to hold real conversations in my target language.</span></li>
+      <li><b>Vocabolario fondamentale</b> — Agisci come linguista. Prepara le prime 300 parole che sbloccano la maggior parte delle conversazioni quotidiane nella mia lingua di destinazione.<span class="en">EN — Build me the first 300 words that unlock the most everyday conversation.</span></li>
+      <li><b>Simulatore di conversazione</b> — Agisci come madrelingua paziente. Sostieni con me una semplice conversazione al mio livello su una situazione reale.<span class="en">EN — Hold a simple conversation with me at my level about a real situation.</span></li>
+      <li><b>Semplificatore di grammatica</b> — Agisci come coach di grammatica che odia il gergo. Spiegami la regola con cui sto faticando usando un linguaggio semplice.<span class="en">EN — Explain the one grammar pattern I am struggling with using plain language.</span></li>
+      <li><b>Correttore di pronuncia</b> — Agisci come coach di pronuncia. Per i suoni piu difficili della mia lingua di destinazione, spiegami come posizionare la bocca.<span class="en">EN — For the hardest sounds, explain how to shape my mouth.</span></li>
+      <li><b>Creatore di immersione</b> — Agisci come coach di immersione. Progetta un piano per circondare la mia vita quotidiana con la lingua di destinazione.<span class="en">EN — Design a plan to surround my daily life with my target language.</span></li>
+      <li><b>Esercitazione shadowing</b> — Agisci come coach di fluidita con il metodo dello shadowing. Dammi un breve brano al mio livello, scomponilo in frasi e guidami nel ripetere ciascuna.<span class="en">EN — Give me a short passage at my level, break it into phrases, and coach me to repeat each one.</span></li>
+      <li><b>Ripasso settimanale</b> — Agisci come coach linguistico per un ripasso del venerdi. Chiedimi di usare la lingua attraverso cinque spunti d'uso quotidiano.<span class="en">EN — Ask me to use the language across five everyday prompts.</span></li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="claude-tips">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - ottimizzare crediti e limiti d'uso</span><span class="count">8</span></div>
+    <ol class="prompt-list">
+      <li><b>Riduci le dimensioni dei file</b> — Copia e incolla testo semplice (.txt) anziche caricare PDF pesanti.</li>
+      <li><b>Pianifica prima</b> — Usa la chat per chiarire la struttura prima di chiedere la generazione di file complessi.</li>
+      <li><b>Istruzione Fammi delle domande</b> — Chiedi a Claude di farti domande prima di iniziare, per scegliere le opzioni senza consumare token.</li>
+      <li><b>Modifica i messaggi</b> — Usa il tasto Modifica sul messaggio precedente per correggere invece di rinviarne di nuovi.</li>
+      <li><b>Nuova chat frequente</b> — Inizia una nuova chat ogni 15-20 messaggi: le chat lunghe consumano molti crediti rileggendo la cronologia.</li>
+      <li><b>Scegli il modello adatto</b> — Haiku per compiti veloci, Sonnet per codice e tabelle, Opus per scrittura complessa.</li>
+      <li><b>Usa i Projects</b> — Carica le linee guida una sola volta nei Projects per file e direttive ricorrenti.</li>
+      <li><b>Disattiva gli strumenti inutili</b> — Disabilita la ricerca web o l'Extended Thinking se non strettamente necessari.</li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="skill-library">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span><span class="tool-tag t-cla">Claude</span>Costruire una libreria riutilizzabile di Claude Skills</span><span class="count">6</span></div>
+    <ol class="prompt-list">
+      <li><b>1. Raccogli le conoscenze —</b> Carica in un notebook di NotebookLM i materiali da cui vuoi che Claude impari: PDF, documentazione di prodotto, paper di ricerca, articoli di blog, trascrizioni di YouTube, SOP aziendali e manuali di formazione. Fonti di alta qualita portano a Skill di alta qualita.</li>
+      <li><b>2. Genera il file skill.md —</b> Chiedi a NotebookLM: Utilizzando solo le fonti caricate, genera un file skill.md completo. Includi il ruolo della skill, gli obiettivi, il flusso di lavoro operativo, i vincoli, le regole, le best practice, il formato di output previsto e degli esempi pratici. Non introdurre informazioni che non siano contenute nelle fonti fornite.</li>
+      <li><b>3. Aggiungilo a Claude —</b> Posiziona il file skill.md generato nella tua directory delle Claude Skills: la skill e pronta ogni volta che ti serve, senza dover riscrivere i prompt da zero.</li>
+      <li><b>4. Crea Skill mirate —</b> Invece di un unico enorme prompt, crea skill separate per compiti specifici (copywriting, stesura email, landing page, assistenza clienti, contenuti SEO, documentazione, code review, ricerca, analisi dati, generazione di FAQ). Ogni skill deve risolvere un singolo problema in modo eccezionale.</li>
+      <li><b>5. Migliora l'affidabilita —</b> Poiche ogni istruzione proviene dal tuo materiale di riferimento, Claude resta allineato a informazioni attendibili: maggiore precisione, output piu coerenti, meno allucinazioni e meno modifiche manuali.</li>
+      <li><b>6. Fai crescere la libreria —</b> Aggiungi nuove skill man mano che la tua base di conoscenze si espande: nel tempo costruisci una collezione di esperti IA riutilizzabili su piu progetti. In sintesi: NotebookLM gestisce le conoscenze, Claude esegue il lavoro.</li>
+    </ol>
+  </div>
+
+  <div class="prompt-group" id="feynman">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - apprendimento personalizzato (Feynman e primi principi)<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
+    <ol class="prompt-list">
+      <li><b>Metodo Feynman</b> — Insegnami [ARGOMENTO] come se fossi un principiante assoluto, con linguaggio semplice e quotidiano. Scomponilo in passaggi chiari con esempi pratici e analogie.</li>
+      <li><b>Scomposizione primi principi</b> — Agisci come docente di livello mondiale. Scomponi [ARGOMENTO] nei suoi elementi piu fondamentali usando il ragionamento basato sui primi principi.</li>
+      <li><b>Coach richiamo attivo</b> — Dopo avermi insegnato [ARGOMENTO], assumi il ruolo di coach per il richiamo attivo (active recall) e mettimi alla prova con domande progressivamente piu impegnative.</li>
+      <li><b>Ripetizione dilazionata</b> — Agisci come esperto di memoria. Crea un piano personalizzato di ripetizione dilazionata (spaced repetition) per padroneggiare [ARGOMENTO].</li>
+      <li><b>Riassunto 80/20</b> — Trasforma [ARGOMENTO] in un sistema di apprendimento sintetico ad alto impatto: il 20% dei concetti per l'80% della comprensione.</li>
+      <li><b>Mentore applicazione reale</b> — Agisci come mentore esperto. Dopo avermi insegnato [ARGOMENTO], mostrami come si applica in situazioni reali con casi di studio pratici.</li>
+      <li><b>Roadmap personalizzata</b> — Agisci come mio coach personale. Crea una roadmap passo dopo passo per padroneggiare [ARGOMENTO], da principiante a esperto.</li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="gemini-video">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - montaggio e modifica video (10 prompt con esempio)</span><span class="count">10</span></div>
+    <ol class="prompt-list">
+      <li><b>Miglioramento cinematografico</b> — <i>"Modifica questo video in una clip cinematografica. Mantieni [SOGGETTO PRINCIPALE] invariato. Migliora l'illuminazione affinche sembri [STILE DI ILLUMINAZIONE]. Aggiungi [MOVIMENTO DI MACCHINA], [STILE COLORE] e [ATMOSFERA VISIVA]. Non modificare [DETTAGLI CHE DEVONO RIMANERE UGUALI]".</i>
+        <span class="tip gem">Esempio: mantieni il viso e l'abbigliamento invariati, illuminazione calda da tramonto, movimento di macchina lento, contrasto morbido, atmosfera calma; non modificare lo sfondo ne i movimenti del corpo.</span>
+      </li>
+      <li><b>Sostituzione dello sfondo</b> — <i>"Sostituisci lo sfondo con [NUOVA LOCATION]. Mantieni [SOGGETTO PRINCIPALE] esattamente uguale. Adatta l'illuminazione, le ombre e l'angolazione della telecamera in modo che sembri reale. Non modificare [VISO, ABBIGLIAMENTO, OGGETTO, MOVIMENTO O ALTRO DETTAGLIO CHIAVE]".</i>
+        <span class="tip gem">Esempio: sfondo sostituito con un moderno studio per podcast, speaker identico, senza toccare viso, abbigliamento, voce e movimento delle labbra.</span>
+      </li>
+      <li><b>Rimozione oggetti</b> — <i>"Rimuovi [OGGETTO DA RIMUOVERE] da questo video. Riempi lo spazio in modo naturale usando lo sfondo circostante. Mantieni [SOGGETTO PRINCIPALE], [ILLUMINAZIONE] e [MOVIMENTO DI MACCHINA] invariati. Rendi la modifica pulita e realistica".</i>
+        <span class="tip gem">Esempio: togliere una bottiglia d'acqua dall'inquadratura ricostruendo tavolo e sfondo, lasciando persona, luce e movimento di macchina invariati.</span>
+      </li>
+      <li><b>Aggiunta di B-roll (immagini di copertura)</b> — <i>"Aggiungi B-roll di [SCENA O SOGGETTO] durante la parte in cui viene menzionato [ARGOMENTO O AZIONE PRINCIPALE]. Adatta il colore, il ritmo e lo stile al video originale. Mantieni la storia principale chiara e rendi la transizione fluida".</i>
+        <span class="tip gem">Esempio: inserire riprese di una persona che digita al portatile mentre si parla di strumenti di produttivita.</span>
+      </li>
+      <li><b>Aggiunta di musica di sottofondo</b> — <i>"Aggiungi musica di sottofondo [STILE MUSICALE] a questo video. Adattala all'atmosfera e al ritmo del contenuto. Mantieni la musica a un volume piu basso rispetto alla voce. Assicurati che il dialogo rimanga chiaro per tutto il video".</i>
+        <span class="tip gem">Esempio: base cinematografica e vivace, sempre sotto il livello della voce, con parlato perfettamente intelligibile.</span>
+      </li>
+      <li><b>Aggiunta di grafiche animate (motion graphics)</b> — <i>"Aggiungi grafiche animate per evidenziare [PAROLE CHIAVE, NUMERI O IDEE]. Adattale allo stile e ai colori del video. Posiziona ogni grafica al momento giusto. Mantieni le animazioni fluide ed evita di coprire il soggetto principale".</i>
+        <span class="tip gem">Esempio: far comparire statistiche e parole chiave nei momenti in cui vengono pronunciate, senza mai coprire chi parla.</span>
+      </li>
+      <li><b>Cambio di abbigliamento</b> — <i>"Cambia [ABBIGLIAMENTO DELLA PERSONA] in [NUOVO STILE DI ABBIGLIAMENTO]. Mantieni [VISO], [FORMA DEL CORPO], [POSA] e [MOVIMENTO] invariati. Fai in modo che il vestito si muova naturalmente con il corpo. Adatta l'illuminazione e le ombre a quelle del video originale".</i>
+        <span class="tip gem">Esempio: sostituire l'abbigliamento con un look streetwear scuro mantenendo identici viso, corporatura, posa e movimenti.</span>
+      </li>
+      <li><b>Montaggio per annuncio di prodotto</b> — <i>"Modifica questo video di prodotto in un annuncio premium per [NOME DEL PRODOTTO]. Mantieni [FORMA, COLORE, LOGO O CARATTERISTICHE CHIAVE] del prodotto invariati. Aggiungi [STILE DELLO SFONDO], [STILE DI ILLUMINAZIONE] e [MOVIMENTO DI MACCHINA]. Fai sembrare il prodotto realistico e di alta qualita".</i>
+        <span class="tip gem">Esempio: spot per uno smartwatch con sfondo nero da studio, illuminazione morbida a faretto e primo piano lento, senza alterare forma, colore, logo e schermo.</span>
+      </li>
+      <li><b>Cambio di angolazione della telecamera</b> — <i>"Ricrea questa scena da [NUOVA ANGOLAZIONE DELLA TELECAMERA]. Mantieni [SOGGETTO PRINCIPALE], [AZIONE] e [DETTAGLI IMPORTANTI] coerenti. Regola [ILLUMINAZIONE], [OMBRE] e [PROSPETTIVA DELLO SFONDO] per adattarli alla nuova angolazione".</i>
+        <span class="tip gem">Esempio: rigirare la scena con un'inquadratura dal basso a effetto (hero shot) mantenendo coerenti speaker, azione e abbigliamento.</span>
+      </li>
+      <li><b>Correzione dell'illuminazione</b> — <i>"Correggi l'illuminazione in questo video. Fai in modo che sembri [STILE DI ILLUMINAZIONE]. Mantieni [SOGGETTO PRINCIPALE] invariato. Riduci [PROBLEMA], migliora [DETTAGLIO DESIDERATO] e mantieni la scena realistica".</i>
+        <span class="tip gem">Esempio: luce morbida e naturale, ombre dure attenuate, viso piu visibile, scena comunque realistica.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;"><b>Attenzione:</b> questi prompt modificano l'aspetto di persone e ambienti reali. Con immagini di studenti o colleghi servono liberatoria e rispetto della normativa sulla privacy; evita modifiche (volto, abbigliamento, sfondo) che possano risultare ingannevoli e dichiara sempre quando un video e stato alterato con l'IA.</div>
+  </div>
+  <div class="prompt-group" id="gemini-file">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - generare file scaricabili (.pdf .xlsx .docx .pptx)</span><span class="count">5</span></div>
+    <ol class="prompt-list">
+      <li><b>PDF - Scheda riassuntiva</b> — Crea una scheda riassuntiva sulla Seconda Guerra Mondiale per la terza media (.pdf): cause, eventi principali, conseguenze e una cronologia sintetica.</li>
+      <li><b>Excel - Registro voti completo</b> — Crea un registro voti per 25 studenti (.xlsx). Colonne: Nome, Cognome, Voto Interrogazione 1 e 2, Voto Compito, Media automatica. Formattazione condizionale rossa per medie sotto il 6.</li>
+      <li><b>Google Slides - Fotosintesi</b> — Crea una presentazione Google Slides di 8 slide sulla fotosintesi clorofilliana per una seconda superiore: titolo, 3-4 punti chiave e spazio immagine per slide.</li>
+      <li><b>Word - Verifica di geometria</b> — Crea una verifica scritta (.docx) sulla geometria euclidea per una prima superiore: 3 domande aperte, 5 esercizi di calcolo, 2 problemi applicativi e intestazione.</li>
+      <li><b>Excel - Importazione registro</b> — Crea un file (.xlsx) con 20 studenti fittizi: Nome, Cognome, Classe, Sezione ed Email scolastica (nome.cognome@scuola.it).</li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="workspace">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini per Google Workspace</span><span class="count">25</span></div>
+    <ol class="prompt-list">
+      <li><b>Gmail &amp; Documenti</b> — Riassumi questo thread di email in 5 punti chiave piu azioni da compiere.</li>
+      <li><b>Gmail &amp; Documenti</b> — Scrivi una risposta professionale con un tono cordiale e sicuro.</li>
+      <li><b>Gmail &amp; Documenti</b> — Trova le email del progetto dell'ultimo mese e sintetizza le decisioni prese.</li>
+      <li><b>Gmail &amp; Documenti</b> — Trasforma queste note di riunione in un brief di progetto strutturato.</li>
+      <li><b>Gmail &amp; Documenti</b> — Riscrivi questo documento per i dirigenti usando un linguaggio conciso.</li>
+      <li><b>Gmail &amp; Documenti</b> — Espandi questi punti elenco in una proposta dettagliata.</li>
+      <li><b>Gmail &amp; Documenti</b> — Correggi e rifinisci questo documento senza modificarne il significato.</li>
+      <li><b>Gmail &amp; Documenti</b> — Crea una sintesi di 1 pagina di questo report.</li>
+      <li><b>Gmail &amp; Documenti</b> — Riscrivi questo documento adattandolo a un pubblico di principianti.</li>
+      <li><b>Gmail &amp; Documenti</b> — Confronta questi 2 documenti ed evidenzia le differenze principali.</li>
+      <li><b>Fogli &amp; Presentazioni</b> — Crea una dashboard delle vendite a partire da questo foglio di calcolo.</li>
+      <li><b>Fogli &amp; Presentazioni</b> — Spiega i trend di questi dati usando un linguaggio semplice.</li>
+      <li><b>Fogli &amp; Presentazioni</b> — Genera le formule per la crescita mensile e il profitto.</li>
+      <li><b>Fogli &amp; Presentazioni</b> — Crea un calendario contenuti di 30 giorni.</li>
+      <li><b>Fogli &amp; Presentazioni</b> — Crea una presentazione a partire da questo documento.</li>
+      <li><b>Fogli &amp; Presentazioni</b> — Suggerisci elementi visivi e immagini per ogni diapositiva.</li>
+      <li><b>Fogli &amp; Presentazioni</b> — Riassumi questa presentazione in 3 diapositive per i dirigenti.</li>
+      <li><b>Fogli &amp; Presentazioni</b> — Trasforma questo foglio di calcolo in grafici pronti per la presentazione.</li>
+      <li><b>Drive &amp; Riunioni</b> — Riassumi tutti i documenti relativi a questo progetto.</li>
+      <li><b>Drive &amp; Riunioni</b> — Confronta questi PDF e identifica le modifiche principali.</li>
+      <li><b>Drive &amp; Riunioni</b> — Estrai ogni azione da compiere (action item) da queste note di riunione.</li>
+      <li><b>Drive &amp; Riunioni</b> — Organizza questi file in categorie di progetto logiche.</li>
+      <li><b>Drive &amp; Riunioni</b> — Crea un report settimanale sullo stato del progetto usando i file di Drive.</li>
+      <li><b>Drive &amp; Riunioni</b> — Genera una tempistica di progetto (timeline) da questi file.</li>
+      <li><b>Drive &amp; Riunioni</b> — Rivedi tutti i documenti del progetto e individua le informazioni mancanti prima del lancio.</li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="edugems">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-edu">Risorse</span>EduGems e risorse per la scuola italiana</span><span class="count">5</span></div>
+    <ol class="prompt-list">
+      <li><b>EduSTEM - MathScratch Tutor</b> — Genera codice Scratch 3.0 pronto all'uso con la sintassi ufficiale italiana dei blocchi, adattando la complessita dall'infanzia/primaria fino alla secondaria di secondo grado.</li>
+      <li><b>EduCreate - Maestro di Rebus</b> — Per italiano L1/L2. Costruisce rebus enigmistici, genera il prompt visivo in inglese per l'IA visiva (Nano Banana / DALL-E) e indica la finalizzazione su Canva.</li>
+      <li><b>EduInclude - Visual Instructional Designer</b> — Analizza il PDF di un'unita didattica, pone 6 domande UDL/accessibilita e genera il prompt pronto per la sezione Infografica di NotebookLM.</li>
+      <li><b>Eric Curts - edugems.ai</b> — Oltre 100 Gems internazionali preconfigurate. Fai una copia della Gem e aggiungi in fondo l'istruzione: rispondere sempre in italiano, adattare i contenuti alle Indicazioni Nazionali/Linee Guida, usare la scala di voti 1-10 e la terminologia scolastica italiana (classe prima, seconda...).</li>
+      <li><b>Elisabetta Nanni - MusaiLab</b> — Chatbot nativamente in italiano per progettare risorse didattiche musicali inclusive e innovative, integrato con le Indicazioni Nazionali MIUR.</li>
+    </ol>
+  </div>
   <div class="prompt-group" id="notebooklm">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM - sistema a 3 prompt</span><span class="count">3</span></div>
     <ol class="prompt-list">
@@ -1051,28 +1252,6 @@
       </li>
     </ol>
   </div>
-  <div class="prompt-group" id="notebooklm-claude">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM + Claude - workflow avanzati</span><span class="count">5</span></div>
-    <ol class="prompt-list">
-      <li><b>Sviluppare competenze settoriali in 30 giorni</b> — Sei un esperto di livello mondiale e progettista didattico specializzato nell'apprendimento accelerato. Aiutami a costruire una solida competenza in [SETTORE]. Contesto: livello attuale [DESCRIVI], motivo [MOTIVO], ore a settimana [X], profondita target [LIVELLO]. Progetta un sistema di 30 giorni con strategia, 10 risorse per NotebookLM, 5 esperti, piano settimanale, prompt di riflessione, concetti fondamentali, test settimanali e risultato al 30 giorno.</li>
-      <li><b>Trasformare le panoramiche audio in azioni</b> — Agisci come stratega dell'apprendimento. Ho ascoltato una panoramica audio di NotebookLM su [ARGOMENTO] basata su [FONTI]. Trasforma l'apprendimento passivo in azioni: insight a piu alto impatto, esperimento della settimana, migliore domanda di follow-up, idea di contenuto, modello mentale di base e un'azione da 10 minuti.</li>
-      <li><b>Estrarre i modelli mentali di un libro</b> — Sei un esperto di modelli mentali. Ho usato NotebookLM per riassumere [LIBRO]. Estrai: modello mentale centrale, framework nascosto (3-5 passaggi), convinzione anticonformista, quando funziona e quando fallisce, pensatori correlati, applicazione reale questa settimana e cheat sheet per la memoria.</li>
-      <li><b>Rilevare bias e ragionamenti deboli</b> — Agisci come metodologo della ricerca. Ho esaminato una fonte tramite NotebookLM [INCOLLA RIASSUNTO]. Fornisci: bias probabili, analisi dell'affermazione piu forte e piu debole, prospettive mancanti, controllo di metodologia e credibilita, 3 fonti per la triangolazione e un punteggio di fiducia (1-10) motivato.</li>
-      <li><b>Trasformare la ricerca in una tesi difendibile</b> — Agisci come consulente strategico senior. Metti sotto stress la ricerca estratta da NotebookLM: tesi centrale in una frase, 3 argomentazioni a supporto, 2 controargomentazioni, la critica dello scettico piu intelligente, la migliore confutazione, livello di confidenza e l'unico dato che cambia la decisione.</li>
-    </ol>
-  </div>
-  <div class="prompt-group" id="skill-library">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span><span class="tool-tag t-cla">Claude</span>Costruire una libreria riutilizzabile di Claude Skills</span><span class="count">6</span></div>
-    <ol class="prompt-list">
-      <li><b>1. Raccogli le conoscenze —</b> Carica in un notebook di NotebookLM i materiali da cui vuoi che Claude impari: PDF, documentazione di prodotto, paper di ricerca, articoli di blog, trascrizioni di YouTube, SOP aziendali e manuali di formazione. Fonti di alta qualita portano a Skill di alta qualita.</li>
-      <li><b>2. Genera il file skill.md —</b> Chiedi a NotebookLM: Utilizzando solo le fonti caricate, genera un file skill.md completo. Includi il ruolo della skill, gli obiettivi, il flusso di lavoro operativo, i vincoli, le regole, le best practice, il formato di output previsto e degli esempi pratici. Non introdurre informazioni che non siano contenute nelle fonti fornite.</li>
-      <li><b>3. Aggiungilo a Claude —</b> Posiziona il file skill.md generato nella tua directory delle Claude Skills: la skill e pronta ogni volta che ti serve, senza dover riscrivere i prompt da zero.</li>
-      <li><b>4. Crea Skill mirate —</b> Invece di un unico enorme prompt, crea skill separate per compiti specifici (copywriting, stesura email, landing page, assistenza clienti, contenuti SEO, documentazione, code review, ricerca, analisi dati, generazione di FAQ). Ogni skill deve risolvere un singolo problema in modo eccezionale.</li>
-      <li><b>5. Migliora l'affidabilita —</b> Poiche ogni istruzione proviene dal tuo materiale di riferimento, Claude resta allineato a informazioni attendibili: maggiore precisione, output piu coerenti, meno allucinazioni e meno modifiche manuali.</li>
-      <li><b>6. Fai crescere la libreria —</b> Aggiungi nuove skill man mano che la tua base di conoscenze si espande: nel tempo costruisci una collezione di esperti IA riutilizzabili su piu progetti. In sintesi: NotebookLM gestisce le conoscenze, Claude esegue il lavoro.</li>
-    </ol>
-  </div>
-
   <div class="prompt-group" id="youtube">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Analisi e decostruzione di video YouTube</span><span class="count">10</span></div>
     <ol class="prompt-list">
@@ -1116,163 +1295,18 @@
       <li><b>Traduttore per le superiori</b> — Riscrivi il contenuto affinche un ragazzo di 12 anni lo afferri appieno. Includi TL;DR, analogia, lessico, vero/falso e spiegazione semplice.</li>
     </ol>
   </div>
-  <div class="prompt-group" id="gemini-video">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - montaggio e modifica video (10 prompt con esempio)</span><span class="count">10</span></div>
+  <div class="prompt-group" id="notebooklm-claude">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>NotebookLM + Claude - workflow avanzati</span><span class="count">5</span></div>
     <ol class="prompt-list">
-      <li><b>Miglioramento cinematografico</b> — <i>"Modifica questo video in una clip cinematografica. Mantieni [SOGGETTO PRINCIPALE] invariato. Migliora l'illuminazione affinche sembri [STILE DI ILLUMINAZIONE]. Aggiungi [MOVIMENTO DI MACCHINA], [STILE COLORE] e [ATMOSFERA VISIVA]. Non modificare [DETTAGLI CHE DEVONO RIMANERE UGUALI]".</i>
-        <span class="tip gem">Esempio: mantieni il viso e l'abbigliamento invariati, illuminazione calda da tramonto, movimento di macchina lento, contrasto morbido, atmosfera calma; non modificare lo sfondo ne i movimenti del corpo.</span>
-      </li>
-      <li><b>Sostituzione dello sfondo</b> — <i>"Sostituisci lo sfondo con [NUOVA LOCATION]. Mantieni [SOGGETTO PRINCIPALE] esattamente uguale. Adatta l'illuminazione, le ombre e l'angolazione della telecamera in modo che sembri reale. Non modificare [VISO, ABBIGLIAMENTO, OGGETTO, MOVIMENTO O ALTRO DETTAGLIO CHIAVE]".</i>
-        <span class="tip gem">Esempio: sfondo sostituito con un moderno studio per podcast, speaker identico, senza toccare viso, abbigliamento, voce e movimento delle labbra.</span>
-      </li>
-      <li><b>Rimozione oggetti</b> — <i>"Rimuovi [OGGETTO DA RIMUOVERE] da questo video. Riempi lo spazio in modo naturale usando lo sfondo circostante. Mantieni [SOGGETTO PRINCIPALE], [ILLUMINAZIONE] e [MOVIMENTO DI MACCHINA] invariati. Rendi la modifica pulita e realistica".</i>
-        <span class="tip gem">Esempio: togliere una bottiglia d'acqua dall'inquadratura ricostruendo tavolo e sfondo, lasciando persona, luce e movimento di macchina invariati.</span>
-      </li>
-      <li><b>Aggiunta di B-roll (immagini di copertura)</b> — <i>"Aggiungi B-roll di [SCENA O SOGGETTO] durante la parte in cui viene menzionato [ARGOMENTO O AZIONE PRINCIPALE]. Adatta il colore, il ritmo e lo stile al video originale. Mantieni la storia principale chiara e rendi la transizione fluida".</i>
-        <span class="tip gem">Esempio: inserire riprese di una persona che digita al portatile mentre si parla di strumenti di produttivita.</span>
-      </li>
-      <li><b>Aggiunta di musica di sottofondo</b> — <i>"Aggiungi musica di sottofondo [STILE MUSICALE] a questo video. Adattala all'atmosfera e al ritmo del contenuto. Mantieni la musica a un volume piu basso rispetto alla voce. Assicurati che il dialogo rimanga chiaro per tutto il video".</i>
-        <span class="tip gem">Esempio: base cinematografica e vivace, sempre sotto il livello della voce, con parlato perfettamente intelligibile.</span>
-      </li>
-      <li><b>Aggiunta di grafiche animate (motion graphics)</b> — <i>"Aggiungi grafiche animate per evidenziare [PAROLE CHIAVE, NUMERI O IDEE]. Adattale allo stile e ai colori del video. Posiziona ogni grafica al momento giusto. Mantieni le animazioni fluide ed evita di coprire il soggetto principale".</i>
-        <span class="tip gem">Esempio: far comparire statistiche e parole chiave nei momenti in cui vengono pronunciate, senza mai coprire chi parla.</span>
-      </li>
-      <li><b>Cambio di abbigliamento</b> — <i>"Cambia [ABBIGLIAMENTO DELLA PERSONA] in [NUOVO STILE DI ABBIGLIAMENTO]. Mantieni [VISO], [FORMA DEL CORPO], [POSA] e [MOVIMENTO] invariati. Fai in modo che il vestito si muova naturalmente con il corpo. Adatta l'illuminazione e le ombre a quelle del video originale".</i>
-        <span class="tip gem">Esempio: sostituire l'abbigliamento con un look streetwear scuro mantenendo identici viso, corporatura, posa e movimenti.</span>
-      </li>
-      <li><b>Montaggio per annuncio di prodotto</b> — <i>"Modifica questo video di prodotto in un annuncio premium per [NOME DEL PRODOTTO]. Mantieni [FORMA, COLORE, LOGO O CARATTERISTICHE CHIAVE] del prodotto invariati. Aggiungi [STILE DELLO SFONDO], [STILE DI ILLUMINAZIONE] e [MOVIMENTO DI MACCHINA]. Fai sembrare il prodotto realistico e di alta qualita".</i>
-        <span class="tip gem">Esempio: spot per uno smartwatch con sfondo nero da studio, illuminazione morbida a faretto e primo piano lento, senza alterare forma, colore, logo e schermo.</span>
-      </li>
-      <li><b>Cambio di angolazione della telecamera</b> — <i>"Ricrea questa scena da [NUOVA ANGOLAZIONE DELLA TELECAMERA]. Mantieni [SOGGETTO PRINCIPALE], [AZIONE] e [DETTAGLI IMPORTANTI] coerenti. Regola [ILLUMINAZIONE], [OMBRE] e [PROSPETTIVA DELLO SFONDO] per adattarli alla nuova angolazione".</i>
-        <span class="tip gem">Esempio: rigirare la scena con un'inquadratura dal basso a effetto (hero shot) mantenendo coerenti speaker, azione e abbigliamento.</span>
-      </li>
-      <li><b>Correzione dell'illuminazione</b> — <i>"Correggi l'illuminazione in questo video. Fai in modo che sembri [STILE DI ILLUMINAZIONE]. Mantieni [SOGGETTO PRINCIPALE] invariato. Riduci [PROBLEMA], migliora [DETTAGLIO DESIDERATO] e mantieni la scena realistica".</i>
-        <span class="tip gem">Esempio: luce morbida e naturale, ombre dure attenuate, viso piu visibile, scena comunque realistica.</span>
-      </li>
-    </ol>
-    <div class="prompts-note ia-note" style="margin:18px 22px 22px;"><b>Attenzione:</b> questi prompt modificano l'aspetto di persone e ambienti reali. Con immagini di studenti o colleghi servono liberatoria e rispetto della normativa sulla privacy; evita modifiche (volto, abbigliamento, sfondo) che possano risultare ingannevoli e dichiara sempre quando un video e stato alterato con l'IA.</div>
-  </div>
-  <div class="prompt-group" id="gemini-file">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - generare file scaricabili (.pdf .xlsx .docx .pptx)</span><span class="count">5</span></div>
-    <ol class="prompt-list">
-      <li><b>PDF - Scheda riassuntiva</b> — Crea una scheda riassuntiva sulla Seconda Guerra Mondiale per la terza media (.pdf): cause, eventi principali, conseguenze e una cronologia sintetica.</li>
-      <li><b>Excel - Registro voti completo</b> — Crea un registro voti per 25 studenti (.xlsx). Colonne: Nome, Cognome, Voto Interrogazione 1 e 2, Voto Compito, Media automatica. Formattazione condizionale rossa per medie sotto il 6.</li>
-      <li><b>Google Slides - Fotosintesi</b> — Crea una presentazione Google Slides di 8 slide sulla fotosintesi clorofilliana per una seconda superiore: titolo, 3-4 punti chiave e spazio immagine per slide.</li>
-      <li><b>Word - Verifica di geometria</b> — Crea una verifica scritta (.docx) sulla geometria euclidea per una prima superiore: 3 domande aperte, 5 esercizi di calcolo, 2 problemi applicativi e intestazione.</li>
-      <li><b>Excel - Importazione registro</b> — Crea un file (.xlsx) con 20 studenti fittizi: Nome, Cognome, Classe, Sezione ed Email scolastica (nome.cognome@scuola.it).</li>
-    </ol>
-  </div>
-  <div class="prompt-group" id="feynman">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini - apprendimento personalizzato (Feynman e primi principi)<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
-    <ol class="prompt-list">
-      <li><b>Metodo Feynman</b> — Insegnami [ARGOMENTO] come se fossi un principiante assoluto, con linguaggio semplice e quotidiano. Scomponilo in passaggi chiari con esempi pratici e analogie.</li>
-      <li><b>Scomposizione primi principi</b> — Agisci come docente di livello mondiale. Scomponi [ARGOMENTO] nei suoi elementi piu fondamentali usando il ragionamento basato sui primi principi.</li>
-      <li><b>Coach richiamo attivo</b> — Dopo avermi insegnato [ARGOMENTO], assumi il ruolo di coach per il richiamo attivo (active recall) e mettimi alla prova con domande progressivamente piu impegnative.</li>
-      <li><b>Ripetizione dilazionata</b> — Agisci come esperto di memoria. Crea un piano personalizzato di ripetizione dilazionata (spaced repetition) per padroneggiare [ARGOMENTO].</li>
-      <li><b>Riassunto 80/20</b> — Trasforma [ARGOMENTO] in un sistema di apprendimento sintetico ad alto impatto: il 20% dei concetti per l'80% della comprensione.</li>
-      <li><b>Mentore applicazione reale</b> — Agisci come mentore esperto. Dopo avermi insegnato [ARGOMENTO], mostrami come si applica in situazioni reali con casi di studio pratici.</li>
-      <li><b>Roadmap personalizzata</b> — Agisci come mio coach personale. Crea una roadmap passo dopo passo per padroneggiare [ARGOMENTO], da principiante a esperto.</li>
-    </ol>
-  </div>
-  <div class="prompt-group" id="workspace">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini per Google Workspace</span><span class="count">25</span></div>
-    <ol class="prompt-list">
-      <li><b>Gmail &amp; Documenti</b> — Riassumi questo thread di email in 5 punti chiave piu azioni da compiere.</li>
-      <li><b>Gmail &amp; Documenti</b> — Scrivi una risposta professionale con un tono cordiale e sicuro.</li>
-      <li><b>Gmail &amp; Documenti</b> — Trova le email del progetto dell'ultimo mese e sintetizza le decisioni prese.</li>
-      <li><b>Gmail &amp; Documenti</b> — Trasforma queste note di riunione in un brief di progetto strutturato.</li>
-      <li><b>Gmail &amp; Documenti</b> — Riscrivi questo documento per i dirigenti usando un linguaggio conciso.</li>
-      <li><b>Gmail &amp; Documenti</b> — Espandi questi punti elenco in una proposta dettagliata.</li>
-      <li><b>Gmail &amp; Documenti</b> — Correggi e rifinisci questo documento senza modificarne il significato.</li>
-      <li><b>Gmail &amp; Documenti</b> — Crea una sintesi di 1 pagina di questo report.</li>
-      <li><b>Gmail &amp; Documenti</b> — Riscrivi questo documento adattandolo a un pubblico di principianti.</li>
-      <li><b>Gmail &amp; Documenti</b> — Confronta questi 2 documenti ed evidenzia le differenze principali.</li>
-      <li><b>Fogli &amp; Presentazioni</b> — Crea una dashboard delle vendite a partire da questo foglio di calcolo.</li>
-      <li><b>Fogli &amp; Presentazioni</b> — Spiega i trend di questi dati usando un linguaggio semplice.</li>
-      <li><b>Fogli &amp; Presentazioni</b> — Genera le formule per la crescita mensile e il profitto.</li>
-      <li><b>Fogli &amp; Presentazioni</b> — Crea un calendario contenuti di 30 giorni.</li>
-      <li><b>Fogli &amp; Presentazioni</b> — Crea una presentazione a partire da questo documento.</li>
-      <li><b>Fogli &amp; Presentazioni</b> — Suggerisci elementi visivi e immagini per ogni diapositiva.</li>
-      <li><b>Fogli &amp; Presentazioni</b> — Riassumi questa presentazione in 3 diapositive per i dirigenti.</li>
-      <li><b>Fogli &amp; Presentazioni</b> — Trasforma questo foglio di calcolo in grafici pronti per la presentazione.</li>
-      <li><b>Drive &amp; Riunioni</b> — Riassumi tutti i documenti relativi a questo progetto.</li>
-      <li><b>Drive &amp; Riunioni</b> — Confronta questi PDF e identifica le modifiche principali.</li>
-      <li><b>Drive &amp; Riunioni</b> — Estrai ogni azione da compiere (action item) da queste note di riunione.</li>
-      <li><b>Drive &amp; Riunioni</b> — Organizza questi file in categorie di progetto logiche.</li>
-      <li><b>Drive &amp; Riunioni</b> — Crea un report settimanale sullo stato del progetto usando i file di Drive.</li>
-      <li><b>Drive &amp; Riunioni</b> — Genera una tempistica di progetto (timeline) da questi file.</li>
-      <li><b>Drive &amp; Riunioni</b> — Rivedi tutti i documenti del progetto e individua le informazioni mancanti prima del lancio.</li>
-    </ol>
-  </div>
-  <div class="prompt-group" id="chatgpt">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gpt">ChatGPT</span>ChatGPT - scrittura e revisione avanzata<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
-    <ol class="prompt-list">
-      <li><b>Correggi errori nascosti</b> — Rivedi questo testo come un editor professionista. Trova errori grammaticali, frasi contorte, parole deboli e periodi poco chiari. Riscrivi solo le parti da migliorare e spiega ogni modifica.</li>
-      <li><b>Suona piu naturale e umano</b> — Riscrivi questo testo in modo naturale e umano. Rimuovi formulazioni robotiche e frasi artificiali. Migliora tono, ritmo e fluidita mantenendo intatti messaggio e voce.</li>
-      <li><b>Rafforza ogni frase</b> — Migliora ogni frase per chiarezza, impatto e leggibilita. Sostituisci i termini deboli, rimuovi le espressioni superflue e rendi conciso cio che e prolisso, senza alterare il significato.</li>
-      <li><b>Rendi il testo piu sintetico</b> — Aumenta concisione e chiarezza. Rimuovi informazioni superflue, ripetizioni e spiegazioni non necessarie, mantenendo intatto il messaggio.</li>
-      <li><b>Migliora la fluidita</b> — Riscrivi migliorando flusso, transizioni e ritmo delle frasi. Rendi la scrittura fluida e coinvolgente, con ogni idea collegata naturalmente alla successiva.</li>
-      <li><b>Revisione da editor professionista</b> — Agisci come editor professionista. Trova problemi grammaticali, debolezze strutturali, ripetizioni e criticita di leggibilita. Fornisci una versione migliorata e spiega le correzioni principali.</li>
-      <li><b>Rendi il testo pronto per la pubblicazione</b> — Trasforma questa bozza in una versione rifinita e pronta per la pubblicazione. Migliora grammatica, chiarezza, struttura e coinvolgimento, preservando la mia voce.</li>
-    </ol>
-  </div>
-  <div class="prompt-group" id="claude-paper">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - Paper Research System (analisi scientifica)<span class="tool-tag t-univ">trasversale</span></span><span class="count">9</span></div>
-    <ol class="prompt-list">
-      <li><b>Protocollo di acquisizione</b> — Condividero [X] articoli su [ARGOMENTO]. Prima di rispondere, elenca ciascun articolo con autore, anno e una frase di tesi centrale. Raggruppa gli articoli in cluster per presupposti condivisi, individua quelli che si contraddicono e mappa il panorama generale senza riassumere i singoli articoli.</li>
-      <li><b>Rilevatore di contraddizioni</b> — Esamina tutti gli articoli e identifica ogni punto in cui due o piu autori si contraddicono. Per ciascuna contraddizione spiega entrambe le posizioni, gli articoli coinvolti e perche il disaccordo esiste. Presenta i risultati in una tabella comparativa.</li>
-      <li><b>Catena delle citazioni</b> — Identifica i tre concetti piu citati negli articoli. Per ciascuno spiega chi lo ha introdotto, chi lo ha messo in discussione, chi lo ha raffinato e l'attuale consenso. Presenta lo sviluppo come albero genealogico delle idee.</li>
-      <li><b>Scanner delle lacune di ricerca</b> — Analizza tutti gli articoli e identifica cinque domande di ricerca irrisolte. Per ciascuna spiega perche esiste ancora, quale articolo si e avvicinato di piu e la metodologia piu probabile per risolverla.</li>
-      <li><b>Audit metodologico</b> — Esamina le metodologie usate e raggruppale (sondaggi, esperimenti, simulazioni, meta-analisi, casi di studio). Identifica quale domina e perche, quale e sotto-utilizzata e quale appare la piu debole, con le ragioni.</li>
-      <li><b>Sintesi principale</b> — Scrivi una sintesi che non riassuma i singoli articoli: spiega cosa crede collettivamente il settore, quali questioni restano discusse, quali risultati sono solidi e concludi con la domanda irrisolta piu importante. Sotto le 400 parole.</li>
-      <li><b>Distruttore di presupposti</b> — Identifica i presupposti su cui si basano gli articoli senza dimostrarli. Per ciascuno spiegalo, individua gli articoli che vi fanno piu affidamento e descrivi come cambierebbe il settore se fosse falso.</li>
-      <li><b>Costruttore mappa della conoscenza</b> — Crea una mappa strutturata della letteratura: tesi centrale, 3-5 pilastri consolidati, 2-3 aree di dibattito, 1-2 domande di frontiera e i tre articoli che ogni debuttante dovrebbe leggere per primi, con motivazione. Output come schema, non prosa.</li>
-      <li><b>Test del E quindi?</b> — Immagina di avere cinque minuti per spiegare l'intero corpo di ricerca a un non esperto intelligente. In una frase: cosa e stato dimostrato; poi la cosa piu grande che ancora non si sa e l'unica implicazione reale che conta di piu. Linguaggio semplice, senza gergo.</li>
-    </ol>
-  </div>
-  <div class="prompt-group" id="claude-accademico">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - leggere, scrivere e revisionare testi accademici<span class="tool-tag t-univ">trasversale</span></span><span class="count">9</span></div>
-    <ol class="prompt-list">
-      <li><b>Comprendere un articolo scientifico in pochi minuti</b> — Agisci come un mentore accademico esperto. Spiega questo articolo di ricerca con un linguaggio semplice ma preciso. Scomponilo in: problema di ricerca, metodologia, risultati chiave, limitazioni e opportunita per ricerche future.</li>
-      <li><b>Dagli appunti alla rassegna della letteratura</b> — Converti i seguenti appunti in punti elenco in una rassegna della letteratura strutturata. Confronta e metti a contrasto gli studi, evidenzia le differenze metodologiche e sintetizza i risultati chiave.</li>
-      <li><b>Confronto tra articoli di ricerca</b> — Confronta questi studi in termini di disegno della ricerca, fonti dei dati, metodi analitici e conclusioni. Presenta le differenze in una tabella e spiega il contributo fornito da ciascuno studio.</li>
-      <li><b>Semplificare metodi complessi</b> — Spiega questa metodologia come se la stessi insegnando a uno studente di laurea magistrale o di dottorato che la affronta per la prima volta. Includi la logica passo-passo del metodo ed esempi pratici.<span class="tip">Particolarmente efficace su statistica, modellizzazione e metodi sperimentali.</span></li>
-      <li><b>Migliorare la scrittura accademica</b> — Riscrivi questo paragrafo per migliorarne la chiarezza, la forza dell'argomentazione e il tono accademico, mantenendo inalterati il significato originale e le citazioni.</li>
-      <li><b>Generare domande di ricerca</b> — Sulla base della seguente sintesi della letteratura, proponi 10 valide domande di ricerca adatte per una tesi di laurea magistrale o di dottorato.<span class="tip">Utile quando ci si blocca nella fase di stesura della proposta di ricerca.</span></li>
-      <li><b>Revisione critica in stile peer review</b> — Agisci come un revisore di una rivista scientifica (peer reviewer). Valuta criticamente questo manoscritto per originalita, metodologia, chiarezza e contributo al settore. Fornisci un feedback costruttivo.<span class="tip">Da usare prima dell'invio definitivo di un lavoro.</span></li>
-      <li><b>Estrarre i dati chiave dagli articoli</b> — Estrai tutte le variabili chiave, le dimensioni dei campioni, i luoghi dello studio e i risultati principali da questo articolo e presentali in una tabella strutturata.<span class="tip">Pensato per revisioni sistematiche e meta-analisi.</span></li>
-      <li><b>Da articolo a proposta di ricerca</b> — Utilizzando i risultati di questo articolo, progetta uno studio di follow-up includendo ipotesi, metodologia, contributo atteso e possibili limitazioni.</li>
-    </ol>
-    <div class="prompts-note ia-note" style="margin:18px 22px 22px;">Questi prompt non dipendono da funzioni esclusive di Claude: funzionano allo stesso modo con Gemini, ChatGPT o NotebookLM, purche il modello possa leggere il documento. Il prompt sulle lacune di ricerca non compare qui perche e gia presente sopra, nel Paper Research System ("Scanner delle lacune di ricerca").</div>
-  </div>
-  <div class="prompt-group" id="lingue">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - framework per l'apprendimento delle lingue<span class="tool-tag t-univ">trasversale</span></span><span class="count">8</span></div>
-    <ol class="prompt-list">
-      <li><b>Roadmap per la fluidita</b> — Agisci come tutor linguistico e progettista di corsi. Costruisci un piano di sei mesi per sostenere vere conversazioni nella mia lingua di destinazione.<span class="en">EN — Build me a six-month plan to hold real conversations in my target language.</span></li>
-      <li><b>Vocabolario fondamentale</b> — Agisci come linguista. Prepara le prime 300 parole che sbloccano la maggior parte delle conversazioni quotidiane nella mia lingua di destinazione.<span class="en">EN — Build me the first 300 words that unlock the most everyday conversation.</span></li>
-      <li><b>Simulatore di conversazione</b> — Agisci come madrelingua paziente. Sostieni con me una semplice conversazione al mio livello su una situazione reale.<span class="en">EN — Hold a simple conversation with me at my level about a real situation.</span></li>
-      <li><b>Semplificatore di grammatica</b> — Agisci come coach di grammatica che odia il gergo. Spiegami la regola con cui sto faticando usando un linguaggio semplice.<span class="en">EN — Explain the one grammar pattern I am struggling with using plain language.</span></li>
-      <li><b>Correttore di pronuncia</b> — Agisci come coach di pronuncia. Per i suoni piu difficili della mia lingua di destinazione, spiegami come posizionare la bocca.<span class="en">EN — For the hardest sounds, explain how to shape my mouth.</span></li>
-      <li><b>Creatore di immersione</b> — Agisci come coach di immersione. Progetta un piano per circondare la mia vita quotidiana con la lingua di destinazione.<span class="en">EN — Design a plan to surround my daily life with my target language.</span></li>
-      <li><b>Esercitazione shadowing</b> — Agisci come coach di fluidita con il metodo dello shadowing. Dammi un breve brano al mio livello, scomponilo in frasi e guidami nel ripetere ciascuna.<span class="en">EN — Give me a short passage at my level, break it into phrases, and coach me to repeat each one.</span></li>
-      <li><b>Ripasso settimanale</b> — Agisci come coach linguistico per un ripasso del venerdi. Chiedimi di usare la lingua attraverso cinque spunti d'uso quotidiano.<span class="en">EN — Ask me to use the language across five everyday prompts.</span></li>
-    </ol>
-  </div>
-  <div class="prompt-group" id="claude-tips">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - ottimizzare crediti e limiti d'uso</span><span class="count">8</span></div>
-    <ol class="prompt-list">
-      <li><b>Riduci le dimensioni dei file</b> — Copia e incolla testo semplice (.txt) anziche caricare PDF pesanti.</li>
-      <li><b>Pianifica prima</b> — Usa la chat per chiarire la struttura prima di chiedere la generazione di file complessi.</li>
-      <li><b>Istruzione Fammi delle domande</b> — Chiedi a Claude di farti domande prima di iniziare, per scegliere le opzioni senza consumare token.</li>
-      <li><b>Modifica i messaggi</b> — Usa il tasto Modifica sul messaggio precedente per correggere invece di rinviarne di nuovi.</li>
-      <li><b>Nuova chat frequente</b> — Inizia una nuova chat ogni 15-20 messaggi: le chat lunghe consumano molti crediti rileggendo la cronologia.</li>
-      <li><b>Scegli il modello adatto</b> — Haiku per compiti veloci, Sonnet per codice e tabelle, Opus per scrittura complessa.</li>
-      <li><b>Usa i Projects</b> — Carica le linee guida una sola volta nei Projects per file e direttive ricorrenti.</li>
-      <li><b>Disattiva gli strumenti inutili</b> — Disabilita la ricerca web o l'Extended Thinking se non strettamente necessari.</li>
+      <li><b>Sviluppare competenze settoriali in 30 giorni</b> — Sei un esperto di livello mondiale e progettista didattico specializzato nell'apprendimento accelerato. Aiutami a costruire una solida competenza in [SETTORE]. Contesto: livello attuale [DESCRIVI], motivo [MOTIVO], ore a settimana [X], profondita target [LIVELLO]. Progetta un sistema di 30 giorni con strategia, 10 risorse per NotebookLM, 5 esperti, piano settimanale, prompt di riflessione, concetti fondamentali, test settimanali e risultato al 30 giorno.</li>
+      <li><b>Trasformare le panoramiche audio in azioni</b> — Agisci come stratega dell'apprendimento. Ho ascoltato una panoramica audio di NotebookLM su [ARGOMENTO] basata su [FONTI]. Trasforma l'apprendimento passivo in azioni: insight a piu alto impatto, esperimento della settimana, migliore domanda di follow-up, idea di contenuto, modello mentale di base e un'azione da 10 minuti.</li>
+      <li><b>Estrarre i modelli mentali di un libro</b> — Sei un esperto di modelli mentali. Ho usato NotebookLM per riassumere [LIBRO]. Estrai: modello mentale centrale, framework nascosto (3-5 passaggi), convinzione anticonformista, quando funziona e quando fallisce, pensatori correlati, applicazione reale questa settimana e cheat sheet per la memoria.</li>
+      <li><b>Rilevare bias e ragionamenti deboli</b> — Agisci come metodologo della ricerca. Ho esaminato una fonte tramite NotebookLM [INCOLLA RIASSUNTO]. Fornisci: bias probabili, analisi dell'affermazione piu forte e piu debole, prospettive mancanti, controllo di metodologia e credibilita, 3 fonti per la triangolazione e un punteggio di fiducia (1-10) motivato.</li>
+      <li><b>Trasformare la ricerca in una tesi difendibile</b> — Agisci come consulente strategico senior. Metti sotto stress la ricerca estratta da NotebookLM: tesi centrale in una frase, 3 argomentazioni a supporto, 2 controargomentazioni, la critica dello scettico piu intelligente, la migliore confutazione, livello di confidenza e l'unico dato che cambia la decisione.</li>
     </ol>
   </div>
   <div class="prompt-group" id="prompt-eng">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Prompt engineering e schede visive stampabili<span class="tool-tag t-univ">trasversale</span></span><span class="count">2</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Come scrivere buoni prompt: guida e schede stampabili<span class="tool-tag t-univ">trasversale</span></span><span class="count">2</span></div>
     <ol class="prompt-list">
       <li><b>Trucco valutazione (0-10) e auto-ottimizzazione</b> — Fai valutare e perfezionare il prompt all'IA in due passi. Passo 1: Dai un voto a questo prompt da 0 a 10: [PROMPT]. Passo 2: Cosa lo renderebbe un 10/10? Riscrivilo e perfezionalo tu. Esempio di role-play: Agisci come Gaio Giulio Cesare nel 44 a.C. e parla a studenti di 10 anni nel Foro; linguaggio semplice e solenne, immagini romane, nessun concetto moderno, risposte brevi e dialogate.</li>
       <li><b>Scheda didattica stampabile con IA visiva</b> — Prompt modello per DALL-E 3 o Gemini Imagen: Crea l'immagine di una scheda didattica stampabile in italiano su [ARGOMENTO] per [CLASSE]. Formato verticale A4, alta risoluzione. Titolo Scopriremo... [DOMANDA] e 4 sezioni: 1) Esplora e osserva, 2) Costruiamo l'idea insieme, 3) Stabilire collegamenti, 4) Rifletti e riassumi con Oggi ho imparato che...</li>
@@ -1291,7 +1325,7 @@
     </ol>
   </div>
   <div class="prompt-group" id="teaching">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>AI Teaching System - progettazione lezioni<span class="tool-tag t-univ">trasversale</span></span><span class="count">5</span></div>
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Progettare lezioni con l'IA (AI Teaching System)<span class="tool-tag t-univ">trasversale</span></span><span class="count">5</span></div>
     <ol class="prompt-list">
       <li><b>Struttura didattica e analisi capitolo</b> — Sei insegnante con 25 anni di esperienza. Analizza il capitolo in profondita (non riassumere) e restituisci: obiettivi di apprendimento, conoscenze preliminari, concetti principali, formule importanti, mappa delle dipendenze concettuali, errori comuni, argomenti confusi, esempi reali, concetti visivi, attivita in classe, trucchi mnemonici, aree d'esame, concetti HOTS e panoramica in una pagina.</li>
       <li><b>DNA dello stile visivo didattico</b> — Sei un Educational Visual Designer. Crea un DNA dello stile visivo riutilizzabile per insegnare [MATERIA/ARGOMENTO]: tavolozza colori, tipografia, icone, illustrazioni, forme, diagrammi, infografiche, stile per la classe, poster, mappe mentali, gerarchia visiva, atmosfera e suggerimenti per animazioni.</li>
@@ -1310,16 +1344,6 @@
       <li><b>Richiamo attivo (active recall)</b> — Valuta le mie conoscenze usando domande di richiamo attivo.<span class="en">EN — Assess my knowledge using active recall questions.</span></li>
       <li><b>Piano miglioramento punti deboli</b> — Analizza la mia prestazione, ordina le aree deboli e crea un piano personalizzato.<span class="en">EN — Analyze my performance, rank weak areas, and create a personalized plan.</span></li>
       <li><b>Roadmap mastery 30 giorni</b> — Crea una roadmap personalizzata a 30 giorni con lezioni giornaliere e pratica.<span class="en">EN — Build a personalized 30-day roadmap with daily lessons and practice.</span></li>
-    </ol>
-  </div>
-  <div class="prompt-group" id="edugems">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-edu">Risorse</span>EduGems e risorse per la scuola italiana</span><span class="count">5</span></div>
-    <ol class="prompt-list">
-      <li><b>EduSTEM - MathScratch Tutor</b> — Genera codice Scratch 3.0 pronto all'uso con la sintassi ufficiale italiana dei blocchi, adattando la complessita dall'infanzia/primaria fino alla secondaria di secondo grado.</li>
-      <li><b>EduCreate - Maestro di Rebus</b> — Per italiano L1/L2. Costruisce rebus enigmistici, genera il prompt visivo in inglese per l'IA visiva (Nano Banana / DALL-E) e indica la finalizzazione su Canva.</li>
-      <li><b>EduInclude - Visual Instructional Designer</b> — Analizza il PDF di un'unita didattica, pone 6 domande UDL/accessibilita e genera il prompt pronto per la sezione Infografica di NotebookLM.</li>
-      <li><b>Eric Curts - edugems.ai</b> — Oltre 100 Gems internazionali preconfigurate. Fai una copia della Gem e aggiungi in fondo l'istruzione: rispondere sempre in italiano, adattare i contenuti alle Indicazioni Nazionali/Linee Guida, usare la scala di voti 1-10 e la terminologia scolastica italiana (classe prima, seconda...).</li>
-      <li><b>Elisabetta Nanni - MusaiLab</b> — Chatbot nativamente in italiano per progettare risorse didattiche musicali inclusive e innovative, integrato con le Indicazioni Nazionali MIUR.</li>
     </ol>
   </div>
   </div>
