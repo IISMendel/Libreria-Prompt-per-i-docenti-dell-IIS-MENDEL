@@ -79,6 +79,20 @@
   footer p{margin-top:4px;}
 
   /* TORNA SU */
+  .qm-fab{position:fixed;bottom:28px;right:86px;height:48px;padding:0 20px;border-radius:26px;background:#0F766E;color:#fff;border:none;display:flex;align-items:center;gap:9px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.22);z-index:31;transition:background .2s ease, transform .2s ease;}
+  .qm-fab:hover{background:#0d5f59;transform:translateY(-2px);}
+  .qm-overlay{position:fixed;inset:0;background:rgba(15,23,22,.5);opacity:0;visibility:hidden;transition:opacity .25s ease, visibility .25s;z-index:40;}
+  .qm-overlay.open{opacity:1;visibility:visible;}
+  .qm-panel{position:fixed;right:0;top:0;bottom:0;width:min(520px,92vw);background:#fff;box-shadow:-8px 0 30px rgba(0,0,0,.2);transform:translateX(100%);transition:transform .3s ease;z-index:41;display:flex;flex-direction:column;}
+  .qm-panel.open{transform:translateX(0);}
+  .qm-panel-head{background:#0F766E;color:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .qm-panel-head b{font-size:16px;font-weight:800;}
+  .qm-close{background:rgba(255,255,255,.16);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:19px;line-height:1;cursor:pointer;flex-shrink:0;}
+  .qm-close:hover{background:rgba(255,255,255,.3);}
+  .qm-panel-body{overflow-y:auto;padding:6px 0 24px;}
+  .qm-panel .quickmap{border:none;border-radius:0;margin:0;}
+  .qm-panel .quickmap-head{display:none;}
+  @media(max-width:640px){.qm-fab{bottom:18px;right:72px;height:44px;padding:0 15px;font-size:13px;}}
   .back-to-top{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;background:var(--green-dark);color:var(--white);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.22);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease, transform .25s ease, background .2s ease, visibility .25s;z-index:30;}
   .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0);}
   .back-to-top:hover{background:var(--green);}
@@ -1507,6 +1521,34 @@
   </div>
 </section>
 
+<button class="qm-fab" id="qmFab" aria-label="Apri la guida alle sezioni">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+  Cosa devo fare?
+</button>
+<div class="qm-overlay" id="qmOverlay"></div>
+<aside class="qm-panel" id="qmPanel" aria-hidden="true">
+  <div class="qm-panel-head"><b>Trova subito la sezione che ti serve</b><button class="qm-close" id="qmClose" aria-label="Chiudi">&times;</button></div>
+  <div class="qm-panel-body">
+  <div class="quickmap">
+    <div class="quickmap-head"></div>
+    <div class="quickmap-sub">Scegli cosa devi fare: il pannello si chiude e ti porta alla sezione.</div>
+    <table>
+      <tr><td class="need">Preparare una verifica, una scheda o materiali per la classe</td><td class="go"><a href="#materiali-classe">Materiali per la classe</a><span class="sep">·</span><a href="#didattici">Prompt didattici</a><span class="sep">·</span><a href="#verifica">Parte 1: preparare una verifica</a></td></tr>
+      <tr><td class="need">Progettare una lezione o un intero percorso</td><td class="go"><a href="#teaching">Progettare lezioni</a><span class="sep">·</span><a href="#notebooklm-corso">Costruire un corso</a><span class="sep">·</span><a href="#lezione">Parte 1: preparare una lezione</a></td></tr>
+      <tr><td class="need">Far studiare e ripassare gli studenti</td><td class="go"><a href="#notebooklm-studio">Studio ed esami</a><span class="sep">·</span><a href="#notebooklm-imparare">Imparare meglio</a><span class="sep">·</span><a href="#feynman">Imparare un argomento</a><span class="sep">·</span><a href="#universali">Prompt universali</a></td></tr>
+      <tr><td class="need">Seguire una tesina, un elaborato o un percorso di maturita</td><td class="go"><a href="#notebooklm-tesina">Tesine ed elaborati</a><span class="sep">·</span><a href="#notebooklm-problema">Problema di ricerca</a><span class="sep">·</span><a href="#notebooklm-revisione">Rassegna e revisione</a></td></tr>
+      <tr><td class="need">Scrivere o revisionare un testo accademico</td><td class="go"><a href="#notebooklm-articolo">Scrivere un articolo</a><span class="sep">·</span><a href="#claude-accademico">Scrittura accademica</a><span class="sep">·</span><a href="#claude-paper">Paper Research System</a><span class="sep">·</span><a href="#ricerca">Ricerca accademica</a></td></tr>
+      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
+      <tr><td class="need">Fare presentazioni, video o infografiche</td><td class="go"><a href="#notebooklm-slide">Presentazioni</a><span class="sep">·</span><a href="#notebooklm-video">Video</a><span class="sep">·</span><a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#gemini-video">Modifica video</a></td></tr>
+      <tr><td class="need">Creare file, pagine web o risorse digitali</td><td class="go"><a href="#gemini-file">Creare file</a><span class="sep">·</span><a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#skill-library">Libreria Skills</a></td></tr>
+      <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Parte 1: comunicazione e famiglie</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a></td></tr>
+      <tr><td class="need">Lavorare su inclusione e differenziazione</td><td class="go"><a href="#inclusione">Parte 1: materiali inclusivi</a><span class="sep">·</span><a href="#materiali-classe">Materiali per la classe</a></td></tr>
+      <tr><td class="need">Imparare a usare meglio l'IA</td><td class="go"><a href="#prompt-eng">Scrivere buoni prompt</a><span class="sep">·</span><a href="#claude-tips">Crediti e limiti</a><span class="sep">·</span><a href="#edugems">EduGems</a></td></tr>
+    </table>
+  </div>
+  </div>
+</aside>
+
 <button class="back-to-top" id="backToTop" aria-label="Torna su">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
@@ -1540,6 +1582,16 @@
   backToTop.addEventListener('click', ()=>{
     window.scrollTo({top:0, behavior:'smooth'});
   });
+
+  const qmFab=document.getElementById('qmFab'), qmPanel=document.getElementById('qmPanel'),
+        qmOverlay=document.getElementById('qmOverlay'), qmClose=document.getElementById('qmClose');
+  const qmOpen=()=>{qmPanel.classList.add('open');qmOverlay.classList.add('open');qmPanel.setAttribute('aria-hidden','false');};
+  const qmShut=()=>{qmPanel.classList.remove('open');qmOverlay.classList.remove('open');qmPanel.setAttribute('aria-hidden','true');};
+  qmFab.addEventListener('click', qmOpen);
+  qmClose.addEventListener('click', qmShut);
+  qmOverlay.addEventListener('click', qmShut);
+  qmPanel.querySelectorAll('a').forEach(a=>a.addEventListener('click', qmShut));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') qmShut(); });
 </script>
 </body>
 </html>
