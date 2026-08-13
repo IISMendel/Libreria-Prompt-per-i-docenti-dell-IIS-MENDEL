@@ -105,6 +105,17 @@
   .tool-tag.t-gpt{background:#D1FAE5;color:#059669;}
   .tool-tag.t-cla{background:#FEF3C7;color:#B45309;}
   .tool-tag.t-univ{background:#EDE9FE;color:#6D28D9;margin-left:8px;margin-right:0;}
+  .quickmap-wrap{max-width:900px;margin:0 auto;padding:26px 24px 0;}
+  .quickmap{margin:0 0 22px;border:1px solid #0F766E;border-radius:10px;overflow:hidden;background:#fff;}
+  .quickmap-head{background:#0F766E;color:#fff;font-size:15px;font-weight:800;padding:11px 18px;}
+  .quickmap-sub{font-size:13px;color:var(--text-muted);padding:11px 18px 4px;line-height:1.5;}
+  .quickmap table{width:100%;border-collapse:collapse;font-size:14px;}
+  .quickmap td{padding:10px 18px;border-top:1px solid #E4EFEE;vertical-align:top;line-height:1.6;}
+  .quickmap td.need{width:42%;font-weight:700;color:var(--text);}
+  .quickmap td.go a{color:#0F766E;font-weight:600;text-decoration:none;border-bottom:1px solid #B9E0DC;}
+  .quickmap td.go a:hover{background:#F0FDFA;}
+  .quickmap td.go span.sep{color:#bbb;margin:0 5px;}
+  @media(max-width:640px){.quickmap td{display:block;padding:8px 14px;border-top:none;}.quickmap td.need{padding-bottom:2px;border-top:1px solid #E4EFEE;}.quickmap td.go{padding-top:0;padding-bottom:12px;}}
   .univ-legend{margin:0 0 18px;padding:12px 16px;background:#F5F3FF;border-left:3px solid #6D28D9;border-radius:0 8px 8px 0;font-size:13.5px;color:#4C1D95;line-height:1.55;}
   .tool-tag.t-did{background:#EDE9FE;color:#7C3AED;}
   .tool-tag.t-edu{background:#FFE4E6;color:#E11D48;}
@@ -187,6 +198,7 @@
     <a href="#claude-paper">Paper Research</a>
     <a href="#claude-accademico">Scrittura accademica</a>
     <a href="#lingue">Lingue</a>
+    <a href="#claude-infografiche">Infografiche</a>
     <a href="#claude-tips">Crediti e limiti</a>
     <a href="#skill-library">Libreria Skills</a>
   </div>
@@ -207,21 +219,46 @@
     <a href="#notebooklm-ruoli">Prompt-ruolo</a>
     <a href="#notebooklm-corso">Costruire un corso</a>
     <a href="#notebooklm-revisione">Rassegna e revisione</a>
+    <a href="#notebooklm-tesina">Tesine ed elaborati</a>
+    <a href="#notebooklm-problema">Problema di ricerca</a>
     <a href="#notebooklm-articolo">Scrivere un articolo</a>
+    <a href="#notebooklm-video">Video</a>
     <a href="#notebooklm-slide">Presentazioni</a>
     <a href="#youtube">YouTube</a>
     <a href="#ricerca">Ricerca accademica</a>
     <a href="#avanzate">Modalità avanzate</a>
     <a href="#notebooklm-claude">Con Claude</a>
+    <a href="#notebooklm-gemini-sito">Creare un sito</a>
   </div>
   <div class="cat-nav-row">
     <span class="cat-nav-label">Trasversali</span>
     <a href="#prompt-eng">Scrivere buoni prompt</a>
+    <a href="#materiali-classe">Materiali per la classe</a>
     <a href="#didattici">Prompt didattici</a>
     <a href="#teaching">Progettare lezioni</a>
     <a href="#universali">Prompt universali</a>
   </div>
 </nav>
+
+<div class="quickmap-wrap">
+  <div class="quickmap">
+    <div class="quickmap-head">Da dove comincio? Trova subito la sezione che ti serve</div>
+    <div class="quickmap-sub">La pagina e divisa in tre parti: prompt generici, prompt per materia e una parte dedicata agli strumenti di IA. Se non sai da dove partire, cerca qui sotto cio che devi fare. Nella Parte 3 quasi tutti i prompt contrassegnati <b>trasversale</b> funzionano con qualunque assistente, quindi non serve avere gia scelto quale usare.</div>
+    <table>
+      <tr><td class="need">Preparare una verifica, una scheda o materiali per la classe</td><td class="go"><a href="#materiali-classe">Materiali per la classe</a><span class="sep">·</span><a href="#didattici">Prompt didattici</a><span class="sep">·</span><a href="#verifica">Parte 1: preparare una verifica</a></td></tr>
+      <tr><td class="need">Progettare una lezione o un intero percorso</td><td class="go"><a href="#teaching">Progettare lezioni</a><span class="sep">·</span><a href="#notebooklm-corso">Costruire un corso</a><span class="sep">·</span><a href="#lezione">Parte 1: preparare una lezione</a></td></tr>
+      <tr><td class="need">Far studiare e ripassare gli studenti</td><td class="go"><a href="#notebooklm-studio">Studio ed esami</a><span class="sep">·</span><a href="#notebooklm-imparare">Imparare meglio</a><span class="sep">·</span><a href="#feynman">Imparare un argomento</a><span class="sep">·</span><a href="#universali">Prompt universali</a></td></tr>
+      <tr><td class="need">Seguire una tesina, un elaborato o un percorso di maturita</td><td class="go"><a href="#notebooklm-tesina">Tesine ed elaborati</a><span class="sep">·</span><a href="#notebooklm-problema">Problema di ricerca</a><span class="sep">·</span><a href="#notebooklm-revisione">Rassegna e revisione</a></td></tr>
+      <tr><td class="need">Scrivere o revisionare un testo accademico</td><td class="go"><a href="#notebooklm-articolo">Scrivere un articolo</a><span class="sep">·</span><a href="#claude-accademico">Scrittura accademica</a><span class="sep">·</span><a href="#claude-paper">Paper Research System</a><span class="sep">·</span><a href="#ricerca">Ricerca accademica</a></td></tr>
+      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
+      <tr><td class="need">Fare presentazioni, video o infografiche</td><td class="go"><a href="#notebooklm-slide">Presentazioni</a><span class="sep">·</span><a href="#notebooklm-video">Video</a><span class="sep">·</span><a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#gemini-video">Modifica video</a></td></tr>
+      <tr><td class="need">Creare file, pagine web o risorse digitali</td><td class="go"><a href="#gemini-file">Creare file</a><span class="sep">·</span><a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#skill-library">Libreria Skills</a></td></tr>
+      <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Parte 1: comunicazione e famiglie</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a></td></tr>
+      <tr><td class="need">Lavorare su inclusione e differenziazione</td><td class="go"><a href="#inclusione">Parte 1: materiali inclusivi</a><span class="sep">·</span><a href="#materiali-classe">Materiali per la classe</a></td></tr>
+      <tr><td class="need">Imparare a usare meglio l'IA</td><td class="go"><a href="#prompt-eng">Scrivere buoni prompt</a><span class="sep">·</span><a href="#claude-tips">Crediti e limiti</a><span class="sep">·</span><a href="#edugems">EduGems</a></td></tr>
+    </table>
+  </div>
+</div>
 
 <!-- ======================= PARTE A — GENERICI ======================= -->
 <section class="prompts-section" id="parte-1">
@@ -737,6 +774,24 @@
       <li><b>Ripasso settimanale</b> — Agisci come coach linguistico per un ripasso del venerdi. Chiedimi di usare la lingua attraverso cinque spunti d'uso quotidiano.<span class="en">EN — Ask me to use the language across five everyday prompts.</span></li>
     </ol>
   </div>
+  <div class="prompt-group" id="claude-infografiche">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Infografiche: estrarre uno stile visivo dalle immagini di riferimento</span><span class="count">1</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;"><b>Come si usa.</b> Apri Claude nella scheda principale (non in quella dedicata al codice, che complica inutilmente le infografiche) e scegli un modello capace, come Opus. <b>Carica una o piu immagini di riferimento</b> che rappresentino l'aspetto desiderato: e il passaggio decisivo, perche il prompt lavora su quelle. Incolla poi il prompt qui sotto e attendi l'anteprima dello stile. Solo quando l'anteprima ti convince, fornisci i contenuti veri dell'infografica e chiedi di generarla.</div>
+    <ol class="prompt-list">
+      <li><b>Estrazione del design system dai riferimenti</b> — <i>"Sei il responsabile del design in questo progetto. Io non sono un designer e prendo le decisioni finali, quindi parlami in modo semplice e chiaro. Le immagini di riferimento allegate rappresentano l'aspetto che desidero: studiale insieme ed estrai il design system che condividono.</i>
+        <ul class="sub">
+          <li>Leggi i riferimenti e identifica: la palette come 4-6 valori esadecimali con nome e ruolo (sfondo, superficie, inchiostro, accento, smorzato); la tipografia per 2-3 ruoli (titoli, corpo del testo, etichette), e se un carattere non e disponibile gratuitamente indica il Google Font piu simile spiegando a cosa si rinuncia; il ritmo della spaziatura, il raggio degli angoli, il trattamento di bordi e ombre, la densita; la logica del layout; e l'unico elemento distintivo che rende questo stile riconoscibile.</li>
+          <li>Fai un resoconto in meno di 200 parole, senza gergo. Per ogni scelta dimmi cos'e e cosa fa per il lettore. Segnala tutto cio che stai deducendo invece di vedere effettivamente.</li>
+          <li>Dove i riferimenti sono in disaccordo, o dove una decisione e ancora aperta, chiedimelo: da 2 a 4 domande al massimo, con opzioni in linguaggio semplice e compromessi espliciti. Non chiedermi nulla a cui puoi rispondere guardando le immagini.</li>
+          <li>Scrivi poi un file DESIGN_SYSTEM.md con: un blocco di variabili CSS <i>:root</i>, la scala tipografica con dimensioni e pesi concreti, valori di spaziatura e raggio, il collegamento a Google Fonts, un paragrafo sulla logica del layout, l'elemento distintivo e un breve elenco di cose che questo stile non fa mai perche ne rovinerebbero l'aspetto.</li>
+          <li>Crea un file tokens-preview.html: una pagina singola con i campioni di colore, la scala tipografica e una scheda di esempio, cosi posso vedere il sistema prima di usarlo. Confrontala con i miei riferimenti e correggi cio che si e discostato.</li>
+          <li>Non progettare altro per ora. La fedelta ai miei riferimenti viene prima del tuo gusto personale: se faresti una scelta piu audace, annotala alla fine come opzione invece di applicarla".</li>
+        </ul>
+        <span class="tip">L'ultima riga e la piu importante: senza quel vincolo il modello tende a "migliorare" i riferimenti e il risultato non somiglia piu a cio che avevi in mente.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;">Il prompt e testo puro e funziona con qualunque assistente che legga le immagini e generi file (Gemini, ChatGPT). Non porta il tag trasversale solo perche due indicazioni operative del riquadro iniziale — la scheda da usare e la scelta del modello — valgono per Claude. Per le pagine dell'Istituto: al posto delle immagini di riferimento puoi descrivere direttamente la palette verde ufficiale, ottenendo un design system coerente con il sito.</div>
+  </div>
   <div class="prompt-group" id="claude-tips">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-cla">Claude</span>Claude - ottimizzare crediti e limiti d'uso</span><span class="count">8</span></div>
     <ol class="prompt-list">
@@ -1195,6 +1250,53 @@
     </ol>
     <div class="prompts-note ia-note" style="margin:18px 22px 22px;"><b>Due funzioni utili da conoscere.</b> La <i>mappa mentale</i> del taccuino serve anche a caccia di lacune: espandi tutti i rami e guarda dove i sotto-rami sono pochi o assenti, perche quegli spazi vuoti segnalano temi poco esplorati o prove limitate. Le <i>panoramiche video</i>, le <i>presentazioni</i> e le <i>infografiche</i> permettono poi di riusare la stessa ricerca in formati diversi: seleziona prima le sole fonti pertinenti a quell'output, perche generare dall'intera libreria produce risultati generici.</div>
   </div>
+  <div class="prompt-group" id="notebooklm-tesina">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Scrivere una tesina o un elaborato dalle proprie fonti<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Sette prompt in sequenza, piu leggeri di quelli sull'articolo scientifico e adatti a una tesina, a un elaborato d'esame o a un percorso di maturita. Tutti si aprono con lo stesso vincolo — <i>"usando solo le mie fonti caricate"</i> — che e cio che tiene il lavoro ancorato ai materiali dello studente invece che alla conoscenza generale del modello.</div>
+    <ol class="prompt-list">
+      <li><b>1. Scaletta dell'elaborato</b> — <i>"Usando solo le mie fonti caricate, crea una scaletta dettagliata per un elaborato su [ARGOMENTO]. Organizza il lavoro in una struttura accademica logica con titolo, introduzione, sezioni principali, sottosezioni e conclusione. Per ogni sezione individua le argomentazioni chiave, le prove a sostegno, i concetti importanti e le fonti piu rilevanti da citare. Proponi un flusso logico tra le sezioni, indica come ciascuna debba contribuire all'argomentazione complessiva e assicurati che la scaletta sia coerente, equilibrata e adeguata a un elaborato di livello universitario".</i>
+      </li>
+      <li><b>2. Rassegna e sintesi della letteratura</b> — <i>"Usando solo le mie fonti caricate, scrivi una rassegna della letteratura completa su [ARGOMENTO]. Individua temi principali, teorie, concetti, risultati, punti di accordo e disaccordo, lacune di ricerca e tendenze emergenti. Confronta e sintetizza le prospettive dei diversi autori invece di riassumere una fonte alla volta. Organizza la rassegna in sezioni chiare, spiega come gli studi si rapportano tra loro, sostieni ogni affermazione con il materiale di riferimento e concludi con le intuizioni chiave e le lacune che dovrebbero orientare il mio elaborato".</i>
+        <span class="tip">"Sintetizzare invece di riassumere una fonte alla volta" e l'istruzione che distingue una rassegna vera da un elenco di riassunti in fila.</span>
+      </li>
+      <li><b>3. Costruire le argomentazioni</b> — <i>"Usando solo le mie fonti caricate, aiutami a sviluppare argomentazioni solide e fondate sulle prove per il mio elaborato su [ARGOMENTO]. Individua le affermazioni piu convincenti sostenute dalla letteratura, spiega come le diverse fonti le sostengono o le mettono in discussione e indica le prove piu forti da includere. Anticipa le possibili obiezioni, valuta punti di forza e limiti delle prove disponibili e proponi la struttura piu logica per presentare ciascuna argomentazione, mantenendo una discussione equilibrata, critica e rigorosa".</i>
+      </li>
+      <li><b>4. Stesura della bozza</b> — <i>"Usando solo le mie fonti caricate, scrivi la bozza di un elaborato ben strutturato su [ARGOMENTO]. Adotta uno stile accademico chiaro e formale, con un'introduzione efficace, sezioni centrali organizzate logicamente e una conclusione concisa. Sviluppa un'argomentazione coerente sostenuta dalle prove delle fonti, indica dove vanno inserite le citazioni, mantieni transizioni fluide tra le sezioni e assicura una discussione equilibrata e obiettiva. Evita affermazioni non supportate e resta fedele alle informazioni presenti nei materiali".</i>
+        <span class="tip">La bozza generata e un punto di partenza da riscrivere, non un testo da consegnare: va riletta, verificata sulle fonti e rifatta con parole proprie.</span>
+      </li>
+      <li><b>5. Rafforzare l'analisi critica</b> — <i>"Usando solo le mie fonti caricate, aiutami a sviluppare un'analisi critica di [ARGOMENTO] invece di limitarmi a descrivere la letteratura. Confronta punti di vista diversi, valuta punti di forza e limiti delle prove disponibili, individua presupposti, incongruenze e lacune, e discutine le implicazioni teoriche e pratiche. Sostieni ogni affermazione con le prove delle fonti, indica dove serve un'analisi piu approfondita e aiutami a produrre una discussione equilibrata e ben argomentata".</i>
+        <span class="tip">Il salto piu difficile per gli studenti: passare dal riferire cio che dicono le fonti al valutarle.</span>
+      </li>
+      <li><b>6. Migliorare l'elaborato</b> — <i>"Usando solo la bozza del mio elaborato e le fonti di riferimento caricate, rivedi il lavoro come farebbe un revisore accademico esperto. Valuta organizzazione, chiarezza, coerenza, stile accademico, flusso logico, qualita dell'argomentazione e uso delle prove. Individua argomentazioni deboli, affermazioni non supportate, contenuti ripetitivi, spiegazioni poco chiare e parti da sviluppare. Proponi revisioni specifiche coerenti con le fonti caricate e concludi con un elenco di miglioramenti ordinati per impatto sulla qualita complessiva".</i>
+      </li>
+      <li><b>7. Controllo prima della consegna</b> — <i>"Usando solo il mio elaborato e le fonti di riferimento caricate, esegui una revisione completa prima della consegna. Verifica che ogni affermazione sia effettivamente sostenuta dalle fonti, valuta organizzazione, flusso logico, coerenza, qualita dell'argomentazione e stile accademico, e individua prove mancanti, transizioni deboli, spiegazioni poco chiare, conclusioni non supportate o incongruenze. Proponi revisioni specifiche restando fedele ai materiali e concludi con una lista di controllo dei miglioramenti piu importanti da completare prima di consegnare".</i>
+      </li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="notebooklm-problema">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Definire il problema di ricerca prima di scrivere<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Una ricerca diventa indifendibile quando il problema di partenza non e chiaro. Questi sette prompt vanno usati <b>prima</b> del gruppo sulla scrittura dell'articolo: costruiscono in sequenza il problema, ne validano la lacuna, ne dimostrano l'importanza, lo delimitano e lo verificano. Come nella serie successiva, ogni prompt si apre con <i>"Esamina tutte le fonti caricate e usale come base esclusiva"</i> e si chiude con il divieto di inventare lacune, dati, popolazioni, citazioni o affermazioni non sostenute dalle fonti.</div>
+    <ol class="prompt-list">
+      <li><b>1. Individuare il problema di ricerca</b> — <i>"Agisci come ricercatore accademico esperto e metodologo. Individua e definisci il problema di ricerca centrale che emerge dalla letteratura caricata. Esamina le fonti per determinare quale questione importante, contraddizione, difficolta persistente o fenomeno non adeguatamente compreso richieda ulteriore indagine. Distingui tra un argomento di ricerca ampio e un vero problema di ricerca: il problema deve essere una condizione o una carenza di conoscenza specifica, indagabile in modo sistematico. Analizza: cio che e gia noto; cio che resta poco chiaro, irrisolto o incoerente; problemi ricorrenti segnalati in piu studi; risultati contraddittori; popolazioni o contesti poco esaminati; questioni pratiche o teoriche aperte; le prove che il problema esista davvero. Confronta le prove tra piu fonti invece di basarti su un solo studio. Proponi 2-3 possibili problemi di ricerca, spiegando per ciascuno significativita, prove a sostegno, indagabilita e contributo potenziale, poi raccomanda il piu solido. Concludi con un enunciato conciso che dica qual e il problema, dove o tra chi si manifesta, cosa resta ignoto e perche serve ulteriore ricerca".</i>
+        <span class="tip">La distinzione tra argomento e problema e il punto su cui si arenano quasi tutte le tesi: "l'agricoltura di precisione" e un argomento, non un problema.</span>
+      </li>
+      <li><b>2. Individuare e validare la lacuna</b> — <i>"Individua e valida la lacuna di ricerca che sostiene il problema centrale. Analizza la letteratura per stabilire quale conoscenza, teoria, metodo, popolazione, contesto o relazione resti insufficientemente indagata. Cerca lacune empiriche, teoriche, metodologiche, contestuali o geografiche, di popolazione, risultati contraddittori, variabili poco esplorate, prove datate o limitate, aree ripetutamente indicate come da approfondire. Distingui una lacuna reale da un tema semplicemente meno studiato: non classificare qualcosa come lacuna se la letteratura caricata non mostra chiaramente che resta irrisolto o poco sviluppato. Per ciascuna lacuna spiega cosa si sa, cosa resta ignoto, di che tipo di lacuna si tratta, quali studi ne sostengono l'esistenza, perche e importante, come si collega al problema e quale nuova conoscenza produrrebbe colmarla. Ordina le lacune dalla piu alla meno sostenuta dalle prove e raccomanda quella principale".</i>
+        <span class="tip">"Nessuno l'ha ancora studiato" non e una lacuna: potrebbe semplicemente non interessare a nessuno. Il prompt chiede prove che la questione sia irrisolta, non solo poco frequentata.</span>
+      </li>
+      <li><b>3. Prove e importanza del problema</b> — <i>"Costruisci una giustificazione solida e basata sulle prove per il problema individuato. Esamina la letteratura per stabilire natura, estensione, persistenza e rilevanza del problema, costruendo una catena di prove che dimostri che esiste, che conta sul piano accademico o pratico e che merita indagine. Stabilisci: le prove che il problema esista; natura ed estensione; popolazioni, organizzazioni, settori o contesti coinvolti dove documentato; conseguenze e implicazioni; prove che resti irrisolto; limiti delle conoscenze o degli approcci attuali; rilevanza accademica, teorica, pratica, sociale o di policy; perche serve ulteriore ricerca. Confronta le prove tra piu fonti individuando accordi, disaccordi e incertezze, dando priorita a quelle recenti e direttamente pertinenti senza trascurare gli studi fondativi. Non dare per scontato che una lacuna renda automaticamente importante il problema: valuta se affrontarlo possa dare un contributo reale alla conoscenza, alla teoria, alla pratica o al contesto".</i>
+      </li>
+      <li><b>4. Delimitare il problema</b> — <i>"Definisci e delimita il problema in modo che diventi specifico, indagabile e circoscritto. Chiarisci l'esatta questione da indagare e individua, ove applicabile: il fenomeno specifico; i concetti o le variabili chiave; la popolazione bersaglio o unita di analisi; il contesto dello studio; i confini geografici; l'arco temporale; i confini teorici o concettuali; cosa va incluso e cosa va escluso dallo studio. Spiega perche ogni confine e giustificato dalla letteratura caricata e come restringere il problema ne migliori chiarezza, fattibilita e indagabilita. Concludi con un enunciato delimitato che specifichi cosa verra indagato, tra chi o su quale unita di analisi e in quale contesto".</i>
+        <span class="tip">Il passaggio che rende una ricerca effettivamente eseguibile: senza confini espliciti il lavoro cresce fino a diventare impossibile da chiudere.</span>
+      </li>
+      <li><b>5. Scrivere l'enunciato del problema</b> — <i>"Sviluppa un enunciato del problema chiaro, conciso e fondato sulle prove, usando problema, lacuna validata, prove, rilevanza e delimitazioni stabiliti nei passaggi precedenti. L'enunciato deve spiegare: il contesto piu ampio; cio che si sa dalla letteratura; il problema specifico; le prove della sua esistenza e importanza; cio che resta ignoto o incoerente; la lacuna sottostante; chi o cosa e coinvolto; le conseguenze del lasciarlo irrisolto; perche serve ulteriore ricerca; quale aspetto specifico lo studio proposto dovrebbe indagare. Costruisci l'argomentazione dal contesto generale al problema specifico, sintetizzando le prove tra piu fonti invece di elencare gli studi uno per uno. Distingui nettamente il problema pratico o empirico dalla lacuna di conoscenza, e non trattare la semplice assenza di ricerca come prova sufficiente. Evita affermazioni vaghe, background eccessivo, soluzioni proposte e dettagli metodologici che appartengono ad altre sezioni".</i>
+      </li>
+      <li><b>6. Allineare il problema con il resto dello studio</b> — <i>"Valuta e rafforza l'allineamento tra il problema di ricerca e le altre componenti dello studio. Verifica la coerenza tra: problema e lacuna; problema e scopo; problema e obiettivi; obiettivi e domande di ricerca; domande e ipotesi ove applicabili; problema e quadro teorico; concetti e variabili tra tutte le componenti; popolazione, contesto e portata. Segnala incongruenze, collegamenti mancanti, variabili superflue, differenze terminologiche, obiettivi troppo ampi, domande che non affrontano il problema e ipotesi non derivate logicamente dalle relazioni proposte. Per ogni problema di allineamento spiega perche e critico e proponi una revisione specifica, preservando il significato del problema salvo che le prove impongano di modificarlo. Presenta l'output come una matrice di allineamento con: problema, lacuna, scopo, obiettivo, domanda, ipotesi, costrutto o variabile, collegamento teorico, valutazione dell'allineamento, criticita rilevata, revisione raccomandata".</i>
+        <span class="tip">La matrice di allineamento e lo strumento che smaschera il difetto piu comune: obiettivi e domande che, guardati da vicino, non rispondono al problema dichiarato.</span>
+      </li>
+      <li><b>7. Revisione finale del problema</b> — <i>"Agisci come revisore paritario ed editor accademico. Rivedi criticamente l'intero processo di sviluppo e rifinisci l'enunciato finale. Valuta se il problema sia: definito con chiarezza e specifico; sostenuto da prove sufficienti; distinto dall'argomento generale; fondato su una lacuna reale e validata; abbastanza rilevante da giustificare l'indagine; adeguatamente delimitato per popolazione, contesto, variabili e portata; fattibile e indagabile; coerente con scopo, obiettivi, domande, ipotesi e quadro teorico; privo di affermazioni non supportate, linguaggio vago, background superfluo e soluzioni premature. Individua debolezze, incongruenze, generalizzazioni eccessive, prove mancanti, confini poco chiari o problemi di allineamento, raccomanda revisioni specifiche e spiega perche ciascuna serve. Concludi con un enunciato del problema rifinito, conciso e rigoroso, adatto a una proposta di ricerca, a una tesi o a un articolo".</i>
+      </li>
+    </ol>
+  </div>
   <div class="prompt-group" id="notebooklm-articolo">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Scrivere un articolo accademico sezione per sezione<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
     <div class="prompts-note ia-note" style="margin:0 22px 18px;">Sette prompt lunghi da usare in sequenza, uno per fase di stesura. Ognuno si apre con la stessa istruzione — <i>"Esamina tutte le fonti caricate e usale come base esclusiva per questa attivita"</i> — e si chiude con lo stesso vincolo: <b>non inventare risultati, dati, lacune, citazioni o riferimenti non supportati dalle fonti</b>. E la parte piu importante di tutta la serie: senza quella clausola finale il modello riempie i vuoti con materiale plausibile ma inesistente.</div>
@@ -1217,6 +1319,22 @@
         <span class="tip">Piu ampio dei tre prompt di autorevisione del gruppo precedente: quelli lavorano su un aspetto per volta, questo produce un referaggio completo del manoscritto.</span>
       </li>
     </ol>
+  </div>
+  <div class="prompt-group" id="notebooklm-video">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Panoramiche video: trasformare le fonti in brevi video esplicativi</span><span class="count">3</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;"><b>Prima di generare.</b> <b>1)</b> Crea un taccuino e carica le fonti (PDF, ebook, appunti, copioni, pagine web). <b>2)</b> Apri le impostazioni e <b>scegli la lingua di output prima di generare</b>: e il passaggio che piu spesso viene dimenticato e che determina la lingua della narrazione. <b>3)</b> Apri <i>Panoramica video</i> e scegli il formato: <i>video breve</i> per formati verticali tipo Shorts, Reels e TikTok, oppure <i>spiegazione cinematografica</i> per contenuti didattici piu lunghi in orizzontale. <b>4)</b> Scegli <i>argomento personalizzato</i> invece delle opzioni predefinite e incolla uno dei prompt qui sotto.</div>
+    <ol class="prompt-list">
+      <li><b>Spiegazione didattica</b> — <i>"Spiega le idee principali di questa fonte in un video rapido e coinvolgente. Usa semplici animazioni visive e motion graphics per rendere [ARGOMENTO] facile da capire. Dai priorita alla chiarezza e semplifica visivamente le informazioni complesse".</i>
+        <span class="tip">Il formato piu adatto a un ripasso o all'introduzione di un argomento nuovo in classe.</span>
+      </li>
+      <li><b>Impostazione narrativa</b> — <i>"Trasforma questa fonte in una narrazione avvincente su [ARGOMENTO]. Inizia con un gancio forte, crea curiosita durante tutto il video e usa elementi visivi cinematografici per evidenziare le scoperte e le conclusioni piu importanti".</i>
+        <span class="tip">Utile per storia, educazione civica e presentazioni di progetto, dove la tensione narrativa aiuta a tenere l'attenzione.</span>
+      </li>
+      <li><b>Tutorial passo-passo</b> — <i>"Crea un video istruttivo pratico basato su questa fonte. Presenta [PROCESSO] con passaggi visivi chiari e concentrati sull'aiutare lo spettatore a raggiungere [RISULTATO]. Mantieni ogni fase semplice e facile da seguire".</i>
+        <span class="tip">Adatto alle procedure di laboratorio e di serra, dove conta la sequenza esatta delle operazioni.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;"><b>Controlla sempre prima di pubblicare.</b> Le immagini generate possono rappresentare in modo errato diagrammi, dati e dettagli tecnici: guarda l'anteprima e verifica i passaggi che contano, soprattutto se il video finisce sul sito della scuola o viene mostrato in classe. Nei contenuti in italiano controlla anche i sottotitoli, che spesso sono la parte piu imprecisa; se servono correzioni, si rifanno a posteriori con un editor video.</div>
   </div>
   <div class="prompt-group" id="notebooklm-slide">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Stili grafici per le presentazioni generate<span class="tool-tag t-univ">trasversale</span></span><span class="count">6</span></div>
@@ -1305,11 +1423,49 @@
       <li><b>Trasformare la ricerca in una tesi difendibile</b> — Agisci come consulente strategico senior. Metti sotto stress la ricerca estratta da NotebookLM: tesi centrale in una frase, 3 argomentazioni a supporto, 2 controargomentazioni, la critica dello scettico piu intelligente, la migliore confutazione, livello di confidenza e l'unico dato che cambia la decisione.</li>
     </ol>
   </div>
+  <div class="prompt-group" id="notebooklm-gemini-sito">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span><span class="tool-tag t-gem">Gemini</span>Da base di conoscenza a sito web con Gemini Canvas</span><span class="count">2</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;"><b>Il flusso in breve.</b> <b>1)</b> Costruisci la base di conoscenza in NotebookLM caricando le fonti migliori (PDF, documenti, appunti, pagine web, trascrizioni, file da Drive): sono queste a determinare l'affidabilita del risultato. <b>2)</b> Apri Gemini, avvia una nuova chat, attiva <i>Canvas</i> dal pulsante degli strumenti e carica le fonti esportate. <b>3)</b> Incolla il prompt principale qui sotto. <b>4)</b> Genera, rifinisci e pubblica: puoi condividere la versione ospitata da Canvas oppure esportare il codice e caricarlo su GitHub Pages. <b>5)</b> Se il flusso ti serve spesso, salvalo come Gem riutilizzabile con le istruzioni di sistema del secondo prompt.</div>
+    <ol class="prompt-list">
+      <li><b>Prompt principale per generare il sito</b> — <i>"Agisci come un senior frontend engineer e un designer UX. Costruisci un sito web responsive e interattivo utilizzando la base di conoscenza allegata come principale fonte di verita. Crea HTML, CSS e JavaScript pronti per la produzione con un'interfaccia moderna, navigazione intuitiva, ottimizzazione mobile, ricerca, FAQ, contenuti interattivi e una chiara gerarchia visiva. Non inventare fatti che non siano supportati dalle fonti caricate. Pubblico: [INSERIRE]. Obiettivo: [INSERIRE]. Sezioni: [INSERIRE]. Stile del brand: [INSERIRE]".</i>
+        <span class="tip">I quattro campi finali fanno la differenza tra un sito generico e uno utilizzabile: compilali sempre. Per le pagine dell'Istituto, in "stile del brand" indica la palette verde ufficiale e il logo, altrimenti Gemini applica il proprio stile predefinito.</span>
+      </li>
+      <li><b>Istruzioni di sistema per un Gem riutilizzabile</b> — In Gemini apri <i>Gems</i> nella barra laterale, crea un nuovo Gem, dagli un nome (per esempio "Costruttore di siti da base di conoscenza") e incolla queste istruzioni: <i>"Agisci come uno sviluppatore frontend esperto. Trasforma le basi di conoscenza, i PDF o la documentazione caricati in siti web curati e responsive. Usa le fonti caricate come fonte di verita. Non inventare mai informazioni. Scegli automaticamente la struttura migliore e genera HTML, CSS e JavaScript puliti con navigazione intuitiva, ricerca, FAQ, sezioni interattive, ottimizzazione mobile, accessibilita e un'interfaccia utente moderna. Consegna un sito completo pronto per essere visualizzato in anteprima, personalizzato, esportato o distribuito".</i>
+        <span class="tip">Al Gem si possono allegare materiali di riferimento fissi: caricando li il manuale d'identita visiva della scuola, ogni pagina generata parte gia con i colori e il logo giusti.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;"><b>Due avvertenze prima di pubblicare.</b> Il codice generato va sempre riletto: controlla che i contenuti corrispondano davvero alle fonti e verifica accessibilita e resa su smartphone, che sono le parti dove questi output risultano piu deboli. Se la pagina finisce sul sito dell'Istituto, ricordati inoltre dei vincoli del CMS: niente blocchi <i>style</i> separati, stili solo in linea e nessuna emoji nel testo principale.</div>
+  </div>
   <div class="prompt-group" id="prompt-eng">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Come scrivere buoni prompt: guida e schede stampabili<span class="tool-tag t-univ">trasversale</span></span><span class="count">2</span></div>
     <ol class="prompt-list">
       <li><b>Trucco valutazione (0-10) e auto-ottimizzazione</b> — Fai valutare e perfezionare il prompt all'IA in due passi. Passo 1: Dai un voto a questo prompt da 0 a 10: [PROMPT]. Passo 2: Cosa lo renderebbe un 10/10? Riscrivilo e perfezionalo tu. Esempio di role-play: Agisci come Gaio Giulio Cesare nel 44 a.C. e parla a studenti di 10 anni nel Foro; linguaggio semplice e solenne, immagini romane, nessun concetto moderno, risposte brevi e dialogate.</li>
       <li><b>Scheda didattica stampabile con IA visiva</b> — Prompt modello per DALL-E 3 o Gemini Imagen: Crea l'immagine di una scheda didattica stampabile in italiano su [ARGOMENTO] per [CLASSE]. Formato verticale A4, alta risoluzione. Titolo Scopriremo... [DOMANDA] e 4 sezioni: 1) Esplora e osserva, 2) Costruiamo l'idea insieme, 3) Stabilire collegamenti, 4) Rifletti e riassumi con Oggi ho imparato che...</li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="materiali-classe">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-did">Didattica</span>Creare materiali per la classe in qualsiasi materia<span class="tool-tag t-univ">trasversale</span></span><span class="count">7</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Sette prompt lunghi per produrre materiali pronti all'uso. Tutti si aprono con lo stesso ruolo — <i>"Agisci come un docente esperto e progettista didattico"</i> — e chiedono di allineare i contenuti agli obiettivi di apprendimento dichiarati. Compila sempre i tre segnaposto: <b>materia</b>, <b>argomento</b> e <b>classe o fascia d'eta</b>.</div>
+    <ol class="prompt-list">
+      <li><b>Schede di lavoro ed esercitazioni</b> — <i>"Crea una scheda di lavoro completa con esercitazioni per [MATERIA] su [ARGOMENTO] per studenti di [CLASSE O FASCIA D'ETA]. Allinea i contenuti agli obiettivi di apprendimento e alle indicazioni ministeriali. Includi una varieta equilibrata di esercizi: scelta multipla, abbinamento, completamento, risposta breve, risoluzione di problemi, domande di pensiero critico e di applicazione, dove appropriato. Organizza le attivita dalla difficolta di base a quella avanzata, fornisci istruzioni chiare e includi una chiave di correzione completa con le spiegazioni. Suggerisci strategie di differenziazione per studenti con abilita diverse. La scheda deve essere coinvolgente, ordinata visivamente, pronta per l'uso in classe e adatta a lavoro in aula, compiti a casa, esercitazione autonoma o verifica".</i>
+      </li>
+      <li><b>Appunti guidati e guida allo studio</b> — <i>"Crea appunti guidati e una guida allo studio completa per [MATERIA] su [ARGOMENTO] per studenti di [CLASSE O FASCIA D'ETA]. Organizza il materiale in sezioni chiare con titoli e sottotitoli. Includi concetti chiave, lessico essenziale, definizioni, formule o procedure dove appropriato, esempi svolti, diagrammi o suggerimenti visivi e sintesi concise. Lascia spazi vuoti, domande, tabelle o elementi grafici che gli studenti completino durante la spiegazione. Concludi con una checklist di ripasso, domande di verifica e un glossario dei termini chiave. Il materiale deve essere ordinato visivamente, coinvolgente, pronto per l'uso in classe e adatto sia alla lezione sia al ripasso individuale".</i>
+        <span class="tip">Gli spazi da completare durante la spiegazione sono la parte che distingue gli appunti guidati da una dispensa: tengono gli studenti attivi mentre ascoltano.</span>
+      </li>
+      <li><b>Organizzatori grafici</b> — <i>"Crea una raccolta di organizzatori grafici pronti all'uso per [MATERIA] su [ARGOMENTO] per studenti di [CLASSE O FASCIA D'ETA]. Scegli le tipologie piu adatte al contenuto tra mappe concettuali, mappe mentali, diagrammi di flusso, diagrammi di Venn, tabelle di confronto, linee del tempo, diagrammi causa-effetto, schemi di sequenza, tabelle SPA (so, voglio sapere, ho imparato), modelli di Frayer o schemi di risoluzione dei problemi. Per ciascun organizzatore fornisci una versione compilata per il docente, una versione vuota per gli studenti, istruzioni d'uso chiare e proposte di differenziazione per abilita diverse. Devono essere ordinati, semplici da usare, pronti per la classe e pensati per promuovere pensiero critico e comprensione concettuale".</i>
+        <span class="tip">La doppia versione, compilata e vuota, e cio che rende il materiale immediatamente utilizzabile: una serve a te, l'altra si fotocopia.</span>
+      </li>
+      <li><b>Presentazione per la lezione</b> — <i>"Crea una presentazione professionale e pronta per la classe su [ARGOMENTO] di [MATERIA] per studenti di [CLASSE O FASCIA D'ETA]. Sviluppa una scaletta slide per slide che comprenda slide di titolo, obiettivi di apprendimento, concetti chiave, spiegazioni chiare, esempi pertinenti, diagrammi, grafici o suggerimenti visivi dove appropriato, domande di discussione, verifiche di comprensione, slide di sintesi e domande di ripasso. Includi note dettagliate per il relatore su ogni slide, indicazioni per coinvolgere gli studenti e suggerimenti su animazioni o elementi multimediali. La presentazione deve essere gradevole, facile da seguire, adeguata all'eta, pronta per l'uso e orientata all'apprendimento attivo".</i>
+      </li>
+      <li><b>Task card e postazioni di lavoro</b> — <i>"Crea [NUMERO] task card e materiali per postazioni di lavoro su [ARGOMENTO] di [MATERIA] per studenti di [CLASSE O FASCIA D'ETA]. Progetta attivita varie che stimolino pensiero critico, risoluzione di problemi, collaborazione, creativita e applicazione a situazioni reali. Includi istruzioni chiare per gli studenti, indicazioni per il docente, obiettivi di apprendimento, materiali necessari, tempo stimato di svolgimento, chiavi di correzione o risposte attese e regole per la rotazione tra le postazioni. Proponi strategie di differenziazione per abilita e bisogni diversi. I materiali devono essere ordinati, coinvolgenti, riutilizzabili e adatti al lavoro individuale, in coppia o in piccolo gruppo".</i>
+        <span class="tip">Formato adatto alle esercitazioni pratiche e ai laboratori, dove la classe ruota su postazioni diverse.</span>
+      </li>
+      <li><b>Exit ticket e dispense</b> — <i>"Crea una serie di exit ticket (biglietti d'uscita) e dispense per [MATERIA] su [ARGOMENTO] per studenti di [CLASSE O FASCIA D'ETA]. Progetta exit ticket vari che verifichino la comprensione attraverso riflessione, applicazione, risoluzione di problemi e risposte brevi. Crea dispense di accompagnamento che sintetizzino concetti chiave, lessico essenziale, definizioni, formule o procedure dove applicabile, esempi svolti, diagrammi o supporti visivi e consigli pratici per il ripasso. Includi istruzioni chiare per gli studenti, chiavi di correzione dove appropriato e suggerimenti per l'uso in classe".</i>
+        <span class="tip">L'exit ticket e una verifica di due minuti a fine ora: dice subito chi ha capito e cosa va ripreso la lezione successiva.</span>
+      </li>
+      <li><b>Materiali differenziati e inclusivi</b> — <i>"Agisci come docente esperto e progettista didattico con competenze di didattica inclusiva. Crea materiali differenziati per [MATERIA] su [ARGOMENTO] per studenti di [CLASSE O FASCIA D'ETA]. Sviluppa piu versioni dello stesso materiale per studenti in difficolta, studenti in linea con la classe, studenti avanzati, studenti non italofoni e studenti con bisogni educativi speciali, mantenendo per tutti i medesimi traguardi di apprendimento. Proponi strategie di scaffolding, misure compensative e dispensative, attivita di arricchimento, compiti di approfondimento e tecnologie assistive dove appropriato. Includi istruzioni per il docente, consegne per gli studenti e suggerimenti per l'applicazione in classe. I materiali devono essere ordinati, coinvolgenti, accessibili e inclusivi, garantendo pari opportunita di apprendimento a ogni studente".</i>
+        <span class="tip">Il vincolo dei "medesimi traguardi per tutti" e il punto chiave: differenziare la strada, non l'obiettivo. L'esito resta comunque una bozza da adattare al PDP o al PEI reale.</span>
+      </li>
     </ol>
   </div>
   <div class="prompt-group" id="didattici">
