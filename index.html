@@ -228,7 +228,8 @@
     <span class="cat-nav-label">NotebookLM</span>
     <a href="#notebooklm">Sistema base</a>
     <a href="#notebooklm-studio">Studio ed esami</a>
-    <a href="#notebooklm-ricerca">Materiale di ricerca</a>
+    <a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a>
+    <a href="#notebooklm-pdf">Analizzare un PDF</a>
     <a href="#notebooklm-imparare">Imparare meglio</a>
     <a href="#notebooklm-ruoli">Prompt-ruolo</a>
     <a href="#notebooklm-corso">Costruire un corso</a>
@@ -264,7 +265,7 @@
       <tr><td class="need">Far studiare e ripassare gli studenti</td><td class="go"><a href="#notebooklm-studio">Studio ed esami</a><span class="sep">·</span><a href="#notebooklm-imparare">Imparare meglio</a><span class="sep">·</span><a href="#feynman">Imparare un argomento</a><span class="sep">·</span><a href="#universali">Prompt universali</a></td></tr>
       <tr><td class="need">Seguire una tesina, un elaborato o un percorso di maturita</td><td class="go"><a href="#notebooklm-tesina">Tesine ed elaborati</a><span class="sep">·</span><a href="#notebooklm-problema">Problema di ricerca</a><span class="sep">·</span><a href="#notebooklm-revisione">Rassegna e revisione</a></td></tr>
       <tr><td class="need">Scrivere o revisionare un testo accademico</td><td class="go"><a href="#notebooklm-articolo">Scrivere un articolo</a><span class="sep">·</span><a href="#claude-accademico">Scrittura accademica</a><span class="sep">·</span><a href="#claude-paper">Paper Research System</a><span class="sep">·</span><a href="#ricerca">Ricerca accademica</a></td></tr>
-      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
+      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
       <tr><td class="need">Fare presentazioni, video o infografiche</td><td class="go"><a href="#notebooklm-slide">Presentazioni</a><span class="sep">·</span><a href="#notebooklm-video">Video</a><span class="sep">·</span><a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#gemini-video">Modifica video</a></td></tr>
       <tr><td class="need">Creare file, pagine web o risorse digitali</td><td class="go"><a href="#gemini-file">Creare file</a><span class="sep">·</span><a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#skill-library">Libreria Skills</a></td></tr>
       <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Burocrazia</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a></td></tr>
@@ -1058,6 +1059,31 @@
       </li>
     </ol>
   </div>
+  <div class="prompt-group" id="notebooklm-pdf">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Spremere un singolo PDF o documento<span class="tool-tag t-univ">trasversale</span></span><span class="count">8</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Otto modi diversi di interrogare <b>un solo documento</b>, dal riassunto per principianti alla recensione critica. A differenza dei gruppi sulla ricerca, qui non serve una bibliografia: basta il PDF che hai davanti — una circolare, un manuale, un report, un capitolo.</div>
+    <ol class="prompt-list">
+      <li><b>Riassunto per chi parte da zero</b> — <i>"Riassumi questo PDF su [ARGOMENTO] per [UN PRINCIPIANTE / UNO STUDENTE / UN LETTORE GENERICO]. Includi: lo scopo principale del documento, cinque idee chiave, spiegazioni semplici, fatti o esempi importanti e una sezione 'cosa significa questo per te'. Evita il gergo tecnico; se alcuni termini sono indispensabili, spiegali in parole povere".</i>
+      </li>
+      <li><b>Appunti dettagliati sezione per sezione</b> — <i>"Trasforma questo PDF in appunti organizzati per [SCOPO]. Per ogni capitolo o sezione includi: idea principale, punti a sostegno, fatti, esempi, date o statistiche rilevanti, termini chiave con definizione semplice, insegnamento pratico e una sintesi in una frase. Concludi con i 10 elementi piu importanti dell'intero documento".</i>
+      </li>
+      <li><b>Informazioni chiave con riferimento alla fonte</b> — <i>"Individua le [10/15/20] affermazioni, scoperte o raccomandazioni piu importanti di questo PDF. Per ciascuna indica: l'affermazione, una spiegazione semplice, perche conta, le prove a sostegno, il riferimento a pagina o sezione e il livello di sostegno (forte, parziale o poco chiaro). Includi solo informazioni esplicitamente presenti nel documento, senza aggiungere conoscenze esterne o supposizioni".</i>
+        <span class="tip">Il riferimento a pagina piu il livello di sostegno rendono l'output verificabile: puoi controllare a campione invece di fidarti.</span>
+      </li>
+      <li><b>Spiegazione delle parti difficili</b> — <i>"Agisci come un tutor paziente e spiega le parti piu difficili di questo PDF su [ARGOMENTO]. Il mio livello di conoscenza e [PRINCIPIANTE / BASE / INTERMEDIO]. Per ogni concetto difficile includi: una spiegazione in linguaggio comune, un'analogia comprensibile, un esempio concreto, una scomposizione passo passo, le definizioni dei termini chiave e una domanda per verificare che io abbia capito. Concludi con l'ordine di studio consigliato per padroneggiare i concetti".</i>
+      </li>
+      <li><b>Dal documento al piano operativo</b> — <i>"Trasforma le idee utili di questo PDF in un piano operativo per [PROGETTO / STUDIO / ATTIVITA]. Per ogni azione indica: obiettivo, azione consigliata, istruzioni passo passo, perche il documento la sostiene, strumenti necessari, possibile ostacolo con relativa soluzione, priorita (alta, media, bassa) e scadenza suggerita. Organizza tutto in quattro fasi: oggi, questa settimana, questo mese, lungo termine".</i>
+        <span class="tip">Utile per tradurre una circolare o delle linee guida in cose concrete da fare, con tempi realistici.</span>
+      </li>
+      <li><b>Guida allo studio completa</b> — <i>"Trasforma questo PDF in una guida allo studio completa per [ESAME / CORSO / ARGOMENTO] di livello [BASE / INTERMEDIO / AVANZATO]. Includi: panoramica dell'argomento, sintesi delle sezioni, termini e definizioni, fatti, date, formule o schemi importanti, concetti che vengono comunemente confusi, 10 domande a risposta breve, 10 a scelta multipla, 5 basate su scenari, le risposte con spiegazione e una checklist di ripasso. Dai particolare rilievo a [ARGOMENTI IMPORTANTI]".</i>
+      </li>
+      <li><b>Confronto tra le opzioni descritte</b> — <i>"Confronta le idee, strategie, metodi o opzioni principali discussi in questo PDF. Crea una tabella comparativa con: scopo, funzionamento, vantaggi, limiti, prove a sostegno, caso d'uso migliore, rischi, destinatario ideale e differenze chiave. Spiega poi quale opzione e la piu solida, la piu facile da attuare, la piu rischiosa e la migliore per [SITUAZIONE SPECIFICA]. Basa ogni conclusione solo sul contenuto del documento".</i>
+      </li>
+      <li><b>Recensione critica del documento</b> — <i>"Recensisci criticamente questo PDF in modo equo, obiettivo ed equilibrato. Valuta: obiettivo principale, solidita delle argomentazioni, qualita delle prove, affidabilita delle fonti, chiarezza e struttura, presupposti, possibili distorsioni, informazioni mancanti, punti deboli o contraddittori e utilita pratica. Fornisci poi 3 punti di forza, 3 debolezze principali, le affermazioni che richiedono verifica, ulteriori domande di ricerca, chi trarrebbe piu vantaggio dalla lettura e un giudizio finale conciso. Basa la valutazione solo sul contenuto del documento, separando chiaramente i fatti dalle opinioni".</i>
+        <span class="tip">Ottimo esercizio di educazione civica: si puo far recensire agli studenti la stessa fonte e confrontare il loro giudizio con quello del modello.</span>
+      </li>
+    </ol>
+  </div>
   <div class="prompt-group" id="notebooklm-imparare">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Smetti di leggere in modo piu intelligente, inizia a imparare in modo piu intelligente - 10 prompt<span class="tool-tag t-univ">trasversale</span></span><span class="count">10</span></div>
     <ol class="prompt-list">
@@ -1538,7 +1564,7 @@
       <tr><td class="need">Far studiare e ripassare gli studenti</td><td class="go"><a href="#notebooklm-studio">Studio ed esami</a><span class="sep">·</span><a href="#notebooklm-imparare">Imparare meglio</a><span class="sep">·</span><a href="#feynman">Imparare un argomento</a><span class="sep">·</span><a href="#universali">Prompt universali</a></td></tr>
       <tr><td class="need">Seguire una tesina, un elaborato o un percorso di maturita</td><td class="go"><a href="#notebooklm-tesina">Tesine ed elaborati</a><span class="sep">·</span><a href="#notebooklm-problema">Problema di ricerca</a><span class="sep">·</span><a href="#notebooklm-revisione">Rassegna e revisione</a></td></tr>
       <tr><td class="need">Scrivere o revisionare un testo accademico</td><td class="go"><a href="#notebooklm-articolo">Scrivere un articolo</a><span class="sep">·</span><a href="#claude-accademico">Scrittura accademica</a><span class="sep">·</span><a href="#claude-paper">Paper Research System</a><span class="sep">·</span><a href="#ricerca">Ricerca accademica</a></td></tr>
-      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
+      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
       <tr><td class="need">Fare presentazioni, video o infografiche</td><td class="go"><a href="#notebooklm-slide">Presentazioni</a><span class="sep">·</span><a href="#notebooklm-video">Video</a><span class="sep">·</span><a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#gemini-video">Modifica video</a></td></tr>
       <tr><td class="need">Creare file, pagine web o risorse digitali</td><td class="go"><a href="#gemini-file">Creare file</a><span class="sep">·</span><a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#skill-library">Libreria Skills</a></td></tr>
       <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Burocrazia</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a></td></tr>
