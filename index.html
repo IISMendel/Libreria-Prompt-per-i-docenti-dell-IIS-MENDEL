@@ -52,7 +52,13 @@
   .cat-nav-label{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#bbb;padding:7px 6px 7px 2px;white-space:nowrap;}
   .cat-nav a{font-size:12px;font-weight:600;color:var(--text-muted);text-decoration:none;padding:6px 11px;border-radius:20px;transition:background .2s,color .2s;white-space:nowrap;}
   .cat-nav a:hover{background:#E8F5E9;color:var(--green-dark);}
-  .cat-nav-parts{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;max-width:1200px;margin:0 auto 9px;padding-bottom:9px;border-bottom:1px solid #ececec;}
+  .cat-nav-toggle{background:#F0F0F0;color:var(--text-muted);border:none;font-family:inherit;font-size:13px;font-weight:700;padding:8px 16px;border-radius:22px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .2s,color .2s;}
+  .cat-nav-toggle:hover{background:#E8F5E9;color:var(--green-dark);}
+  .cat-nav-toggle svg{transition:transform .25s ease;}
+  .cat-nav-toggle.open svg{transform:rotate(180deg);}
+  .cat-nav-links{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .cat-nav-links.open{max-height:70vh;overflow-y:auto;padding-top:9px;margin-top:9px;border-top:1px solid #ececec;}
+  .cat-nav-parts{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;max-width:1200px;margin:0 auto;}
   .cat-nav-parts a{font-size:13px;font-weight:800;color:#fff;padding:8px 18px;border-radius:22px;letter-spacing:.01em;}
   .cat-nav-parts a.p1{background:var(--green);}
   .cat-nav-parts a.p2{background:var(--amber);}
@@ -165,7 +171,9 @@
     <a class="p1" href="#parte-1">Parte 1 · Generici</a>
     <a class="p2" href="#parte-2">Parte 2 · Per materia</a>
     <a class="p3" href="#parte-3">Parte 3 · Intelligenza artificiale</a>
+    <button class="cat-nav-toggle" id="navToggle" aria-expanded="false">Tutte le sezioni<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
   </div>
+  <div class="cat-nav-links" id="catNavLinks">
   <div class="cat-nav-row">
     <span class="cat-nav-label">Generici</span>
     <a href="#verifica">Verifiche</a>
@@ -212,7 +220,7 @@
     <a href="#claude-paper">Paper Research</a>
     <a href="#claude-accademico">Scrittura accademica</a>
     <a href="#lingue">Lingue</a>
-    <a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#poster-stili">Locandine e manifesti</a>
+    <a href="#claude-infografiche">Infografiche</a>
     <a href="#claude-sito">Creare una pagina web</a>
     <a href="#claude-tips">Crediti e limiti</a>
     <a href="#skill-library">Libreria Skills</a>
@@ -229,7 +237,7 @@
     <span class="cat-nav-label">NotebookLM</span>
     <a href="#notebooklm">Sistema base</a>
     <a href="#notebooklm-studio">Studio ed esami</a>
-    <a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a>
+    <a href="#notebooklm-ricerca">Materiale di ricerca</a>
     <a href="#notebooklm-pdf">Analizzare un PDF</a>
     <a href="#notebooklm-imparare">Imparare meglio</a>
     <a href="#notebooklm-ruoli">Prompt-ruolo</a>
@@ -244,17 +252,18 @@
     <a href="#ricerca">Ricerca accademica</a>
     <a href="#avanzate">Modalità avanzate</a>
     <a href="#notebooklm-claude">Con Claude</a>
-    <a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#claude-sito">Creare una pagina web</a>
+    <a href="#notebooklm-gemini-sito">Creare un sito</a>
   </div>
   <div class="cat-nav-row">
     <span class="cat-nav-label">Trasversali</span>
-    <a href="#prompt-eng">Scrivere buoni prompt</a><span class="sep">·</span><a href="#pensare-meglio">70 domande per ragionare</a>
+    <a href="#prompt-eng">Scrivere buoni prompt</a>
     <a href="#materiali-classe">Materiali per la classe</a>
     <a href="#didattici">Prompt didattici</a>
     <a href="#teaching">Progettare lezioni</a>
     <a href="#poster-stili">Locandine e manifesti</a>
     <a href="#pensare-meglio">70 domande per ragionare</a>
     <a href="#universali">Prompt universali</a>
+  </div>
   </div>
 </nav>
 
@@ -1777,6 +1786,17 @@
   backToTop.addEventListener('click', ()=>{
     window.scrollTo({top:0, behavior:'smooth'});
   });
+
+  const navToggle=document.getElementById('navToggle'), catNavLinks=document.getElementById('catNavLinks');
+  navToggle.addEventListener('click', ()=>{
+    const open=catNavLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  catNavLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    catNavLinks.classList.remove('open'); navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded','false');
+  }));
 
   const qmFab=document.getElementById('qmFab'), qmPanel=document.getElementById('qmPanel'),
         qmOverlay=document.getElementById('qmOverlay'), qmClose=document.getElementById('qmClose');
