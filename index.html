@@ -136,6 +136,8 @@
   .quickmap td.go a:hover{background:#F0FDFA;}
   .quickmap td.go span.sep{color:#bbb;margin:0 5px;}
   @media(max-width:640px){.quickmap td{display:block;padding:8px 14px;border-top:none;}.quickmap td.need{padding-bottom:2px;border-top:1px solid #E4EFEE;}.quickmap td.go{padding-top:0;padding-bottom:12px;}}
+  .cluster-head{margin:34px 0 16px;padding:11px 20px;background:linear-gradient(90deg,#E8F1FE,#F6FAFF);border-left:5px solid #2563EB;border-radius:0 10px 10px 0;font-size:18px;font-weight:800;color:#1E40AF;scroll-margin-top:120px;}
+  @media(max-width:640px){.cluster-head{font-size:16px;padding:10px 15px;}}
   .univ-legend{margin:0 0 18px;padding:12px 16px;background:#F5F3FF;border-left:3px solid #6D28D9;border-radius:0 8px 8px 0;font-size:13.5px;color:#4C1D95;line-height:1.55;}
   .tool-tag.t-did{background:#EDE9FE;color:#7C3AED;}
   .tool-tag.t-edu{background:#FFE4E6;color:#E11D48;}
@@ -163,7 +165,7 @@
 </section>
 
 <div class="info-strip">
-  <b>132 prompt didattici</b> &nbsp;·&nbsp; <b>62 generici</b> + <b>70 per materia</b> &nbsp;·&nbsp; <b>+ Parte 3: oltre 300 prompt e sistemi IA</b> &nbsp;·&nbsp; Basta sostituire le parti tra [parentesi quadre]
+  <b>Oltre 500 prompt in tre parti</b> &nbsp;·&nbsp; <b>62 generici</b> · <b>165 per materia</b> · <b>oltre 300 su IA e strumenti</b> &nbsp;·&nbsp; Basta sostituire le parti tra [parentesi quadre]
 </div>
 
 <nav class="cat-nav">
@@ -232,8 +234,19 @@
     <a href="#feynman">Imparare un argomento</a>
     <a href="#gemini-video">Modifica video</a>
     <a href="#gemini-file">Creare file</a>
-    <a href="#workspace">Workspace</a>
     <a href="#edugems">EduGems</a>
+  </div>
+  <div class="cat-nav-row">
+    <span class="cat-nav-label">Workspace</span>
+    <a href="#workspace-fondamenti">Fondamenti</a>
+    <a href="#workspace">Panoramica</a>
+    <a href="#gemini-gmail">Gmail</a>
+    <a href="#gemini-docs">Documenti</a>
+    <a href="#gemini-drive">Drive</a>
+    <a href="#gemini-slides">Presentazioni</a>
+    <a href="#gemini-calendar">Calendar</a>
+    <a href="#gemini-meet">Meet</a>
+    <a href="#gemini-moduli">Moduli</a>
   </div>
   <div class="cat-nav-row">
     <span class="cat-nav-label">NotebookLM</span>
@@ -283,9 +296,9 @@
       <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
       <tr><td class="need">Fare presentazioni, video o infografiche</td><td class="go"><a href="#creare-presentazioni">Creare presentazioni</a><span class="sep">·</span><a href="#notebooklm-slide">Presentazioni</a><span class="sep">·</span><a href="#notebooklm-video">Video</a><span class="sep">·</span><a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#poster-stili">Locandine e manifesti</a><span class="sep">·</span><a href="#gemini-video">Modifica video</a></td></tr>
       <tr><td class="need">Creare file, pagine web o risorse digitali</td><td class="go"><a href="#gemini-file">Creare file</a><span class="sep">·</span><a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#claude-sito">Creare una pagina web</a><span class="sep">·</span><a href="#skill-library">Libreria Skills</a></td></tr>
-      <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Burocrazia</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a></td></tr>
+      <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Burocrazia</a><span class="sep">·</span><a href="#workspace-fondamenti">Workspace: fondamenti</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a><span class="sep">·</span><a href="#gemini-gmail">Gmail</a></td></tr>
       <tr><td class="need">Lavorare su inclusione e differenziazione</td><td class="go"><a href="#inclusione">Inclusione</a><span class="sep">·</span><a href="#materiali-classe">Materiali per la classe</a></td></tr>
-      <tr><td class="need">Imparare a usare meglio l'IA</td><td class="go"><a href="#prompt-eng">Scrivere buoni prompt</a><span class="sep">·</span><a href="#prompt-parametrici">Prompt parametrici</a><span class="sep">·</span><a href="#pensare-meglio">70 domande per ragionare</a><span class="sep">·</span><a href="#claude-tips">Crediti e limiti</a><span class="sep">·</span><a href="#edugems">EduGems</a></td></tr>
+      <tr><td class="need">Imparare a usare meglio l'IA</td><td class="go"><a href="#prompt-eng">Scrivere buoni prompt</a><span class="sep">·</span><a href="#workspace-fondamenti">Workspace: fondamenti</a><span class="sep">·</span><a href="#prompt-parametrici">Prompt parametrici</a><span class="sep">·</span><a href="#pensare-meglio">70 domande per ragionare</a><span class="sep">·</span><a href="#claude-tips">Crediti e limiti</a><span class="sep">·</span><a href="#edugems">EduGems</a></td></tr>
     </table>
   </div>
 </div>
@@ -987,6 +1000,33 @@
       <li><b>Excel - Importazione registro</b> — Crea un file (.xlsx) con 20 studenti fittizi: Nome, Cognome, Classe, Sezione ed Email scolastica (nome.cognome@scuola.it).</li>
     </ol>
   </div>
+  <div class="prompt-group" id="edugems">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-edu">Risorse</span>EduGems e risorse per la scuola italiana</span><span class="count">5</span></div>
+    <ol class="prompt-list">
+      <li><b>EduSTEM - MathScratch Tutor</b> — Genera codice Scratch 3.0 pronto all'uso con la sintassi ufficiale italiana dei blocchi, adattando la complessita dall'infanzia/primaria fino alla secondaria di secondo grado.</li>
+      <li><b>EduCreate - Maestro di Rebus</b> — Per italiano L1/L2. Costruisce rebus enigmistici, genera il prompt visivo in inglese per l'IA visiva (Nano Banana / DALL-E) e indica la finalizzazione su Canva.</li>
+      <li><b>EduInclude - Visual Instructional Designer</b> — Analizza il PDF di un'unita didattica, pone 6 domande UDL/accessibilita e genera il prompt pronto per la sezione Infografica di NotebookLM.</li>
+      <li><b>Eric Curts - edugems.ai</b> — Oltre 100 Gems internazionali preconfigurate. Fai una copia della Gem e aggiungi in fondo l'istruzione: rispondere sempre in italiano, adattare i contenuti alle Indicazioni Nazionali/Linee Guida, usare la scala di voti 1-10 e la terminologia scolastica italiana (classe prima, seconda...).</li>
+      <li><b>Elisabetta Nanni - MusaiLab</b> — Chatbot nativamente in italiano per progettare risorse didattiche musicali inclusive e innovative, integrato con le Indicazioni Nazionali MIUR.</li>
+    </ol>
+  </div>
+  <div class="cluster-head" id="workspace-blocco">Gemini dentro Google Workspace</div>
+  <div class="prompt-group" id="workspace-fondamenti">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Workspace con Gemini: come funziona e come si scrive un prompt<span class="tool-tag t-univ">trasversale</span></span><span class="count">1</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;"><b>Dove si trova.</b> Gemini e integrato nelle app che gia usi — Gmail, Documenti, Drive, Presentazioni, Calendar, Meet, Moduli — e si riconosce dall'icona a scintilla. Legge cio che hai aperto per ricavarne il contesto e collega tra loro i file, le persone e i progetti del tuo dominio, quindi le risposte tengono conto del lavoro reale e non solo della domanda.</div>
+    <ol class="prompt-list">
+      <li><b>I quattro elementi di un buon prompt</b>
+        <ul class="sub">
+          <li><b>Ruolo</b>: chi deve impersonare l'IA (un docente di inglese, un revisore, un progettista).</li>
+          <li><b>Contesto</b>: qual e la situazione e a chi si rivolge il risultato.</li>
+          <li><b>Compito</b>: cosa deve fare esattamente.</li>
+          <li><b>Formato</b>: in che forma deve restituirlo (tabella, elenco, testo continuo, numero di righe).</li>
+        </ul>
+        <span class="tip">Quasi tutti i prompt deludenti mancano di uno dei quattro, di solito il contesto o il formato.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;"><b>La revisione conta quanto il prompt.</b> L'IA produce in fretta una prima bozza: sta a te rileggerla, aggiungere la tua competenza e il tuo stile, e <b>verificare i fatti</b>, perche il modello puo affermare con sicurezza cose sbagliate. Non inoltrare mai un testo generato senza averlo riletto: la decisione, e la responsabilita, restano di chi firma.</div>
+  </div>
   <div class="prompt-group" id="workspace">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini per Google Workspace</span><span class="count">25</span></div>
     <ol class="prompt-list">
@@ -1017,14 +1057,195 @@
       <li><b>Drive &amp; Riunioni</b> — Rivedi tutti i documenti del progetto e individua le informazioni mancanti prima del lancio.</li>
     </ol>
   </div>
-  <div class="prompt-group" id="edugems">
-    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-edu">Risorse</span>EduGems e risorse per la scuola italiana</span><span class="count">5</span></div>
+  <div class="prompt-group" id="gemini-gmail">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini in Gmail: funzioni e prompt</span><span class="count">12</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Comandi disponibili nell'interfaccia: il pulsante di <b>riepilogo</b> in cima ai thread lunghi; il pulsante <b>calendario</b>, che genera un evento dal contenuto del messaggio; <b>Aiutami a scrivere</b> (matita con la scintilla) per una nuova bozza; <b>Aiutami a perfezionare</b>, selezionando il testo esistente per formalizzarlo, ampliarlo o accorciarlo; le <b>risposte suggerite</b> in fondo al thread; <b>Aiutami a pianificare</b>, che inserisce le tue disponibilita nella bozza.</div>
     <ol class="prompt-list">
-      <li><b>EduSTEM - MathScratch Tutor</b> — Genera codice Scratch 3.0 pronto all'uso con la sintassi ufficiale italiana dei blocchi, adattando la complessita dall'infanzia/primaria fino alla secondaria di secondo grado.</li>
-      <li><b>EduCreate - Maestro di Rebus</b> — Per italiano L1/L2. Costruisce rebus enigmistici, genera il prompt visivo in inglese per l'IA visiva (Nano Banana / DALL-E) e indica la finalizzazione su Canva.</li>
-      <li><b>EduInclude - Visual Instructional Designer</b> — Analizza il PDF di un'unita didattica, pone 6 domande UDL/accessibilita e genera il prompt pronto per la sezione Infografica di NotebookLM.</li>
-      <li><b>Eric Curts - edugems.ai</b> — Oltre 100 Gems internazionali preconfigurate. Fai una copia della Gem e aggiungi in fondo l'istruzione: rispondere sempre in italiano, adattare i contenuti alle Indicazioni Nazionali/Linee Guida, usare la scala di voti 1-10 e la terminologia scolastica italiana (classe prima, seconda...).</li>
-      <li><b>Elisabetta Nanni - MusaiLab</b> — Chatbot nativamente in italiano per progettare risorse didattiche musicali inclusive e innovative, integrato con le Indicazioni Nazionali MIUR.</li>
+      <li><b>Leggere</b> — Smistare e consultare la posta
+        <ul class="sub">
+          <li>Fammi un riepilogo di tutti i messaggi non letti ricevuti oggi da [PERSONA].</li>
+          <li>Elenca i tre punti principali di questa lunga conversazione.</li>
+          <li>Riscrivi questo aggiornamento normativo in modo che sia chiaro anche per chi non e del settore.</li>
+        </ul>
+      </li>
+      <li><b>Cercare</b> — Recuperare informazioni sepolte nella posta
+        <ul class="sub">
+          <li>In quale data e stata comunicata la scadenza per [ADEMPIMENTO]?</li>
+          <li>Raccogli tutti gli aggiornamenti dell'ultimo mese relativi a [PRATICA / PROGETTO].</li>
+          <li>Trova @[FILE] e indicami [DATO SPECIFICO].</li>
+        </ul>
+        <span class="tip">La ricerca in linguaggio naturale e il vantaggio principale rispetto ai filtri di Gmail: trova cio che ricordi vagamente, senza sapere mittente o parole esatte.</span>
+      </li>
+      <li><b>Scrivere</b> — Redigere e rifinire
+        <ul class="sub">
+          <li>Scrivi un messaggio di sollecito cortese chiedendo aggiornamenti su [QUESTIONE].</li>
+          <li>Riscrivi questa bozza in modo che risulti piu sicura e meno remissiva.</li>
+          <li>Prepara un aggiornamento per il gruppo di lavoro basato sulle decisioni in @[NOTE DELLA RIUNIONE].</li>
+        </ul>
+        <span class="tip">"Meno remissiva" e una richiesta che funziona molto bene: rimuove le scuse superflue mantenendo la cortesia.</span>
+      </li>
+      <li><b>Ragionare</b> — Preparare e analizzare
+        <ul class="sub">
+          <li>Suggeriscimi cinque modi per comunicare [INIZIATIVA] in modo efficace.</li>
+          <li>Leggi questa bozza: quali domande e probabile che ponga chi la ricevera?</li>
+          <li>Trasforma i riscontri sparsi in questo thread in una lista di controllo passo per passo.</li>
+        </ul>
+        <span class="tip">Anticipare le domande del destinatario prima di inviare e il modo piu rapido per evitare tre scambi di chiarimenti.</span>
+      </li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;">Attenzione ai dati personali: molte email di scuola contengono nomi di studenti, situazioni familiari o dati sensibili. Prima di far riassumere o rielaborare un thread, valuta cosa stai dando in pasto allo strumento e attieniti alle indicazioni dell'Istituto sul trattamento dei dati.</div>
+  </div>
+  <div class="prompt-group" id="gemini-docs">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini in Google Documenti: funzioni e prompt</span><span class="count">9</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Comandi nell'interfaccia: <b>Aiutami a scrivere</b> (matita con la scintilla) su pagina vuota per la prima bozza; selezionando un blocco di testo compare l'icona di Gemini per <b>cambiare tono, riassumere o ampliare</b>; il pannello laterale <b>Chiedi a Gemini</b> interroga il documento aperto. Con la chiocciola (@) si richiamano altri file di Drive.</div>
+    <ol class="prompt-list">
+      <li><b>Creare</b> — Prima stesura e generazione
+        <ul class="sub">
+          <li>Scrivi una bozza di [TIPO DI DOCUMENTO] su [ARGOMENTO].</li>
+          <li>Crea una scaletta per [PERCORSO / CORSO / PROGETTO], comprese pause e attivita pratiche.</li>
+          <li>Scrivi una comunicazione di benvenuto basandoti sulle indicazioni contenute in @[FILE].</li>
+        </ul>
+        <span class="tip">Chiedere prima la scaletta e poi il testo sezione per sezione da risultati migliori che pretendere il documento intero in un colpo solo.</span>
+      </li>
+      <li><b>Migliorare</b> — Riscrivere e formattare
+        <ul class="sub">
+          <li>Riscrivi questo paragrafo rendendolo piu conciso ed efficace.</li>
+          <li>Amplia questa sezione aggiungendo tre esempi concreti.</li>
+          <li>Trasforma questi appunti in una tabella con tre colonne: attivita, responsabile, scadenza.</li>
+        </ul>
+        <span class="tip">La conversione di appunti disordinati in tabella e l'uso piu redditizio: risolve in pochi secondi il verbale scritto di fretta.</span>
+      </li>
+      <li><b>Consultare</b> — Sintesi e verifica
+        <ul class="sub">
+          <li>Fornisci un riassunto puntato di questo documento, evidenziando decisioni e prossimi passi.</li>
+          <li>In quale sezione si parla di [ARGOMENTO SPECIFICO]?</li>
+          <li>Rivedi questo documento rispetto a @[RIFERIMENTO]: abbiamo tralasciato qualche requisito?</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="gemini-drive">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini in Google Drive: funzioni e prompt</span><span class="count">9</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Dal pannello laterale di Drive si possono selezionare uno o piu file e interrogarli <b>senza aprirli</b>: e il vantaggio principale rispetto a Documenti, dove si lavora su un file per volta.</div>
+    <ol class="prompt-list">
+      <li><b>Consultare</b> — Ricerca e sintesi tra piu file
+        <ul class="sub">
+          <li>Fornisci un riassunto dei punti principali trattati in questi file selezionati.</li>
+          <li>In quale di questi documenti si parla delle scadenze per [ADEMPIMENTO]?</li>
+          <li>Riassumi le decisioni principali prese nel verbale dell'ultima riunione.</li>
+        </ul>
+      </li>
+      <li><b>Generare</b> — Produrre testi da file esistenti
+        <ul class="sub">
+          <li>Crea la bozza di una comunicazione che riassuma i risultati contenuti in @[FILE].</li>
+          <li>Confronta @[FILE A] e @[FILE B] ed elenca le differenze principali.</li>
+          <li>Scrivi un breve testo informativo basato su @[LINEE GUIDA].</li>
+        </ul>
+        <span class="tip">Il confronto tra due versioni di uno stesso documento e utile quando arrivano circolari aggiornate: mostra subito cosa e cambiato.</span>
+      </li>
+      <li><b>Analizzare</b> — Estrarre e organizzare dati
+        <ul class="sub">
+          <li>Estrai tutte le azioni assegnate a me in questo documento.</li>
+          <li>Qual e il totale indicato nel file allegato a questa cartella?</li>
+          <li>Crea una tabella che riassuma [ELEMENTI] e le rispettive scadenze citate in questi documenti.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="gemini-slides">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini in Google Presentazioni: funzioni e prompt</span><span class="count">9</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Oltre ai prompt, conviene conoscere i comandi disponibili nell'interfaccia: <b>Chiedi a Gemini</b> (pannello laterale) per generare o interrogare la presentazione; <b>Migliora questa diapositiva</b>, che riprogetta una slide di solo testo in un layout visivo; <b>Aiutami a visualizzare</b>, per generare immagini, grafica vettoriale e infografiche o rimuovere lo sfondo da una foto; <b>Perfeziona</b>, che compare selezionando del testo e permette di riassumerlo, puntarlo o riformularlo. Con la chiocciola (@) si richiamano i file di Drive dentro il prompt.</div>
+    <ol class="prompt-list">
+      <li><b>Creare</b> — Generare presentazioni e singole diapositive
+        <ul class="sub">
+          <li>Suggerisci 3 spunti di apertura coinvolgenti per una presentazione su [ARGOMENTO].</li>
+          <li>Crea una presentazione di 10 diapositive basata sui contenuti di @[FILE DRIVE].</li>
+          <li>Aggiungi una diapositiva con l'ordine del giorno che elenchi i punti trattati oggi.</li>
+        </ul>
+        <span class="tip">Le nuove diapositive adottano automaticamente layout, caratteri e tema gia presenti: conviene quindi impostare prima il tema e generare dopo.</span>
+      </li>
+      <li><b>Migliorare</b> — Rifinire testi e grafica
+        <ul class="sub">
+          <li>Genera un'immagine vettoriale di [SOGGETTO].</li>
+          <li>Trasforma questo paragrafo in un elenco di tre punti, facile da leggere a colpo d'occhio.</li>
+          <li>Scrivi le note del relatore per questo schema tecnico, rivolgendoti a un pubblico non esperto.</li>
+        </ul>
+        <span class="tip">"Migliora questa diapositiva" e il comando piu utile su slide ereditate da altri: converte i muri di testo in un layout leggibile senza rifare tutto a mano.</span>
+      </li>
+      <li><b>Consultare</b> — Riassumere e verificare
+        <ul class="sub">
+          <li>Riassumi le differenze principali tra questa presentazione e @[ALTRO FILE].</li>
+          <li>Rivedi questa presentazione rispetto a @[DOCUMENTO DI RIFERIMENTO]: manca qualche punto richiesto?</li>
+          <li>Elenca tutte le azioni da compiere e le scadenze citate in queste diapositive.</li>
+        </ul>
+        <span class="tip">Il confronto con un documento di riferimento e utile per controllare che una presentazione di progetto copra tutto cio che il bando o la delibera richiedono.</span>
+      </li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="gemini-calendar">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini in Google Calendar: funzioni e prompt</span><span class="count">9</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Gli eventi si creano <b>in linguaggio naturale</b>, indicando partecipanti, data, ora e luogo in un'unica frase invece di compilare i campi. Dal pannello di Gmail si trasforma un messaggio in evento gia precompilato.</div>
+    <ol class="prompt-list">
+      <li><b>Pianificare</b> — Creare eventi e gestire il tempo
+        <ul class="sub">
+          <li>Fissa una riunione di 45 minuti con [PERSONE] martedi prossimo alle 10.</li>
+          <li>Trova un orario libero domani pomeriggio in cui io e [PERSONA] siamo entrambi disponibili.</li>
+          <li>Crea un evento per [IMPEGNO] venerdi alle 13 e imposta un promemoria un'ora prima.</li>
+        </ul>
+      </li>
+      <li><b>Prepararsi</b> — Ordini del giorno e contesto
+        <ul class="sub">
+          <li>Scrivi un ordine del giorno in tre punti per la riunione di domani su [ARGOMENTO].</li>
+          <li>Trova e riassumi gli ultimi messaggi scambiati con i partecipanti al prossimo incontro.</li>
+          <li>Suggerisci 3 punti chiave da affrontare nell'incontro con [INTERLOCUTORE].</li>
+        </ul>
+        <span class="tip">Recuperare il contesto prima di una riunione e cio che evita di arrivarci senza ricordare cosa era stato deciso l'ultima volta.</span>
+      </li>
+      <li><b>Consultare</b> — Riepilogare gli impegni
+        <ul class="sub">
+          <li>Quali sono i miei impegni principali di oggi? Ho spazi liberi nel pomeriggio?</li>
+          <li>Quando e programmato il prossimo [TIPO DI RIUNIONE]?</li>
+          <li>Riassumi tutti gli incontri dell'ultimo mese riguardanti @[PROGETTO].</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <div class="prompt-group" id="gemini-meet">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini in Google Meet: funzioni e prompt</span><span class="count">3</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;"><b>Le funzioni contano piu dei prompt.</b> <i>Appari al meglio</i> corregge illuminazione e inquadratura; <i>audio da studio</i> isola la voce eliminando rumori di fondo; i <b>sottotitoli in tempo reale</b>, anche tradotti, aiutano chi ha difficolta uditive o segue in lingua straniera; <i>Prendi appunti per me</i> (se attivo nel piano dell'Istituto) redige il verbale in un documento e lo allega all'evento di Calendar; chi entra in ritardo puo chiedere un riepilogo di cio che e stato detto. Gli unici prompt veri servono a generare gli sfondi.</div>
+    <ol class="prompt-list">
+      <li><b>Sfondo professionale</b> — Genera l'immagine di un ufficio moderno e luminoso con grandi finestre e piante.</li>
+      <li><b>Sfondo astratto</b> — Crea uno sfondo astratto e sobrio con tonalita [COLORI].</li>
+      <li><b>Sfondo ambientato</b> — Realizza l'interno di una biblioteca accogliente con scaffali in legno.</li>
+    </ol>
+    <div class="prompts-note ia-note" style="margin:18px 22px 22px;">La verbalizzazione automatica va usata con cautela nelle riunioni scolastiche: i partecipanti vanno informati che la seduta viene trascritta, e il verbale generato resta una bozza da rivedere e approvare, non un atto.</div>
+  </div>
+  <div class="prompt-group" id="gemini-moduli">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-gem">Gemini</span>Gemini in Google Moduli: funzioni e prompt</span><span class="count">8</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Descrivendo l'obiettivo si ottiene una bozza completa di modulo — domande, titoli e opzioni di risposta — da rifinire. E lo strumento piu immediato per verifiche a correzione automatica e questionari di gradimento.</div>
+    <ol class="prompt-list">
+      <li><b>Creare</b> — Generare moduli, questionari e verifiche
+        <ul class="sub">
+          <li>Crea una verifica a scelta multipla di 10 domande su [ARGOMENTO] per il livello [LIVELLO].</li>
+          <li>Genera un modulo di iscrizione per [INIZIATIVA], con domande su [INFORMAZIONI DA RACCOGLIERE].</li>
+          <li>Crea un questionario di gradimento per raccogliere le opinioni degli studenti su [ATTIVITA].</li>
+        </ul>
+      </li>
+      <li><b>Migliorare</b> — Rifinire domande e risposte
+        <ul class="sub">
+          <li>Suggerisci tre opzioni errate ma plausibili per questa domanda su [ARGOMENTO].</li>
+          <li>Riscrivi la descrizione introduttiva del modulo in modo piu chiaro per le famiglie.</li>
+          <li>Riformula questa domanda perche non risulti tendenziosa e garantisca risposte piu obiettive.</li>
+        </ul>
+        <span class="tip">I distrattori plausibili sono la parte piu laboriosa di una prova a scelta multipla: farseli proporre e poi selezionarli fa risparmiare molto tempo.</span>
+      </li>
+      <li><b>Progettare per l'analisi</b> — Pensare fin dall'inizio a come leggerai i dati
+        <ul class="sub">
+          <li>Qual e il tipo di domanda migliore per misurare il gradimento di [ESPERIENZA]?</li>
+          <li>Riformula questa domanda aperta in una a scelta multipla con categorie definite, per facilitare l'analisi.</li>
+        </ul>
+        <span class="tip">Scelta decisiva: le risposte aperte sono ricche ma quasi impossibili da aggregare a fine anno. Deciderlo prima di somministrare, non dopo.</span>
+      </li>
     </ol>
   </div>
   <div class="prompt-group" id="notebooklm">
@@ -1830,9 +2051,9 @@
       <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
       <tr><td class="need">Fare presentazioni, video o infografiche</td><td class="go"><a href="#creare-presentazioni">Creare presentazioni</a><span class="sep">·</span><a href="#notebooklm-slide">Presentazioni</a><span class="sep">·</span><a href="#notebooklm-video">Video</a><span class="sep">·</span><a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#poster-stili">Locandine e manifesti</a><span class="sep">·</span><a href="#gemini-video">Modifica video</a></td></tr>
       <tr><td class="need">Creare file, pagine web o risorse digitali</td><td class="go"><a href="#gemini-file">Creare file</a><span class="sep">·</span><a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#claude-sito">Creare una pagina web</a><span class="sep">·</span><a href="#skill-library">Libreria Skills</a></td></tr>
-      <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Burocrazia</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a></td></tr>
+      <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Burocrazia</a><span class="sep">·</span><a href="#workspace-fondamenti">Workspace: fondamenti</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a><span class="sep">·</span><a href="#gemini-gmail">Gmail</a></td></tr>
       <tr><td class="need">Lavorare su inclusione e differenziazione</td><td class="go"><a href="#inclusione">Inclusione</a><span class="sep">·</span><a href="#materiali-classe">Materiali per la classe</a></td></tr>
-      <tr><td class="need">Imparare a usare meglio l'IA</td><td class="go"><a href="#prompt-eng">Scrivere buoni prompt</a><span class="sep">·</span><a href="#prompt-parametrici">Prompt parametrici</a><span class="sep">·</span><a href="#pensare-meglio">70 domande per ragionare</a><span class="sep">·</span><a href="#claude-tips">Crediti e limiti</a><span class="sep">·</span><a href="#edugems">EduGems</a></td></tr>
+      <tr><td class="need">Imparare a usare meglio l'IA</td><td class="go"><a href="#prompt-eng">Scrivere buoni prompt</a><span class="sep">·</span><a href="#workspace-fondamenti">Workspace: fondamenti</a><span class="sep">·</span><a href="#prompt-parametrici">Prompt parametrici</a><span class="sep">·</span><a href="#pensare-meglio">70 domande per ragionare</a><span class="sep">·</span><a href="#claude-tips">Crediti e limiti</a><span class="sep">·</span><a href="#edugems">EduGems</a></td></tr>
     </table>
   </div>
   </div>
