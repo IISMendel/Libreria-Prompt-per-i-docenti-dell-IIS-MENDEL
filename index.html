@@ -261,6 +261,7 @@
     <a href="#notebooklm-studio">Studio ed esami</a>
     <a href="#notebooklm-ricerca">Materiale di ricerca</a>
     <a href="#notebooklm-pdf">Analizzare un PDF</a>
+    <a href="#notebooklm-critico">Interrogare le fonti</a>
     <a href="#notebooklm-imparare">Imparare meglio</a>
     <a href="#notebooklm-ruoli">Prompt-ruolo</a>
     <a href="#notebooklm-corso">Costruire un corso</a>
@@ -300,7 +301,7 @@
       <tr><td class="need">Far studiare e ripassare gli studenti</td><td class="go"><a href="#notebooklm-studio">Studio ed esami</a><span class="sep">·</span><a href="#notebooklm-imparare">Imparare meglio</a><span class="sep">·</span><a href="#feynman">Imparare un argomento</a><span class="sep">·</span><a href="#universali">Prompt universali</a></td></tr>
       <tr><td class="need">Seguire una tesina, un elaborato o un percorso di maturita</td><td class="go"><a href="#notebooklm-tesina">Tesine ed elaborati</a><span class="sep">·</span><a href="#notebooklm-problema">Problema di ricerca</a><span class="sep">·</span><a href="#notebooklm-revisione">Rassegna e revisione</a></td></tr>
       <tr><td class="need">Scrivere o revisionare un testo accademico</td><td class="go"><a href="#notebooklm-articolo">Scrivere un articolo</a><span class="sep">·</span><a href="#claude-accademico">Scrittura accademica</a><span class="sep">·</span><a href="#claude-paper">Paper Research System</a><span class="sep">·</span><a href="#ricerca">Ricerca accademica</a></td></tr>
-      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
+      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-critico">Interrogare le fonti</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
       <tr><td class="need">Fare presentazioni, video o infografiche</td><td class="go"><a href="#creare-presentazioni">Creare presentazioni</a><span class="sep">·</span><a href="#notebooklm-slide">Presentazioni</a><span class="sep">·</span><a href="#notebooklm-video">Video</a><span class="sep">·</span><a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#poster-stili">Locandine e manifesti</a><span class="sep">·</span><a href="#gemini-video">Modifica video</a></td></tr>
       <tr><td class="need">Creare file, pagine web o risorse digitali</td><td class="go"><a href="#gemini-file">Creare file</a><span class="sep">·</span><a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#claude-sito">Creare una pagina web</a><span class="sep">·</span><a href="#skill-library">Libreria Skills</a></td></tr>
       <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Burocrazia</a><span class="sep">·</span><a href="#workspace-fondamenti">Workspace: fondamenti</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a><span class="sep">·</span><a href="#gemini-gmail">Gmail</a></td></tr>
@@ -1531,6 +1532,24 @@
       </li>
     </ol>
   </div>
+  <div class="prompt-group" id="notebooklm-critico">
+    <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Interrogare le fonti con spirito critico<span class="tool-tag t-univ">trasversale</span></span><span class="count">5</span></div>
+    <div class="prompts-note ia-note" style="margin:0 22px 18px;">Cinque prompt brevi da usare su un taccuino gia popolato, quando l'obiettivo non e riassumere ma <b>mettere alla prova</b> cio che le fonti affermano. Utili anche come esercizio in classe: le stesse domande allenano il pensiero critico a prescindere dallo strumento.</div>
+    <ol class="prompt-list">
+      <li><b>Allenatore di pensiero critico</b> — <i>"Agisci come il mio allenatore di pensiero critico. Analizza ogni fonte di questo taccuino e individua presupposti impliciti, argomentazioni deboli, affermazioni non sostenute, errori logici e prove mancanti. Spiega come si potrebbe rafforzare ciascuna conclusione con un ragionamento migliore".</i>
+      </li>
+      <li><b>Sguardo dell'esperto</b> — <i>"Esamina questo taccuino come farebbe un esperto riconosciuto del settore. Spiega cosa colpisce, quali idee sono le piu rilevanti, quali equivoci ricorrono comunemente e a quali conclusioni arriverebbe un esperto dopo aver letto queste fonti".</i>
+        <span class="tip">La domanda sugli equivoci ricorrenti e la parte piu utile in classe: fa emergere gli errori tipici prima che li commettano gli studenti.</span>
+      </li>
+      <li><b>Valutatore delle prove</b> — <i>"Valuta ogni affermazione importante contenuta in questo taccuino. Spiega quanto ciascuna sia sostenuta dalle prove, individua le informazioni contrastanti e separa fatti, opinioni e supposizioni in sezioni distinte ed esplicitamente etichettate".</i>
+        <span class="tip">La separazione in tre categorie e un ottimo modello da far replicare agli studenti su un testo qualsiasi.</span>
+      </li>
+      <li><b>Generatore di domande</b> — <i>"Crea 30 domande stimolanti basate su questo taccuino. Concentrati su domande che spingano ad approfondire, mettano in discussione i presupposti e facciano emergere le lacune di conoscenza, invece di verificare la semplice memorizzazione".</i>
+      </li>
+      <li><b>Supporto a una decisione</b> — <i>"Usando solo le informazioni di questo taccuino, aiutami a valutare una decisione. Elenca gli argomenti piu solidi a favore e contro ciascuna opzione, spiega quali sono le incertezze e indica la scelta piu sostenuta dalle prove. Sintetizza poi il tutto in opportunita, rischi, prove a sostegno e azioni consigliate, in forma concisa e orientata alla decisione".</i>
+      </li>
+    </ol>
+  </div>
   <div class="prompt-group" id="notebooklm-imparare">
     <div class="prompt-group-title ia-title"><span><span class="tool-tag t-nb">NotebookLM</span>Smetti di leggere in modo piu intelligente, inizia a imparare in modo piu intelligente - 10 prompt<span class="tool-tag t-univ">trasversale</span></span><span class="count">10</span></div>
     <ol class="prompt-list">
@@ -2179,7 +2198,7 @@
       <tr><td class="need">Far studiare e ripassare gli studenti</td><td class="go"><a href="#notebooklm-studio">Studio ed esami</a><span class="sep">·</span><a href="#notebooklm-imparare">Imparare meglio</a><span class="sep">·</span><a href="#feynman">Imparare un argomento</a><span class="sep">·</span><a href="#universali">Prompt universali</a></td></tr>
       <tr><td class="need">Seguire una tesina, un elaborato o un percorso di maturita</td><td class="go"><a href="#notebooklm-tesina">Tesine ed elaborati</a><span class="sep">·</span><a href="#notebooklm-problema">Problema di ricerca</a><span class="sep">·</span><a href="#notebooklm-revisione">Rassegna e revisione</a></td></tr>
       <tr><td class="need">Scrivere o revisionare un testo accademico</td><td class="go"><a href="#notebooklm-articolo">Scrivere un articolo</a><span class="sep">·</span><a href="#claude-accademico">Scrittura accademica</a><span class="sep">·</span><a href="#claude-paper">Paper Research System</a><span class="sep">·</span><a href="#ricerca">Ricerca accademica</a></td></tr>
-      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
+      <tr><td class="need">Analizzare documenti, PDF, fonti o video</td><td class="go"><a href="#notebooklm">Sistema base</a><span class="sep">·</span><a href="#notebooklm-ricerca">Materiale di ricerca</a><span class="sep">·</span><a href="#notebooklm-critico">Interrogare le fonti</a><span class="sep">·</span><a href="#notebooklm-pdf">Analizzare un PDF</a><span class="sep">·</span><a href="#youtube">YouTube</a><span class="sep">·</span><a href="#avanzate">Modalità avanzate</a></td></tr>
       <tr><td class="need">Fare presentazioni, video o infografiche</td><td class="go"><a href="#creare-presentazioni">Creare presentazioni</a><span class="sep">·</span><a href="#notebooklm-slide">Presentazioni</a><span class="sep">·</span><a href="#notebooklm-video">Video</a><span class="sep">·</span><a href="#claude-infografiche">Infografiche</a><span class="sep">·</span><a href="#poster-stili">Locandine e manifesti</a><span class="sep">·</span><a href="#gemini-video">Modifica video</a></td></tr>
       <tr><td class="need">Creare file, pagine web o risorse digitali</td><td class="go"><a href="#gemini-file">Creare file</a><span class="sep">·</span><a href="#notebooklm-gemini-sito">Creare un sito</a><span class="sep">·</span><a href="#claude-sito">Creare una pagina web</a><span class="sep">·</span><a href="#skill-library">Libreria Skills</a></td></tr>
       <tr><td class="need">Sbrigare comunicazioni, verbali e burocrazia</td><td class="go"><a href="#burocrazia">Burocrazia</a><span class="sep">·</span><a href="#workspace-fondamenti">Workspace: fondamenti</a><span class="sep">·</span><a href="#workspace">Gemini per Workspace</a><span class="sep">·</span><a href="#gemini-gmail">Gmail</a></td></tr>
